@@ -8,6 +8,10 @@ import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { RecipeStarRatingComponent } from './recipe-star-rating/recipe-star-rating.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+import { LoginComponent } from './login/login.component';
+import { LoginModalBtnComponent } from './login-modal-btn/login-modal-btn.component';
+import { LoginModalContentComponent } from './login-modal-content/login-modal-content.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     RecipeStarRatingComponent,
     RecipePageComponent,
     NavbarComponent,
+    LoginModalComponent,
+    LoginComponent,
+    LoginModalBtnComponent,
+    LoginModalContentComponent,
   ],
   imports: [
     NgbModule,
