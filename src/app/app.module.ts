@@ -5,11 +5,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
+import { RecipeStarRatingComponent } from './recipe-star-rating/recipe-star-rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeCardComponent,
+    RecipeStarRatingComponent,
   ],
   imports: [
     NgbModule,
