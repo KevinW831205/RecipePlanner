@@ -12,4 +12,6 @@ export class RecipeStarRatingComponent implements OnInit {
   ngOnInit() {
   }
 
+  currentRate = 3.58;
+
 }
