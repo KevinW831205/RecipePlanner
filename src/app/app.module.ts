@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { RecipeStarRatingComponent } from './recipe-star-rating/recipe-star-rating.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RecipePageComponent } from './recipe-page/recipe-page.component';
     RecipeCardComponent,
     RecipeStarRatingComponent,
     RecipePageComponent,
+    NavbarComponent,
   ],
   imports: [
     NgbModule,
