@@ -22,6 +22,9 @@ import { LoginModalContentComponent } from './login-modal-content/login-modal-co
     LoginModalBtnComponent,
     LoginModalContentComponent
   ],
+  entryComponents: [
+    LoginModalContentComponent
+  ],
   imports: [
     NgbModule,
     BrowserModule,
