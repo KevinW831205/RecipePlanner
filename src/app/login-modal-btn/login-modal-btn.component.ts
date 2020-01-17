@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from '../login/login.component';
+import { LoginModalContentComponent } from '../login-modal-content/login-modal-content.component';
 
 @Component({
   selector: 'app-login-modal-btn',
@@ -11,7 +11,7 @@ export class LoginModalBtnComponent implements OnInit {
 
   constructor(private modalService: NgbModal) { }
   open() {
-    const modalRef = this.modalService.open(LoginComponent);
+    const modalRef = this.modalService.open(LoginModalContentComponent);
     modalRef.componentInstance.name = 'World';
   }
 
