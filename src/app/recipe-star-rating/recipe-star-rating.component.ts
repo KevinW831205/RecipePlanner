@@ -13,5 +13,6 @@ export class RecipeStarRatingComponent implements OnInit {
   }
 
   currentRate = 3.58;
+  reviewAmount = 1402;  
 
 }

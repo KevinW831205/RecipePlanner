@@ -5,3 +5,6 @@
     </span>
 </ng-template>
 <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+<div>
+    <span class="rate-text">rate: {{currentRate}}  ({{reviewAmount}} reviews)</span>
+</div>
