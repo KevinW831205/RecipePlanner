@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginModalBtnComponent } from './login-modal-btn/login-modal-btn.component';
 import { LoginComponent } from './login/login.component'
 import { LoginModalContentComponent } from './login-modal-content/login-modal-content.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { LoginModalContentComponent } from './login-modal-content/login-modal-co
   ],
   imports: [
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule
   ],
