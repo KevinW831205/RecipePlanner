@@ -11,6 +11,8 @@ import { LoginModalBtnComponent } from './login-modal-btn/login-modal-btn.compon
 import { LoginComponent } from './login/login.component'
 import { LoginModalContentComponent } from './login-modal-content/login-modal-content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     LoginComponent,
     LoginModalBtnComponent,
-    LoginModalContentComponent
+    LoginModalContentComponent,
+    SignupFormComponent,
+    ProfileComponent
   ],
   entryComponents: [
     LoginModalContentComponent
