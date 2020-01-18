@@ -13,6 +13,7 @@ import { LoginModalContentComponent } from './login-modal-content/login-modal-co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginModalBtnComponent,
     LoginModalContentComponent,
     SignupFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    RecipeDetailPageComponent
   ],
   entryComponents: [
     LoginModalContentComponent
