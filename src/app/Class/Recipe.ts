@@ -1,5 +1,5 @@
 export class Recipe {
-    constructor(private id: number, private name: string, private authorId: number, private ratings, ) {
+    constructor(private id: number, private name: string, private authorId: number, private ratings, private instructions, private ingredients ) {
 
     }
 
