@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-pa
     LoginModalContentComponent,
     SignupFormComponent,
     ProfileComponent,
-    RecipeDetailPageComponent
+    RecipeDetailPageComponent,
+    InstructionsComponent,
+    IngredientsComponent
   ],
   entryComponents: [
     LoginModalContentComponent
