@@ -16,6 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
 import { InstructionsComponent } from './instructions/instructions.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
+import { AuthorMediaComponent } from './author-media/author-media.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
     ProfileComponent,
     RecipeDetailPageComponent,
     InstructionsComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    AuthorMediaComponent
   ],
   entryComponents: [
     LoginModalContentComponent
