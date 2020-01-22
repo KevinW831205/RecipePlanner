@@ -4,8 +4,15 @@ import { Ingredients } from './Ingredients';
 
 
 export class Recipe {
-    constructor(private id: number, private name: string, private authorId: number, private ratings: Ratings, private instructions: Instructions, private ingredients: Ingredients) {
-
-    }
+    constructor(
+        private id: number,
+        private name: string,
+        private authorId: number,
+        private ratings: Ratings,
+        private instructionList: Instructions,
+        private ingredientList: Ingredients,
+        private numberOfRating: number,
+        private averageRating: number
+    ) { }
 
 }
