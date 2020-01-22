@@ -1,6 +1,6 @@
 import { Ratings } from './Ratings';
-import { Instructions } from './Instructions';
-import { Ingredients } from './Ingredients';
+import { Instruction } from './Instruction';
+import { Ingredient } from './Ingredient';
 
 
 export class Recipe {
@@ -9,8 +9,8 @@ export class Recipe {
         private name: string,
         private authorId: number,
         private ratings: Ratings,
-        private instructionList: Instructions,
-        private ingredientList: Ingredients,
+        private instructionList: Instruction[],
+        private ingredientList: Ingredient[],
         private numberOfRating: number,
         private averageRating: number
     ) { }
