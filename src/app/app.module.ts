@@ -18,6 +18,7 @@ import { InstructionsComponent } from './instructions/instructions.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { AuthorMediaComponent } from './author-media/author-media.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
+import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AdminProfileComponent } from './admin/admin-profile/admin-profile.compo
     InstructionsComponent,
     IngredientsComponent,
     AuthorMediaComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    CategoryTagsPageComponent
   ],
   entryComponents: [
     LoginModalContentComponent
