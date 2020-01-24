@@ -3,7 +3,7 @@ export class Ratings {
         private id: number,
         private accountId: number,
         private recipeId: number,
-        private raing: number
+        private rating: number
     ){}
 
 }

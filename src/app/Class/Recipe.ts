@@ -12,7 +12,8 @@ export class Recipe {
         private instructionList: Instruction[],
         private ingredientList: Ingredient[],
         private numberOfRating: number,
-        private averageRating: number
+        private averageRating: number,
+        private description: string
     ) { }
 
 }
