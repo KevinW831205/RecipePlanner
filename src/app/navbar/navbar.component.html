@@ -40,10 +40,33 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li> -->
 
+            <li ngbDropdown *ngIf="user; else notLoggedIn" class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    logged in
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+                    <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
+                    <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+                    <a class="dropdown-item" (click)="logout()">Log Out</a>
+                </div>
+            </li>
+
+            <ng-template #notLoggedIn>
+                <li class="nav-item">
+                    <app-login-modal-btn></app-login-modal-btn>
+                </li>
+            </ng-template>
 
         </ul>
 
-        <app-login-modal-btn></app-login-modal-btn>
+
+
+
+
+
 
         <!-- Search bar -->
 
