@@ -19,6 +19,9 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
 import { AuthorMediaComponent } from './author-media/author-media.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
+import { DataService } from './services/data.service';
+import { RecipeService } from './services/recipe.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -47,9 +50,12 @@ import { CategoryTagsPageComponent } from './admin/category-tags-page/category-t
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    RecipeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

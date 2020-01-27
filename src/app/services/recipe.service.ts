@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { DataService } from './data.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RecipeService {
+export class RecipeService extends DataService {
 
-  constructor() { }
+  constructor(http: HttpClient) {
+    let url = "http://localhost:8080/recipe/"
+    super(http, url);
+  }
 }
