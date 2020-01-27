@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class RecipeService extends DataService {
 
   constructor(http: HttpClient) {
-    let url = "http://localhost:8080/recipe/"
+    let url = "http://localhost:8080/api/recipe/"
     super(http, url);
   }
 }

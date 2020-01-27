@@ -1,22 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 
 
-
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+
   constructor(private http: HttpClient, private url) { }
+
+
 
   getAll() {
     try {
-      return this.http.get(this.url);
+      return this.http.get(this.url, httpOptions);
     } catch (error) {
       this.handleError(error);
     }
