@@ -1,9 +1,11 @@
 <div class="card" >
     <img class="card-img-top" src="" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">{{recipeName}}</h5>
-        <p class="card-text">{{recipeDescription}}</p>
+        <h5 class="card-title">{{recipe.name}}</h5>
+        <p class="card-text">{{recipe.description}}</p>
         <a routerLink="" class="btn btn-primary">Details</a>
-        <app-recipe-star-rating></app-recipe-star-rating>
+        <app-recipe-star-rating 
+        [averageRating]="recipe.averageRating" 
+        [numberOfRating]="recipe.numberOfRating"></app-recipe-star-rating>
     </div>
 </div>
