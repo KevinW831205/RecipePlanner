@@ -16,49 +16,47 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
 
+export class DataService<someType> {
 
   constructor(private http: HttpClient, private url) { }
 
-
-
-  getAll() {
+  getAll(): Observable<someType[]> {
     try {
-      return this.http.get(this.url, httpOptions);
+      return this.http.get<someType[]>(this.url, httpOptions);
     } catch (error) {
       this.handleError(error);
     }
   }
 
-  get(id) {
+  get(id): Observable<someType> {
     try {
-      return this.http.get(this.url + '/' + id);
+      return this.http.get<someType>(this.url + '/' + id);
     } catch (error) {
       this.handleError(error);
     }
   }
 
 
-  create(resource) {
+  create(resource): Observable<someType> {
     try {
-      return this.http.post(this.url, JSON.stringify(resource));
+      return this.http.post<someType>(this.url, JSON.stringify(resource));
     } catch (error) {
       this.handleError(error);
     }
   }
 
-  update(resource) {
+  update(resource): Observable<someType> {
     try {
-      this.http.patch(this.url + "/" + resource.id, JSON.stringify(resource));
+      this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource));
     } catch (error) {
       this.handleError(error);
     }
   }
 
-  delete(id) {
+  delete(id): Observable<someType> {
     try {
-      return this.http.delete(this.url + "/" + id);
+      return this.http.delete<someType>(this.url + "/" + id);
     } catch (error) {
       this.handleError(error);
     }
