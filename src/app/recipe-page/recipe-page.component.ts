@@ -21,9 +21,5 @@ export class RecipePageComponent implements OnInit {
     })
   }
 
-  recipeId(){
-    this.recipes[0].getId();
-  }
-
 
 }
