@@ -48,7 +48,7 @@ export class DataService<someType> {
 
   update(resource): Observable<someType> {
     try {
-      this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource));
+      return this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource));
     } catch (error) {
       this.handleError(error);
     }

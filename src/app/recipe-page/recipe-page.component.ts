@@ -9,7 +9,8 @@ import { Recipe } from '../models/Recipe';
 })
 export class RecipePageComponent implements OnInit {
 
-  private recipes: Recipe[];
+  recipes: Recipe[];
+
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
