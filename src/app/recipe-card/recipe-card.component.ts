@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecipeCardComponent implements OnInit {
   @Input() recipeName;
-  @Input() description;
+  @Input() recipeDescription;
 
   constructor() { }
 
