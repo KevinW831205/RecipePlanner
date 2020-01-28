@@ -1,4 +1,10 @@
 <div class="container">
+    <div class="row" >
+        <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipes">
+            <app-recipe-card [recipeName]="recipe.name"></app-recipe-card>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-4 col-sm-12 my-3">
             <app-recipe-card></app-recipe-card>
@@ -6,29 +12,9 @@
         <div class="col-md-4 col-sm-12 my-3">
             <app-recipe-card></app-recipe-card>
         </div>
-        <div class="col-md-4 col-sm-12 my-3">
-            <app-recipe-card></app-recipe-card>
-        </div>
 
-        <div class="col-md-4 col-sm-12 my-3">
-            <app-recipe-card></app-recipe-card>
-        </div>
-        <div class="col-md-4 col-sm-12 my-3">
-            <app-recipe-card></app-recipe-card>
-        </div>
-        <div class="col-md-4 col-sm-12 my-3">
-            <app-recipe-card></app-recipe-card>
-        </div>
-
-        <div class="col-md-4 col-sm-12 my-3">
-            <app-recipe-card></app-recipe-card>
-        </div>
-        <div class="col-md-4 col-sm-12 my-3">
-            <app-recipe-card></app-recipe-card>
-        </div>
         <div class="col-md-4 col-sm-12 my-3">
             <app-recipe-card></app-recipe-card>
         </div>
     </div>
-
 </div>

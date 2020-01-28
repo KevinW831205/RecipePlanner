@@ -5,10 +5,11 @@ import { Ingredient } from './Ingredient';
 
 export class Recipe {
 
+    name;
 
     constructor(
         private id: number,
-        private name: string,
+        name: string,
         private author: Account,
         private instructionList: Instruction[],
         private ingredientList: Ingredient[],
@@ -16,15 +17,16 @@ export class Recipe {
         private averageRating: number,
         private description: string
     ) { 
+        this.name = name;
     }
 
     getId(){
         return this.id
     }
 
-    getName(){
-        return this.name;
-    }
+    // getName(){
+    //     return this.name;
+    // }
 
     getAuthor(){
         return this.author;

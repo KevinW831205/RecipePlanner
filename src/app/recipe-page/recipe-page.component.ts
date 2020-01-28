@@ -14,8 +14,10 @@ export class RecipePageComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    console.log("init");
     this.recipeService.getAll().subscribe((recipes)=>{
-      this.recipes = recipes
+      this.recipes = recipes;
+      console.log(this.recipes)
     })
   }
 
