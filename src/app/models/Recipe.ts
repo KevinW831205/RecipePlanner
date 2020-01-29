@@ -13,6 +13,7 @@ export class Recipe {
     numberOfRating
     averageRating;
     description;
+    categories;
 
     constructor(
         id: number,
@@ -22,18 +23,22 @@ export class Recipe {
         ingredientList: Ingredient[],
         numberOfRating: number,
         averageRating: number,
-        description: string
-    ) { 
+        description: string,
+        categories: any[]
+    ) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.instructionList = instructionList;
         this.ingredientList = ingredientList;
-        this.numberOfRating= numberOfRating;
+        this.numberOfRating = numberOfRating;
         this.averageRating = averageRating;
         this.description = description;
-
+        this.categories = categories;
     }
+
+
+
 
     // getId(){
     //     return this.id

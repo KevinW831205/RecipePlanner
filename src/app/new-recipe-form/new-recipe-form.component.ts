@@ -15,7 +15,7 @@ export class NewRecipeFormComponent implements OnInit {
 
   save(recipeForm){
     console.log(recipeForm);
-    new Recipe(null,null,null,null,null,null,null,null);
+    new Recipe(null,null,null,null,null,null,null,null, null);
   }
 
 }
