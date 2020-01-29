@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { RecipeStarRatingComponent } from './recipe-star-rating/recipe-star-rating.component';
@@ -10,7 +14,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginModalBtnComponent } from './login-modal-btn/login-modal-btn.component';
 import { LoginComponent } from './login/login.component'
 import { LoginModalContentComponent } from './login-modal-content/login-modal-content.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
@@ -19,10 +22,8 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
 import { AuthorMediaComponent } from './author-media/author-media.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
-import { DataService } from './services/data.service';
 import { RecipeService } from './services/recipe.service';
-import { HttpClientModule } from '@angular/common/http';
-import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { RecipeFormComponent } from './recipe-form/recipe-form.component';
     AuthorMediaComponent,
     AdminProfileComponent,
     CategoryTagsPageComponent,
-    RecipeFormComponent
+    NewRecipeFormComponent,
   ],
   entryComponents: [
     LoginModalContentComponent
