@@ -22,6 +22,7 @@ import { CategoryTagsPageComponent } from './admin/category-tags-page/category-t
 import { DataService } from './services/data.service';
 import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     IngredientsComponent,
     AuthorMediaComponent,
     AdminProfileComponent,
-    CategoryTagsPageComponent
+    CategoryTagsPageComponent,
+    RecipeFormComponent
   ],
   entryComponents: [
     LoginModalContentComponent
