@@ -5,5 +5,17 @@
         <div class="alert alert-danger" *ngIf="name.touched && name.invalid">A Name is Required</div>
     </div>
 
+    <div class="form-group">
+        <label for="name">Recipe Name</label>
+        <input #name="ngModel" ngModel name="name" id="name" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">A Name is Required</div>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Recipe Name</label>
+        <input #name="ngModel" ngModel name="name" id="name" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">A Name is Required</div>
+    </div>
+
     <button class="btn btn-primary">Submit</button>
 </form>
