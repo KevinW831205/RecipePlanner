@@ -2,8 +2,7 @@
     <div class="row" >
         <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipes">
             <app-recipe-card 
-            [recipeName]="recipe.name" 
-            [recipeDescription]="recipe.description"
+                [recipe]="recipe"
             ></app-recipe-card>
         </div>
     </div>

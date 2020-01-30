@@ -12,4 +12,5 @@ export class RecipeService extends DataService<Recipe> {
     let url = "http://localhost:8080/api/recipe/"
     super(http, url);
   }
+
 }

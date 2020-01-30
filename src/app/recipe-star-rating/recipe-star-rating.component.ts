@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-star-rating',
@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-star-rating.component.css']
 })
 export class RecipeStarRatingComponent implements OnInit {
+  @Input() averageRating;
+  @Input() numberOfRating;  
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  currentRate = 3.58;
-  reviewAmount = 1402;  
 
 }
