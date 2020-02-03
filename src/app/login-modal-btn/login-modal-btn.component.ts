@@ -12,7 +12,7 @@ export class LoginModalBtnComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
   open() {
     const modalRef = this.modalService.open(LoginModalContentComponent);
-    modalRef.componentInstance.name = 'World';
+    modalRef.componentInstance.name = 'Login';
   }
 
   ngOnInit() {
