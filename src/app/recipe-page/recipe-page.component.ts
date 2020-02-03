@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
 import { Recipe } from '../models/Recipe';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-page',
@@ -14,7 +15,6 @@ export class RecipePageComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    console.log("init");
     this.recipes$ = this.recipeService.getAll()
   }
 

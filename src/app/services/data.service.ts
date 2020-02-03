@@ -31,7 +31,7 @@ export class DataService<someType> {
 
   get(id): Observable<someType> {
     try {
-      return this.http.get<someType>(this.url + '/' + id);
+      return this.http.get<someType>(this.url + '/' + id, httpOptions);
     } catch (error) {
       this.handleError(error);
     }
