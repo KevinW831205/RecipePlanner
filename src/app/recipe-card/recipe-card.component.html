@@ -1,8 +1,11 @@
-<div class="card">
+<div class="card h-100">
     <img class="card-img-top" [src]="recipe.imageUrl" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{recipe.name}}</h5>
         <p class="card-text">{{recipe.description}}</p>
+
+    </div>
+    <div class="card-footer">
         <a [routerLink]="['/recipe/',recipe.id]" class="btn btn-primary">Details</a>
         <app-recipe-star-rating [averageRating]="recipe.averageRating" [numberOfRating]="recipe.numberOfRating">
         </app-recipe-star-rating>

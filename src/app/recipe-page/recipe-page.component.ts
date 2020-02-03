@@ -9,16 +9,13 @@ import { Recipe } from '../models/Recipe';
 })
 export class RecipePageComponent implements OnInit {
 
-  recipes: Recipe[];
+  recipes$: Observable<Recipe[]>;
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
     console.log("init");
-    this.recipeService.getAll().subscribe((recipes)=>{
-      this.recipes = recipes;
-      console.log(this.recipes)
-    })
+    this.recipes$ = this.recipeService.getAll()
   }
 
 

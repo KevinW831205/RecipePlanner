@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row" >
+    <div class="row" *ngIf="recipes$ | async as recipes">
         <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipes">
             <app-recipe-card 
                 [recipe]="recipe"   
