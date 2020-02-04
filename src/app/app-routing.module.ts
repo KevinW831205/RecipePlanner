@@ -4,6 +4,8 @@ import { RecipePageComponent } from './recipe-page/recipe-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
 import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 const routes: Routes = [
 
@@ -11,6 +13,7 @@ const routes: Routes = [
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
   { path: 'admin/category-tags', component: CategoryTagsPageComponent },
+  { path: 'register', component: SignupPageComponent },
   // { path:'', component: },
   { path: '', redirectTo: '/recipes', pathMatch: 'full' }
 ];

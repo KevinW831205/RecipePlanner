@@ -24,6 +24,7 @@ import { AdminProfileComponent } from './admin/admin-profile/admin-profile.compo
 import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
 import { RecipeService } from './services/recipe.service';
 import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.compon
     AdminProfileComponent,
     CategoryTagsPageComponent,
     NewRecipeFormComponent,
+    SignupPageComponent,
   ],
   entryComponents: [
     LoginModalContentComponent
