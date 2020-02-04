@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log(this.account.username, this.account.password)
     setTimeout(() => { this.activeModal.close('Close click') }, 1000)
   }
 

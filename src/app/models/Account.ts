@@ -1,9 +1,10 @@
-export class Account {  
-    constructor(
-        private id : number,
-        private username: string,
-        private password: string,
-        private isAdmin: boolean,
-    ){}
+export class Account {
+    id : number;
+    username: string;
+    admin: boolean;
+    profileImageUrl: string;
+
+
+    constructor(init?: Partial<Account> ){}
 
 }
