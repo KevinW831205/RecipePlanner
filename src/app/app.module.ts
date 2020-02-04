@@ -25,6 +25,7 @@ import { CategoryTagsPageComponent } from './admin/category-tags-page/category-t
 import { RecipeService } from './services/recipe.service';
 import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CustomFormsModule
   ],
   providers: [
     RecipeService
