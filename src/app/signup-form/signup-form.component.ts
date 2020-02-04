@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupInfo } from '../models/SignupInfo';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -7,20 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupFormComponent implements OnInit {
 
-  account: { username: string, password: string; } = {
+  account: SignupInfo = {
     username: null,
     password: null
   }
-  cPassword:string = null;
+  cPassword: string = null;
 
-  
-  constructor() { }
+  constructor(private accountService: AccountService) {
+
+  }
 
   ngOnInit() {
   }
 
-  signUp(){
-    
+  signUp() {
+    this.accountService.createAccount(this.account).subscribe(
+      r => {
+        console.log(r);
+      }, error => {
+
+      }
+    )
   }
 
 }

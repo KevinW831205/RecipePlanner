@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 
 
-import { httpOptions , baseUrl} from './httpConfig';
+import { httpOptions, baseUrl } from './httpConfig';
 import { HttpClient } from '@angular/common/http';
 import { SignupInfo } from '../models/SignupInfo';
 
@@ -10,11 +10,11 @@ import { SignupInfo } from '../models/SignupInfo';
   providedIn: 'root'
 })
 export class AccountService {
-  constructor(private http: HttpClient) { 
-  
+  constructor(private http: HttpClient) {
+
   }
 
-  createAccount(accountInfo:SignupInfo){
-    this.http.put(baseUrl+"accout/",accountInfo);
+  createAccount(accountInfo: SignupInfo) {
+    return this.http.post(baseUrl + "account/", accountInfo, httpOptions);
   }
 }
