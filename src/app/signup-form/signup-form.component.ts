@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupFormComponent implements OnInit {
 
+  account: { username: string, password: string; } = {
+    username: null,
+    password: null
+  }
+  cPassword:string = null;
+
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  signUp(){
+    
   }
 
 }
