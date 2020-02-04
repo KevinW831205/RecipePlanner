@@ -9,11 +9,11 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 
 const routes: Routes = [
 
+  { path: 'signup', component: SignupPageComponent },
   { path: 'recipes', component: RecipePageComponent },
-  { path: 'profile/:username', component: ProfileComponent },
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
+  { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category-tags', component: CategoryTagsPageComponent },
-  { path: 'register', component: SignupPageComponent },
   // { path:'', component: },
   { path: '', redirectTo: '/recipes', pathMatch: 'full' }
 ];
