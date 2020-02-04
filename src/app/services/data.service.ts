@@ -13,7 +13,11 @@ import { httpOptions } from './httpConfig';
 
 export class DataService<someType> {
 
-  constructor(public http: HttpClient, public url: string) { }
+  url
+
+  constructor(public http: HttpClient, url: string) {
+    this.url = url;
+  }
 
   getAll(): Observable<someType[]> {
     try {
