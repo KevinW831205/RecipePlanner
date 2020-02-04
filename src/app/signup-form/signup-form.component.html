@@ -13,17 +13,19 @@
         <input #password="ngModel" [(ngModel)]="account.password" name="password" id="password" type="password"
             class="form-control" required [rangeLength]="[6,20]">
         <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
-            <div>Enter a password</div>
+            <div *ngIf="password.errors?.required">Enter a password</div>
+            <div *ngIf="password.errors?.rangeLength">Password Length should be between 6 to 20 characters</div>
         </div>
     </div>
 
     <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
         <input #confirmPassword="ngModel" [(ngModel)]="cPassword" name="confirmPassword" id="confirmPassword"
-            type="password" class="form-control">
-
-        <!-- <div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.invalid">Enter a password</div> -->
+            type="password" class="form-control" required [equalTo]="password">
+        <div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.invalid">
+            <div *ngIf="confirmPassword.errors?.required">Confirm password</div>
+            <div *ngIf="confirmPassword.errors?.equalTo">Passwords must match</div>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary" (click)="signUp()" [disabled]="signUpForm.invalid">Login</button>
+    <button type="submit" class="btn btn-primary" (click)="signUp()" [disabled]="signUpForm.invalid">Sign Up</button>
 </form>
