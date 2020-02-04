@@ -15,7 +15,7 @@ export class RecipePageComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    this.recipes$ = this.recipeService.getAll()
+    this.recipes$ = this.recipeService.getPublished()
   }
 
 

@@ -2,16 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { httpOptions } from './httpConfig';
 
 
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-  })
-}
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +13,7 @@ const httpOptions = {
 
 export class DataService<someType> {
 
-  constructor(private http: HttpClient, private url) { }
+  constructor(public http: HttpClient, public url: string) { }
 
   getAll(): Observable<someType[]> {
     try {
@@ -63,7 +57,7 @@ export class DataService<someType> {
 
   }
 
-  private handleError(error: Response) {
+  handleError(error: Response) {
     if (error.status === 400) {
     }
     if (error.status === 404) {
