@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 
 
@@ -16,13 +17,12 @@ export class LoginComponent implements OnInit {
     password: null
   }
 
-  constructor(public activeModal: NgbActiveModal) { }
+  constructor(public activeModal: NgbActiveModal, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   login() {
-    console.log(this.account.username, this.account.password)
     setTimeout(() => { this.activeModal.close('Close click') }, 1000)
   }
 
