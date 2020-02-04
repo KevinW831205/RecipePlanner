@@ -8,5 +8,6 @@
     <app-login></app-login>
 </div>
 <div class="modal-footer">
+    <a class="signup-link" routerLink="/signup" (click)="activeModal.close('signup')">Sign Up</a>
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
 </div>
