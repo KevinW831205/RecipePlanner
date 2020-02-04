@@ -11,19 +11,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm = new FormGroup({
-    "account": new FormGroup({
-      "username": new FormControl(
-        '',
-        [
-          Validators.required,
-        ],
-      ),
-      "password": new FormControl('', Validators.required)
-    })
-  });
-
-
+  account: { username: string, password: string; } = {
+    username: null,
+    password: null
+  }
 
   constructor(public activeModal: NgbActiveModal) { }
 
