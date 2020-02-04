@@ -26,6 +26,7 @@ import { RecipeService } from './services/recipe.service';
 import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { CustomFormsModule } from 'ng2-validation';
+import { AccountService } from './services/account.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { CustomFormsModule } from 'ng2-validation';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CustomFormsModule
+    CustomFormsModule,
+    AccountService
   ],
   providers: [
     RecipeService
