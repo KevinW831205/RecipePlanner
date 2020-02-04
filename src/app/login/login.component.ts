@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { SignupInfo } from '../models/SignupInfo';
 
 
 
@@ -12,7 +13,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  account: { username: string, password: string; } = {
+  account: SignupInfo = {
     username: null,
     password: null
   }

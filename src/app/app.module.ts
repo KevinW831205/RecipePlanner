@@ -60,10 +60,11 @@ import { AccountService } from './services/account.service';
     AppRoutingModule,
     HttpClientModule,
     CustomFormsModule,
-    AccountService
   ],
   providers: [
-    RecipeService
+    RecipeService,
+    AccountService
+
   ],
   bootstrap: [AppComponent]
 })
