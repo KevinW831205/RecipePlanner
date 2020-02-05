@@ -20,7 +20,7 @@ export class LoginComponent {
   };
   invalidLogin: boolean = false;
 
-  @Output() change = new EventEmitter();
+  @Output() submit: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private authService: AuthService) { }
 
@@ -31,7 +31,7 @@ export class LoginComponent {
         this.authService.userSubject.next(res);
         this.invalidLogin = false;
         localStorage.setItem('user',JSON.stringify(res))
-        this.change.emit('success');
+        this.submit.emit(true);
         // this.activeModal.close('logged in')
       }, err => {
         if (err.status == 403) {

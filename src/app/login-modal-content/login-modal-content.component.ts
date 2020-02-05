@@ -13,4 +13,11 @@ export class LoginModalContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  checkSubmit(e){
+    if(e){
+      this.activeModal.close('logged in')
+    }
+  
+  }
+
 }
