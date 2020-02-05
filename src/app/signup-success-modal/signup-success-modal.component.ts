@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-success-modal',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupSuccessModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activeModal: NgbActiveModal, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  redirect(){
+    this.activeModal.close('redirect')
+    this.router.navigate(['/'])
   }
 
 }

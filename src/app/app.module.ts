@@ -27,8 +27,8 @@ import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.compon
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { CustomFormsModule } from 'ng2-validation';
 import { AccountService } from './services/account.service';
-import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { SignupSuccessModalComponent } from './signup-success-modal/signup-success-modal.component';
+import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
     SignupSuccessModalComponent,
   ],
   entryComponents: [
-    LoginModalContentComponent
+    LoginModalContentComponent,
+    SignupSuccessModalComponent
   ],
   imports: [
     NgbModule,
@@ -68,7 +69,6 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
   providers: [
     RecipeService,
     AccountService
-
   ],
   bootstrap: [AppComponent]
 })

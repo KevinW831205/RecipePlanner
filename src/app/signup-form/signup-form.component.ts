@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupInfo } from '../models/SignupInfo';
 import { AccountService } from '../services/account.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SignupSuccessModalComponent } from '../signup-success-modal/signup-success-modal.component';
 
 @Component({
   selector: 'app-signup-form',
@@ -16,7 +18,7 @@ export class SignupFormComponent implements OnInit {
   cPassword: string = null;
   uniqueError: boolean;
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService, private modalService: NgbModal) {
 
   }
 
@@ -27,6 +29,8 @@ export class SignupFormComponent implements OnInit {
     this.accountService.createAccount(this.account).subscribe(
       r => {
         console.log(r);
+        const modalRef = this.modalService.open(SignupSuccessModalComponent);
+        modalRef.componentInstance.name = 'Login';
       }, error => {
         if(error.status === 500){
           this.uniqueError = true;

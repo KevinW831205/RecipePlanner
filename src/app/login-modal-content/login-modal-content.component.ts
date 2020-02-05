@@ -8,8 +8,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginModalContentComponent implements OnInit {
 
-  @Input() name;
-
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
