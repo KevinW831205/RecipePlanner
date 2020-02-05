@@ -3,6 +3,7 @@ export class Account {
     username: string;
     admin: boolean;
     profileImageUrl: string;
+    aboutMe: string;
 
 
     constructor(init?: Partial<Account> ){}
