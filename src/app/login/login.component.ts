@@ -16,17 +16,27 @@ export class LoginComponent {
   account: SignupInfo = {
     username: null,
     password: null
-  }
+  };
+  invalidLogin: boolean = false;
 
   constructor(public activeModal: NgbActiveModal, private authService: AuthService) { }
 
+
   login() {
-    this.authService.login(this.account)
-      .subscribe(r => {
+    this.authService.login(this.account).subscribe(
+      res => {
+        this.authService.userSubject.next(res);
+        this.invalidLogin = false;
         this.activeModal.close('logged in')
-      }, e => {
-        console.log(e)
-      })
+      }, err => {
+        if (err.status == 403) {
+          this.invalidLogin = true;
+        }
+
+      }
+    )
+
+
   }
 
 }
