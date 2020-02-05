@@ -30,7 +30,7 @@ export class SignupFormComponent implements OnInit {
       r => {
         console.log(r);
         const modalRef = this.modalService.open(SignupSuccessModalComponent);
-        modalRef.componentInstance.name = 'Login';
+        modalRef.componentInstance.name = 'signupsuccess';
       }, error => {
         if(error.status === 500){
           this.uniqueError = true;

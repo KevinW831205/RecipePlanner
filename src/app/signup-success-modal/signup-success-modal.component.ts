@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgbActiveModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,12 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './signup-success-modal.component.html',
   styleUrls: ['./signup-success-modal.component.css']
 })
-export class SignupSuccessModalComponent implements OnInit {
+export class SignupSuccessModalComponent {
 
-  constructor(public activeModal: NgbActiveModal, private router: Router) { }
-
-  ngOnInit() {
+  constructor(public activeModal: NgbActiveModal, private router: Router) { 
   }
+
+
 
   redirect(){
     this.activeModal.close('redirect')
