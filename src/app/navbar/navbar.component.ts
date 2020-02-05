@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
     this.authService.user$.subscribe(r=>{
       this.user = r;
     })
+    this.authService.checkUserPersist()
   }
 
   logout(){

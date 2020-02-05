@@ -24,16 +24,26 @@ export class AuthService {
       take(1)
     ).subscribe(
       res => {
+        localStorage.setItem('user', JSON.stringify(res));
         this.userSubject.next(res);
       },
-      err=>{
+      err => {
         console.log(err)
       }
     );
     return this.user$
   }
 
+  checkUserPersist() {
+    let user = localStorage.getItem('user');
+    console.log(user)
+    if (user) {
+      this.userSubject.next(JSON.parse(user));
+    }
+  }
+
   logout() {
+    localStorage.removeItem('user');
     this.userSubject.next(null);
     this.router.navigate(['/'])
   }
