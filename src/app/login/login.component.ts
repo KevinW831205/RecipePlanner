@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { SignupInfo } from '../models/SignupInfo';
+
 
 
 
@@ -19,7 +20,9 @@ export class LoginComponent {
   };
   invalidLogin: boolean = false;
 
-  constructor(public activeModal: NgbActiveModal, private authService: AuthService) { }
+  @Output() change = new EventEmitter();
+
+  constructor(private authService: AuthService) { }
 
 
   login() {
@@ -27,16 +30,15 @@ export class LoginComponent {
       res => {
         this.authService.userSubject.next(res);
         this.invalidLogin = false;
-        this.activeModal.close('logged in')
+        localStorage.setItem('user',JSON.stringify(res))
+        this.change.emit('success');
+        // this.activeModal.close('logged in')
       }, err => {
         if (err.status == 403) {
           this.invalidLogin = true;
         }
-
       }
     )
-
-
   }
 
 }

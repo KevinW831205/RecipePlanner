@@ -29,6 +29,14 @@ export class AuthService {
     }
   }
 
+  isLoggedIn(){
+    let user = localStorage.getItem('user');
+    if(user){
+      return true;
+    }
+    return false;
+  }
+
   logout() {
     localStorage.removeItem('user');
     this.userSubject.next(null);

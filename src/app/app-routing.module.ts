@@ -7,13 +7,16 @@ import { CategoryTagsPageComponent } from './admin/category-tags-page/category-t
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 
   { path: 'signup', component: SignupPageComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'recipes', component: RecipePageComponent },
-  { path: 'my/profile', component: ProfileComponent},
-  { path: 'my/recipes', component: MyRecipesComponent },
+  { path: 'my/profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'my/recipes', component: MyRecipesComponent, canActivate: [AuthGuard] },
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category-tags', component: CategoryTagsPageComponent },
