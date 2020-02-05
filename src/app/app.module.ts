@@ -27,6 +27,7 @@ import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.compon
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { CustomFormsModule } from 'ng2-validation';
 import { AccountService } from './services/account.service';
+import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AccountService } from './services/account.service';
     CategoryTagsPageComponent,
     NewRecipeFormComponent,
     SignupPageComponent,
+    MyRecipesComponent,
   ],
   entryComponents: [
     LoginModalContentComponent

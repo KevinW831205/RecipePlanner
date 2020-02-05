@@ -6,12 +6,14 @@ import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-pa
 import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 
 const routes: Routes = [
 
   { path: 'signup', component: SignupPageComponent },
   { path: 'recipes', component: RecipePageComponent },
   { path: 'my/profile', component: ProfileComponent},
+  { path: 'my/recipes', component: MyRecipesComponent },
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category-tags', component: CategoryTagsPageComponent },
