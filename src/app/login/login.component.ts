@@ -11,7 +11,7 @@ import { SignupInfo } from '../models/SignupInfo';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   account: SignupInfo = {
     username: null,
@@ -19,9 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(public activeModal: NgbActiveModal, private authService: AuthService) { }
-
-  ngOnInit() {
-  }
 
   login() {
     this.authService.login(this.account)

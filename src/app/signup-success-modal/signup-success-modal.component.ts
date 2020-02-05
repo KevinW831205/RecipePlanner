@@ -15,7 +15,7 @@ export class SignupSuccessModalComponent {
 
 
   redirect(){
-    this.activeModal.close('redirect')
+    this.activeModal.close()
     this.router.navigate(['/'])
   }
 
