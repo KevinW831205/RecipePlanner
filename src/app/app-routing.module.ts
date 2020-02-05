@@ -11,6 +11,7 @@ const routes: Routes = [
 
   { path: 'signup', component: SignupPageComponent },
   { path: 'recipes', component: RecipePageComponent },
+  { path: 'my/profile', component: ProfileComponent},
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category-tags', component: CategoryTagsPageComponent },
