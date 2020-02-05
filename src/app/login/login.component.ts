@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { SignupInfo } from '../models/SignupInfo';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -22,7 +23,7 @@ export class LoginComponent {
 
   @Output() submit: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
 
   login() {
@@ -32,6 +33,7 @@ export class LoginComponent {
         this.invalidLogin = false;
         localStorage.setItem('user',JSON.stringify(res))
         this.submit.emit(true);
+        this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl')|| '/')
         // this.activeModal.close('logged in')
       }, err => {
         if (err.status == 403) {
