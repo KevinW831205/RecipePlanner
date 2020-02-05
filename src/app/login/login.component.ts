@@ -26,9 +26,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.account)
       .subscribe(r => {
-        console.log(r)
-      },
-      e=>{
+        this.activeModal.close('logged in')
+      }, e => {
         console.log(e)
       })
   }
