@@ -14,6 +14,7 @@ export class SignupFormComponent implements OnInit {
     password: null
   }
   cPassword: string = null;
+  uniqueError: boolean;
 
   constructor(private accountService: AccountService) {
 
@@ -27,7 +28,9 @@ export class SignupFormComponent implements OnInit {
       r => {
         console.log(r);
       }, error => {
-
+        if(error.status === 500){
+          this.uniqueError = true;
+        }
       }
     )
   }

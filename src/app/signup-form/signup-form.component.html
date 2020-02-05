@@ -1,4 +1,5 @@
 <form #signUpForm="ngForm">
+    <div *ngIf="uniqueError" class="alert alert-danger">The username was taken</div>
     <div class="form-group">
         <label for="username">Username</label>
         <input #username="ngModel" [(ngModel)]="account.username" name="username" id="username" type="text"
