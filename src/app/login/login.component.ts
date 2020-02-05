@@ -24,7 +24,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    setTimeout(() => { this.activeModal.close('Close click') }, 1000)
+    this.authService.login(this.account)
+      .subscribe(r => {
+        console.log(r)
+      },
+      e=>{
+        console.log(e)
+      })
   }
 
 }
