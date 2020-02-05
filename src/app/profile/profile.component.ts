@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, of } from 'rxjs';
 import { Account } from '../models/Account';
 
 @Component({
@@ -8,23 +8,24 @@ import { Account } from '../models/Account';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit, OnDestroy {
-  
-  user: Account;
-  subscription: Subscription;
+export class ProfileComponent implements OnInit {
 
-  constructor(private authService : AuthService) { 
-    
+  user$: Observable<Account>;
+
+  constructor(private authService: AuthService) {
+
   }
 
   ngOnInit() {
-    this.subscription = this.authService.user$.subscribe(res=>{
-      this.user = res;
-    });
+    if (this.authService.isLoggedIn) {
+      let user:Account = JSON.parse(localStorage.getItem('user'))
+      this.user$ = of(user);
+    } else {
+      this.user$ = this.authService.user$
+    }
+
+
   }
 
-  ngOnDestroy(){
-    this.subscription.unsubscribe();
-  }
 
 }

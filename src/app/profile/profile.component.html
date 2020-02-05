@@ -1,5 +1,6 @@
-<p>Profile</p>
 <div class="container" *ngIf="user$ | async as user">
-    <p>{{user | json}}</p> 
-    
+    <h1>My Profile</h1>
+
+    <p>{{user | json}}</p>
+
 </div>
