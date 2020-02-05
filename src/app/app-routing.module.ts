@@ -9,11 +9,12 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { LoginComponent } from './login/login.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
 
   { path: 'signup', component: SignupPageComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: 'recipes', component: RecipePageComponent },
   { path: 'my/profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'my/recipes', component: MyRecipesComponent, canActivate: [AuthGuard] },

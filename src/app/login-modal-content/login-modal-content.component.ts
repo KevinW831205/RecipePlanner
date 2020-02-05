@@ -17,7 +17,6 @@ export class LoginModalContentComponent implements OnInit {
     if(e){
       this.activeModal.close('logged in')
     }
-  
   }
 
 }

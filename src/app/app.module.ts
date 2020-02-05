@@ -29,6 +29,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import { AccountService } from './services/account.service';
 import { SignupSuccessModalComponent } from './signup-success-modal/signup-success-modal.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MyRecipesComponent } from './my-recipes/my-recipes.component';
     SignupPageComponent,
     MyRecipesComponent,
     SignupSuccessModalComponent,
+    LoginPageComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
