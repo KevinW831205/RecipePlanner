@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   aboutMeTextArea: string = "";
   aboutMeEditing: boolean = false;
   editingImage: boolean = false;
+  imageUrlInput : string = "";
 
 
   constructor(private authService: AuthService, private accountService: AccountService) {
@@ -44,6 +45,14 @@ export class ProfileComponent implements OnInit {
 
   populateAboutMe(aboutMe: string){
     this.aboutMeTextArea = aboutMe;
+  }
+
+  toggelEditingImage(){
+    this.editingImage = !this.editingImage;
+  }
+
+  saveImageUrl(id:number){
+
   }
 
 }
