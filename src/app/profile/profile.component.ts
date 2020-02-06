@@ -11,11 +11,11 @@ import { AccountService } from '../services/account.service';
 })
 export class ProfileComponent implements OnInit {
 
-  user$: Observable<Account>;
+  user: Account;
   aboutMeTextArea: string = "";
   aboutMeEditing: boolean = false;
   editingImage: boolean = false;
-  imageUrlInput : string = "";
+  imageUrlInput: string = "";
 
 
   constructor(private authService: AuthService, private accountService: AccountService) {
@@ -23,17 +23,18 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.checkUserPersist();
-    this.user$ = this.authService.user$
+    this.authService.user$.subscribe(res => {
+      this.user = res;
+    })
   }
 
   saveAboutMe(id: number) {
     this.accountService.patchAboutMe({ aboutMe: this.aboutMeTextArea }, id).subscribe(
-      res=>{
+      res => {
         console.log(res)
         this.toggleEditAboutMe();
       },
-      err=>{
+      err => {
         console.log(err)
       }
     )
@@ -43,21 +44,21 @@ export class ProfileComponent implements OnInit {
     this.aboutMeEditing = !this.aboutMeEditing;
   }
 
-  populateAboutMe(aboutMe: string){
+  populateAboutMe(aboutMe: string) {
     this.aboutMeTextArea = aboutMe;
   }
 
-  toggelEditingImage(){
+  toggelEditingImage() {
     this.editingImage = !this.editingImage;
   }
 
-  saveImageUrl(id:number){
-    this.accountService.patchImageUrl({profileImageUrl:this.imageUrlInput},id).subscribe(
-      res=>{
+  saveImageUrl(id: number) {
+    this.accountService.patchImageUrl({ profileImageUrl: this.imageUrlInput }, id).subscribe(
+      res => {
         console.log(res);
         this.toggelEditingImage();
       },
-      err=>{
+      err => {
         console.log(err);
       }
     )

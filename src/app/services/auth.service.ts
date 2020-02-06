@@ -27,7 +27,6 @@ export class AuthService {
     let user = localStorage.getItem('user');
     if (user) {
       this.accountService.getAccount(JSON.parse(user)).subscribe(res => {
-        console.log(res)
         this.userSubject.next(res);
       })
       // this.userSubject.next(JSON.parse(user));
