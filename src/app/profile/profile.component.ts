@@ -52,7 +52,15 @@ export class ProfileComponent implements OnInit {
   }
 
   saveImageUrl(id:number){
-
+    this.accountService.patchImageUrl({profileImageUrl:this.imageUrlInput},id).subscribe(
+      res=>{
+        console.log(res);
+        this.toggelEditingImage();
+      },
+      err=>{
+        console.log(err);
+      }
+    )
   }
 
 }

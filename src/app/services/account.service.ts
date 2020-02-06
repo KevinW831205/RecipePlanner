@@ -15,16 +15,19 @@ export class AccountService {
 
   }
 
-  getAccount(userName: string): Observable<Account>{
-    return this.http.get<Account>(baseUrl+"account/user?username="+userName);
+  getAccount(userName: string): Observable<Account> {
+    return this.http.get<Account>(baseUrl + "account/user?username=" + userName);
   }
 
   createAccount(accountInfo: SignupInfo) {
     return this.http.post(baseUrl + "account/", accountInfo, httpOptions);
   }
 
-  patchAboutMe(aboutMe: {aboutMe:string}, id:number){
-    console.log(baseUrl+"account/aboutme/"+id)
-    return this.http.patch(baseUrl+"account/aboutme/"+id,aboutMe, httpOptions);
+  patchAboutMe(aboutMe: { aboutMe: string }, id: number) {
+    return this.http.patch(baseUrl + "account/aboutme/" + id, aboutMe, httpOptions);
+  }
+
+  patchImageUrl(url: { profileImageUrl: string }, id: number) {
+    return this.http.patch(baseUrl + "account/profileImageUrl/" + id, url, httpOptions)
   }
 }
