@@ -1,6 +1,7 @@
 <div class="container" *ngIf="user$ | async as user">
     <h1>My Profile</h1>
     <h3>Welcome {{user.username}}</h3>
+    <p>Id : {{user.id}}</p>
 
     <div class="my-3">
         <img [src]="user.profileImageUrl">
@@ -20,18 +21,21 @@
 
     <div>
         <h4>About Me</h4>
-        <p *ngIf="user.aboutMe; else addAboutMe ">{{user.aboutMe}}</p>
+        <ng-template *ngIf="user.aboutMe; else addAboutMe ">
+            <p>{{user.aboutMe}}</p>
+            <button class="btn btn-warning">Edit</button>
+        </ng-template>
         <ng-template #addAboutMe>
-            <button class="btn btn-primary">Add an About Me</button>
+            <button class="btn btn-primary" (click)="toggleEditAboutMe()">Add an About Me</button>
         </ng-template>
 
-        <form>
+        <form *ngIf="aboutMeEditing">
             <div class="form-group">
                 <label for="eAboutMe">Write something about yourself</label>
-                <textarea [(ngModel)]="aboutMeTextArea" name="eAboutMe" id="eAboutMe" class="w-100"></textarea>
+                <textarea [(ngModel)]="aboutMeTextArea" name="eAboutMe" id="eAboutMe" class="w-100" [maxlength]="500"></textarea>
                 <div class="float-right length-text">{{aboutMeTextArea.length}}/500</div>
             </div>
-            <button class="btn btn-primary" type="button" (click)="saveAboutMe()">Save</button>
+            <button class="btn btn-primary" type="button" (click)="saveAboutMe(user.id)">Save</button>
         </form>
 
     </div>

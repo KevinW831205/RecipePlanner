@@ -14,6 +14,7 @@ export class LoginModalContentComponent implements OnInit {
   }
 
   checkSubmit(e){
+    console.log(e)
     if(e){
       this.activeModal.close('logged in')
     }

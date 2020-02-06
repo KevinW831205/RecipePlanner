@@ -5,7 +5,7 @@
     </button>
 </div>
 <div class="modal-body">
-    <app-login (submit)="checkSubmit($event)"></app-login>
+    <app-login (submitLogin)="checkSubmit($event)"></app-login>
 </div>
 <div class="modal-footer">
     <a class="signup-link" routerLink="/signup" (click)="activeModal.close('signup')">Sign Up</a>

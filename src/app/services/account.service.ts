@@ -22,4 +22,8 @@ export class AccountService {
   createAccount(accountInfo: SignupInfo) {
     return this.http.post(baseUrl + "account/", accountInfo, httpOptions);
   }
+
+  patchAboutMe(aboutMe: {aboutMe:string}, id:number){
+    return this.http.patch(baseUrl+"account/aboutme/"+id,aboutMe, httpOptions);
+  }
 }

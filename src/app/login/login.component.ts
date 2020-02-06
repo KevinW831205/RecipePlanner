@@ -21,7 +21,7 @@ export class LoginComponent {
   };
   invalidLogin: boolean = false;
 
-  @Output() submit: EventEmitter<boolean> = new EventEmitter();
+  @Output() submitLogin: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
@@ -32,7 +32,7 @@ export class LoginComponent {
         this.authService.userSubject.next(res);
         this.invalidLogin = false;
         localStorage.setItem('user',JSON.stringify(res.username))
-        this.submit.emit(true);
+        this.submitLogin.emit(true);
         this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl')|| '/')
         // this.activeModal.close('logged in')
       }, err => {
