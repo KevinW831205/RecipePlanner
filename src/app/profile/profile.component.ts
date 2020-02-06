@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   user$: Observable<Account>;
   aboutMeTextArea: string = "";
   aboutMeEditing: boolean = false;
+  editingImage: boolean = false;
 
 
   constructor(private authService: AuthService, private accountService: AccountService) {

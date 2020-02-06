@@ -2,3 +2,14 @@
     color: lightslategray;
     font-size: 12px;
 }
+
+.image-container{
+    position: relative;
+    width:150px;
+}
+
+.image-edit-btn{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
