@@ -38,7 +38,7 @@ export class DataService<someType> {
   create(resource): Observable<someType> {
     console.log(resource)
     try {
-      return this.http.post<someType>(this.url, JSON.stringify(resource));
+      return this.http.post<someType>(this.url, JSON.stringify(resource), httpOptions);
     } catch (error) {
       this.handleError(error);
     }
@@ -46,7 +46,7 @@ export class DataService<someType> {
 
   update(resource): Observable<someType> {
     try {
-      return this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource));
+      return this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource), httpOptions);
     } catch (error) {
       this.handleError(error);
     }
@@ -54,7 +54,7 @@ export class DataService<someType> {
 
   delete(id): Observable<someType> {
     try {
-      return this.http.delete<someType>(this.url + "/" + id);
+      return this.http.delete<someType>(this.url + "/" + id, httpOptions);
     } catch (error) {
       this.handleError(error);
     }
