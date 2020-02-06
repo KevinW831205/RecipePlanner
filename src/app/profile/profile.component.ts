@@ -11,7 +11,7 @@ import { Account } from '../models/Account';
 export class ProfileComponent implements OnInit {
 
   user$: Observable<Account>;
-  aboutMeTextArea : string = "";
+  aboutMeTextArea: string = "";
   aboutMeEditing: boolean = false;
 
 
@@ -21,12 +21,14 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isLoggedIn) {
-      let user:Account = JSON.parse(localStorage.getItem('user'))
+      let user: Account = JSON.parse(localStorage.getItem('user'))
       this.user$ = of(user);
     } else {
       this.user$ = this.authService.user$
     }
+  }
 
+  saveAboutMe() {
 
   }
 
