@@ -1,1 +1,8 @@
-<p>my-recipes works!</p>
+<div class="container">
+    <h1>My Recipes <button class="btn btn-primary">Create a New Recipe</button></h1>
+    <h3>Recipes Unpublished</h3>
+
+    <h4 *ngIf="recipesUnpublished.length == 0" class="mb-5">No Recipes Created</h4>
+    <h3>Recipes Published</h3>
+
+</div>

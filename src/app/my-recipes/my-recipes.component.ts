@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from '../models/Recipe';
+import { AuthService } from '../services/auth.service';
+import { Subscription } from 'rxjs';
+import { Account } from '../models/Account';
 
 @Component({
   selector: 'app-my-recipes',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyRecipesComponent implements OnInit {
 
-  constructor() { }
+  user: Account;
+  recipesUnpublished: Recipe[] = [];
+  recipesPublished: Recipe[] = [];
+  userSubscription: Subscription;
+
+  constructor(private authService: AuthService) {
+    this.authService.checkUserPersist();
+    this.userSubscription = this.authService.user$.subscribe(
+      res => {
+        this.user = res;
+      }
+    )
+
+  }
 
   ngOnInit() {
+
   }
 
 }
