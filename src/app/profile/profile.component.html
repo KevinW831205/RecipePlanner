@@ -1,8 +1,19 @@
 <div class="container" *ngIf="user$ | async as user">
     <h1>My Profile</h1>
-    <h3>{{user.username}}</h3>
-    <button class="btn btn-primary">Edit</button>
+    <h3>Welcome {{user.username}}</h3>
+
+
+    <img src="https://via.placeholder.com/150">
+    <button class="btn btn-warning">Edit</button>
+    <div>
+        <p>{{user.aboutMe}}</p>
+        <ng-template>
+
+        </ng-template>
+    </div>
     <p>{{user | json}}</p>
-    
+
+
+
 
 </div>

@@ -1,5 +1,6 @@
 <div class="container">
     <div class="row" *ngIf="recipes$ | async as recipes">
+        <h3 *ngIf="recipes.length === 0" class="text-center">No Recipes Found</h3>
         <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipes">
             <app-recipe-card 
                 [recipe]="recipe"   
