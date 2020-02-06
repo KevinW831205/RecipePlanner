@@ -5,7 +5,7 @@
 
     <div class="my-3">
         <img [src]="user.profileImageUrl">
-        <button class="btn btn-warning">Edit</button>
+        <button class="btn btn-warning btn-sm">Edit</button>
     </div>
     <div>
         <form class="form-inline">
@@ -20,10 +20,10 @@
 
 
     <div>
-        <h4>About Me</h4>
+        <h4>About Me <button class="btn btn-warning btn-sm"
+                (click)="toggleEditAboutMe(); populateAboutMe(user.aboutMe);">Edit</button></h4>
         <div *ngIf="user.aboutMe; else addAboutMe">
             <p>{{user.aboutMe}}</p>
-            <button class="btn btn-warning">Edit</button>
         </div>
         <ng-template #addAboutMe>
             <button class="btn btn-primary" (click)="toggleEditAboutMe()">Add an About Me</button>
@@ -32,7 +32,8 @@
         <form *ngIf="aboutMeEditing">
             <div class="form-group">
                 <label for="eAboutMe">Write something about yourself</label>
-                <textarea [(ngModel)]="aboutMeTextArea" name="eAboutMe" id="eAboutMe" class="w-100" [maxlength]="500"></textarea>
+                <textarea [(ngModel)]="aboutMeTextArea" name="eAboutMe" id="eAboutMe" class="w-100" [maxlength]="500">
+                </textarea>
                 <div class="float-right length-text">{{aboutMeTextArea.length}}/500</div>
             </div>
             <button class="btn btn-primary" type="button" (click)="saveAboutMe(user.id)">Save</button>
@@ -41,8 +42,4 @@
     </div>
 
     <p>{{user | json}}</p>
-
-
-
-
 </div>

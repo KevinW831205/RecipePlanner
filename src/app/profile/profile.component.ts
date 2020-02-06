@@ -41,5 +41,8 @@ export class ProfileComponent implements OnInit {
     this.aboutMeEditing = !this.aboutMeEditing;
   }
 
+  populateAboutMe(aboutMe: string){
+    this.aboutMeTextArea = aboutMe;
+  }
 
 }
