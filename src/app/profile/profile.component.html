@@ -21,10 +21,10 @@
 
     <div>
         <h4>About Me</h4>
-        <ng-template *ngIf="user.aboutMe; else addAboutMe ">
+        <div *ngIf="user.aboutMe; else addAboutMe">
             <p>{{user.aboutMe}}</p>
             <button class="btn btn-warning">Edit</button>
-        </ng-template>
+        </div>
         <ng-template #addAboutMe>
             <button class="btn btn-primary" (click)="toggleEditAboutMe()">Add an About Me</button>
         </ng-template>
