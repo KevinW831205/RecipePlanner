@@ -28,6 +28,9 @@ export class MyRecipesComponent implements OnInit {
         this.recipesUnpublished = this.user.recipesCreated.filter(r=>{
           return !r.published;
         })
+        this.recipesPublished = this.user.recipesCreated.filter(r=>{
+          return r.published;
+        })
       }
     )
   }
