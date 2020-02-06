@@ -23,7 +23,7 @@
         <label for="confirmPassword">Confirm Password</label>
         <input #confirmPassword="ngModel" [(ngModel)]="cPassword" name="confirmPassword" id="confirmPassword"
             type="password" class="form-control" required [equalTo]="password">
-        <div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.invalid">
+        <div class="alert alert-danger" *ngIf="password.touched && confirmPassword.invalid">
             <div *ngIf="confirmPassword.errors?.required">Confirm password</div>
             <div *ngIf="confirmPassword.errors?.equalTo">Passwords must match</div>
         </div>

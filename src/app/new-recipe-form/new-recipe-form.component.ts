@@ -14,9 +14,11 @@ import { Router } from '@angular/router';
 export class NewRecipeFormComponent implements OnInit, OnDestroy {
 
   user: Account;
-  subscription: Subscription
+  subscription: Subscription;
+  error:boolean = false;
 
-  constructor(private authService: AuthService, private recipeService: RecipeService, private router : Router) { }
+
+  constructor(private authService: AuthService, private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit() {
     this.authService.checkUserPersist();
@@ -35,13 +37,11 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
     recipe.name = recipe.name.trim();
     recipe.description = recipe.description.trim();
     recipe.account = { id: this.user.id }
-    console.log(recipe)
     this.recipeService.create(recipe).subscribe(
       res => {
-        console.log(res);
-        this.router.navigate(['recipe',res.id])
-        
+        this.router.navigate(['recipe', res.id])
       }, err => {
+        this.error = true;
         console.log(err);
       }
     )

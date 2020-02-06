@@ -13,10 +13,10 @@ export class RecipeDetailPageComponent {
 
   recipe: Recipe;
 
-  constructor(private recipeService: RecipeService, private route: ActivatedRoute) { 
+  constructor(private recipeService: RecipeService, private route: ActivatedRoute) {
     this.recipeService.get(this.route.snapshot.paramMap.get('id')).pipe(
       take(1)
-    ).subscribe(r=>{
+    ).subscribe(r => {
       console.log(r);
       this.recipe = r;
     });
