@@ -25,12 +25,9 @@ export class MyRecipesComponent implements OnInit {
     this.userSubscription = this.authService.user$.subscribe(
       res => {
         this.user = res;
-        console.log(this.user)
         this.recipesUnpublished = this.user.recipesCreated.filter(r=>{
           return !r.published;
         })
-
-        console.log(this.recipesUnpublished)
       }
     )
   }
