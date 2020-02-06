@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.authService.checkUserPersist();
     this.userSubscription = this.authService.user$.subscribe(res => {
       this.user = res;
     })
