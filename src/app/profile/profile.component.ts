@@ -9,29 +9,35 @@ import { AccountService } from '../services/account.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnDestroy {
 
   user: Account;
   aboutMeTextArea: string = "";
   aboutMeEditing: boolean = false;
   editingImage: boolean = false;
   imageUrlInput: string = "";
-
+  userSubscription: Subscription;
 
   constructor(private authService: AuthService, private accountService: AccountService) {
 
   }
 
   ngOnInit() {
-    this.authService.user$.subscribe(res => {
+    this.userSubscription = this.authService.user$.subscribe(res => {
       this.user = res;
     })
+  }
+
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
   }
 
   saveAboutMe(id: number) {
     this.accountService.patchAboutMe({ aboutMe: this.aboutMeTextArea }, id).subscribe(
       res => {
         console.log(res)
+        this.user.aboutMe=this.aboutMeTextArea;
+        this.aboutMeTextArea = "";
         this.toggleEditAboutMe();
       },
       err => {
@@ -56,6 +62,8 @@ export class ProfileComponent implements OnInit {
     this.accountService.patchImageUrl({ profileImageUrl: this.imageUrlInput }, id).subscribe(
       res => {
         console.log(res);
+        this.user.profileImageUrl = this.imageUrlInput;
+        this.imageUrlInput = "";
         this.toggelEditingImage();
       },
       err => {
