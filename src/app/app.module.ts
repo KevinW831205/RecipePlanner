@@ -63,7 +63,8 @@ import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.com
   ],
   entryComponents: [
     LoginModalContentComponent,
-    SignupSuccessModalComponent
+    SignupSuccessModalComponent,
+    NewRecipeModalComponent
   ],
   imports: [
     NgbModule,
