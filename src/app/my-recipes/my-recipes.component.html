@@ -1,7 +1,7 @@
 <div class="container">
 
     <!-- <button class="btn btn-primary" (click)="createNewRecipe()">Create a New Recipe</button> -->
-    <h1>{{user.username}}'s Recipes
+    <h1 *ngIf="user">{{user.username}}'s Recipes
     </h1>
 
     <h3>Recipes Unpublished</h3>

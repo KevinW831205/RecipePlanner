@@ -36,6 +36,7 @@ export class DataService<someType> {
 
 
   create(resource): Observable<someType> {
+    console.log(resource)
     try {
       return this.http.post<someType>(this.url, JSON.stringify(resource));
     } catch (error) {

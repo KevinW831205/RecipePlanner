@@ -6,36 +6,18 @@ import { Ingredient } from './Ingredient';
 export class Recipe {
 
     id
-    name;
-    author;
+    name: string;
+    account;
     instructionList;
     ingredientList;
-    numberOfRating
+    numberOfRating;
     averageRating;
-    description;
+    description: string;
     categories;
-    published:boolean;
+    published: boolean;
 
-    constructor(
-        id: number,
-        name: string,
-        author: Account,
-        instructionList: Instruction[],
-        ingredientList: Ingredient[],
-        numberOfRating: number,
-        averageRating: number,
-        description: string,
-        categories: any[]
-    ) {
-        this.id = id;
-        this.name = name;
-        this.author = author;
-        this.instructionList = instructionList;
-        this.ingredientList = ingredientList;
-        this.numberOfRating = numberOfRating;
-        this.averageRating = averageRating;
-        this.description = description;
-        this.categories = categories;
+    constructor(init?: Partial<Recipe>) {
+        Object.assign(this, init)
     }
 
 

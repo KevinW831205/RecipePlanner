@@ -9,6 +9,8 @@ export class Account {
     recipesCreated: Recipe[];
 
 
-    constructor(init?: Partial<Account> ){}
+    constructor(init?: Partial<Account> ){
+        
+    }
 
 }
