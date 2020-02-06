@@ -17,17 +17,22 @@ export class MyRecipesComponent implements OnInit {
   userSubscription: Subscription;
 
   constructor(private authService: AuthService) {
-    this.authService.checkUserPersist();
-    this.userSubscription = this.authService.user$.subscribe(
-      res => {
-        this.user = res;
-      }
-    )
 
   }
 
   ngOnInit() {
+    this.authService.checkUserPersist();
+    this.userSubscription = this.authService.user$.subscribe(
+      res => {
+        this.user = res;
+        console.log(this.user)
+        this.recipesUnpublished = this.user.recipesCreated.filter(r=>{
+          return !r.published;
+        })
 
+        console.log(this.recipesUnpublished)
+      }
+    )
   }
 
 }

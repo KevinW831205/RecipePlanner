@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.accountService.patchAboutMe({ aboutMe: this.aboutMeTextArea }, id).subscribe(
       res => {
         console.log(res)
-        this.user.aboutMe=this.aboutMeTextArea;
+        this.user.aboutMe=this.aboutMeTextArea.trim();
         this.aboutMeTextArea = "";
         this.toggleEditAboutMe();
       },
@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.accountService.patchImageUrl({ profileImageUrl: this.imageUrlInput }, id).subscribe(
       res => {
         console.log(res);
-        this.user.profileImageUrl = this.imageUrlInput;
+        this.user.profileImageUrl = this.imageUrlInput.trim();
         this.imageUrlInput = "";
         this.toggelEditingImage();
       },

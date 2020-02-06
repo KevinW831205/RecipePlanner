@@ -14,6 +14,7 @@ export class Recipe {
     averageRating;
     description;
     categories;
+    published:boolean;
 
     constructor(
         id: number,
