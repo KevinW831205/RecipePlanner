@@ -11,6 +11,9 @@ import { Account } from '../models/Account';
 export class ProfileComponent implements OnInit {
 
   user$: Observable<Account>;
+  aboutMeTextArea : string = "";
+  aboutMeEditing: boolean = false;
+
 
   constructor(private authService: AuthService) {
 
