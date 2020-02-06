@@ -26,8 +26,15 @@ export class ProfileComponent implements OnInit {
   }
 
   saveAboutMe(id: number) {
-    this.accountService.patchAboutMe({ aboutMe: this.aboutMeTextArea }, id)
-    this.toggleEditAboutMe();
+    this.accountService.patchAboutMe({ aboutMe: this.aboutMeTextArea }, id).subscribe(
+      res=>{
+        console.log(res)
+        this.toggleEditAboutMe();
+      },
+      err=>{
+        console.log(err)
+      }
+    )
   }
 
   toggleEditAboutMe() {

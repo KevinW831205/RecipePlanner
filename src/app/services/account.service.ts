@@ -24,6 +24,7 @@ export class AccountService {
   }
 
   patchAboutMe(aboutMe: {aboutMe:string}, id:number){
+    console.log(baseUrl+"account/aboutme/"+id)
     return this.http.patch(baseUrl+"account/aboutme/"+id,aboutMe, httpOptions);
   }
 }
