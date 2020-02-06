@@ -58,7 +58,6 @@ export class DataService<someType> {
     } catch (error) {
       this.handleError(error);
     }
-
   }
 
   handleError(error: Response) {

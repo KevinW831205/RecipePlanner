@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { RecipeService } from '../services/recipe.service';
 import { Subscription } from 'rxjs';
 import { Account } from '../models/Account';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-recipe-form',
@@ -15,7 +16,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
   user: Account;
   subscription: Subscription
 
-  constructor(private authService: AuthService, private recipeService: RecipeService) { }
+  constructor(private authService: AuthService, private recipeService: RecipeService, private router : Router) { }
 
   ngOnInit() {
     this.authService.checkUserPersist();
@@ -38,6 +39,8 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
     this.recipeService.create(recipe).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['recipe',res.id])
+        
       }, err => {
         console.log(err);
       }
