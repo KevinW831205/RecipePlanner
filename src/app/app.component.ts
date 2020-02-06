@@ -9,4 +9,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'RecipePlanner';
 
+  constructor(){
+  }
+
 }

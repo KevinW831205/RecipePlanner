@@ -12,7 +12,6 @@ import { httpOptions } from './httpConfig';
 })
 
 export class DataService<someType> {
-
   url
 
   constructor(public http: HttpClient, url: string) {

@@ -31,7 +31,7 @@ export class LoginComponent {
       res => {
         this.authService.userSubject.next(res);
         this.invalidLogin = false;
-        localStorage.setItem('user',JSON.stringify(res))
+        localStorage.setItem('user',JSON.stringify(res.username))
         this.submit.emit(true);
         this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl')|| '/')
         // this.activeModal.close('logged in')

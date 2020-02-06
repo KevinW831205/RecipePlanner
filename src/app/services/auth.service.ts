@@ -6,6 +6,7 @@ import { SignupInfo } from '../models/SignupInfo';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Account } from '../models/Account';
 import { take } from 'rxjs/operators';
+import { AccountService } from './account.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
   user$: Observable<Account>;
   userSubject = new Subject<Account>();
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private accountService: AccountService) {
     this.user$ = this.userSubject.asObservable();
   }
 
@@ -25,13 +26,17 @@ export class AuthService {
   checkUserPersist() {
     let user = localStorage.getItem('user');
     if (user) {
-      this.userSubject.next(JSON.parse(user));
+      this.accountService.getAccount(JSON.parse(user)).subscribe(res => {
+        console.log(res)
+        this.userSubject.next(res);
+      })
+      // this.userSubject.next(JSON.parse(user));
     }
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     let user = localStorage.getItem('user');
-    if(user){
+    if (user) {
       return true;
     }
     return false;

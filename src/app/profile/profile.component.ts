@@ -20,12 +20,8 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.authService.isLoggedIn) {
-      let user: Account = JSON.parse(localStorage.getItem('user'))
-      this.user$ = of(user);
-    } else {
-      this.user$ = this.authService.user$
-    }
+    this.authService.checkUserPersist();
+    this.user$ = this.authService.user$
   }
 
   saveAboutMe() {
