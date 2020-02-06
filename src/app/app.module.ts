@@ -30,6 +30,9 @@ import { AccountService } from './services/account.service';
 import { SignupSuccessModalComponent } from './signup-success-modal/signup-success-modal.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { SummaryPipe } from './recipe-card/summary.pipe';
+import { NewRecipeBtnComponent } from './new-recipe-btn/new-recipe-btn.component';
+import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MyRecipesComponent,
     SignupSuccessModalComponent,
     LoginPageComponent,
+    SummaryPipe,
+    NewRecipeBtnComponent,
+    NewRecipeModalComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,

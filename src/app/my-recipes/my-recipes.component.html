@@ -1,5 +1,6 @@
 <div class="container">
-    <h1>My Recipes <button class="btn btn-primary">Create a New Recipe</button></h1>
+    <h1>My Recipes <button class="btn btn-primary" (click)="createNewRecipe()">Create a New Recipe</button>
+    </h1>
     <h3>Recipes Unpublished</h3>
     <div class="row">
         <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipesUnpublished">
