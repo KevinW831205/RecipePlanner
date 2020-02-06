@@ -1,7 +1,12 @@
+p{
+  margin:0;
+  padding: 0;
+  font: 12px;
+}
 .star {
     position: relative;
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #d3d3d3;
   }
   .full {
