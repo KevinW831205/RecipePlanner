@@ -1,8 +1,9 @@
 <div class="container">
 
     <!-- <button class="btn btn-primary" (click)="createNewRecipe()">Create a New Recipe</button> -->
-    <h1>My Recipes <app-new-recipe-btn></app-new-recipe-btn>
+    <h1>{{user.username}}'s Recipes
     </h1>
+
     <h3>Recipes Unpublished</h3>
     <div class="row">
         <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipesUnpublished">
@@ -17,5 +18,5 @@
         </div>
         <h4 *ngIf="recipesPublished.length == 0" class="mb-5">No Recipes Created</h4>
     </div>
-    {{user | json}}
 </div>
+<app-new-recipe-btn></app-new-recipe-btn>
