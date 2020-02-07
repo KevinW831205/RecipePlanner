@@ -18,7 +18,9 @@ export class InstructionsComponent implements OnInit {
   }
 
   addInstruction() {
-    this.recipe.instructionList.push(new Instruction(0, 0, "ins", 0));
+    let instruction = new Instruction(0, this.recipe.id, "ins", this.recipe.instructionList.length + 1)
+    
+    this.recipe.instructionList.push(instruction);
   }
 
 
