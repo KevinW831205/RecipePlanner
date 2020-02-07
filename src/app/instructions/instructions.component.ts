@@ -31,8 +31,13 @@ export class InstructionsComponent implements OnInit {
     )
   }
 
+  updateInstruction(instruction: Instruction, i) {
+    console.log(instruction);
+    this.toggleEdit(i);
+  }
+
   toggleEdit(i) {
-    this.edit[i] = true;
+    this.edit[i] = !this.edit[i];
   }
 
 

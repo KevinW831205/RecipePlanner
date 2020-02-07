@@ -1,12 +1,19 @@
 <ol>
     <li class="my-2" *ngFor="let instruction of recipe.instructionList; index as i;">
 
-        {{instruction.instruction}}
 
-        <p *ngIf="edit[i]">editing</p>
+        <span *ngIf="!edit[i]">
+            {{instruction.instruction}}
+            <button class="btn btn-warning btn-sm ml-3" (click)="toggleEdit(i)">Edit</button>
+            <button class="btn btn-danger btn-sm ml-3">Delete</button>
+        </span>
+        <span *ngIf="edit[i]">
+            <input [value]="instruction.instruction">
+            <button class="btn btn-primary btn-sm ml-3" (click)="updateInstruction(instruction, i)">Save</button>
+            <button class="btn btn-danger btn-sm ml-3" (click)="toggleEdit(i)">Cancel</button>
+        </span>
 
-        <button class="btn btn-warning btn-sm ml-3" (click)="toggleEdit(i)">Edit</button>
-        <button class="btn btn-danger btn-sm ml-3">delete</button>
+
     </li>
 </ol>
 <button class="btn btn-primary" (click)="addInstruction()">Add Instruction</button>
