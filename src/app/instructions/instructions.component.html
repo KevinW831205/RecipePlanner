@@ -1,4 +1,11 @@
 <ol>
-    <li *ngFor="let instruction of recipe.instructionList">{{instruction.instruction}}</li>
+    <li class="my-2" *ngFor="let instruction of recipe.instructionList; index as i;">
+
+        {{instruction.instruction}}
+
+
+        <button class="btn btn-warning btn-sm ml-3" (click)="toggleEdit(i)">Edit</button>
+        <button class="btn btn-danger btn-sm ml-3">delete</button>
+    </li>
 </ol>
 <button class="btn btn-primary" (click)="addInstruction()">Add Instruction</button>

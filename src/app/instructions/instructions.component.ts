@@ -12,6 +12,7 @@ import { InstructionService } from '../services/instruction.service';
 export class InstructionsComponent implements OnInit {
 
   @Input() recipe: Recipe;
+  edit: boolean[] = [];
 
   constructor(private instructionService: InstructionService) { }
 
@@ -19,7 +20,7 @@ export class InstructionsComponent implements OnInit {
   }
 
   addInstruction() {
-    let instruction = new Instruction(0, this.recipe.id, "ins", this.recipe.instructionList.length + 1);
+    let instruction = new Instruction(0, this.recipe.id, "new instruction", this.recipe.instructionList.length + 1);
     this.instructionService.create(instruction).subscribe(
       res => {
         this.recipe.instructionList.push(res);
@@ -28,7 +29,10 @@ export class InstructionsComponent implements OnInit {
         console.log(err)
       }
     )
+  }
 
+  toggleEdit(i) {
+    console.log(i);
   }
 
 
