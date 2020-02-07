@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RecipeService } from '../services/recipe.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-edit-recipe-page',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditRecipePageComponent implements OnInit {
 
-  constructor() { }
+  authorized = false;
+
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService) { }
 
   ngOnInit() {
+    let recipeId = this.route.snapshot.paramMap.get('id');
+    this.recipeService.get
+
   }
 
 }

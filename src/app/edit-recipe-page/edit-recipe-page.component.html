@@ -1,1 +1,8 @@
-<p>edit-recipe-page works!</p>
+<div class="container">
+    <div *ngIf="authorized; else unauthorized">
+        <h1>Edit Recipe</h1>
+    </div>
+    <ng-template #unauthorized>
+        <h3>Unauthorized to Edit this recipe</h3>
+    </ng-template>
+</div>
