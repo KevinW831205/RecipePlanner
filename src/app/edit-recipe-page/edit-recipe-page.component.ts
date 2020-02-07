@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from '../services/recipe.service';
 import { AuthService } from '../services/auth.service';
+import { Subscription, VirtualTimeScheduler } from 'rxjs';
+import { Recipe } from '../models/Recipe';
 
 @Component({
   selector: 'app-edit-recipe-page',
@@ -10,13 +12,28 @@ import { AuthService } from '../services/auth.service';
 })
 export class EditRecipePageComponent implements OnInit {
 
+  recipe: Recipe;
   authorized = false;
+  recipeSubscription: Subscription;
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService) { }
 
   ngOnInit() {
     let recipeId = this.route.snapshot.paramMap.get('id');
-    this.recipeService.get
+    this.recipeSubscription = this.recipeService.get(recipeId).subscribe(
+      recipe => {
+        this.recipe = recipe;
+        this.authService.checkUserPersist();
+        this.authService.user$.subscribe(user => {
+          if (user.username == this.recipe.account.username) {
+            this.authorized = true;
+          }
+        })
+      },
+      err => {
+
+      }
+    )
 
   }
 
