@@ -1,1 +1,4 @@
-<p>instructions works!</p>
+<ol>
+    <li *ngFor="let instruction of recipe.instructionList">{{instruction.instruction}}</li>
+</ol>
+<button class="btn btn-primary" (click)="addInstruction()">Add Instruction</button>

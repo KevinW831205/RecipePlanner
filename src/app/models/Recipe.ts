@@ -8,7 +8,7 @@ export class Recipe {
     id
     name: string;
     account;
-    instructionList;
+    instructionList: Instruction[];
     ingredientList;
     numberOfRating;
     averageRating;

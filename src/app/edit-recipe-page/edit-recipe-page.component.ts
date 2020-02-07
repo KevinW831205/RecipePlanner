@@ -34,7 +34,7 @@ export class EditRecipePageComponent implements OnInit {
 
       }
     )
-
   }
+
 
 }
