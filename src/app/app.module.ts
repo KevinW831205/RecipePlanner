@@ -34,6 +34,7 @@ import { SummaryPipe } from './recipe-card/summary.pipe';
 import { NewRecipeBtnComponent } from './new-recipe-btn/new-recipe-btn.component';
 import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.component';
 import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
+import { InstructionService } from './services/instruction.service';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.com
   ],
   providers: [
     RecipeService,
-    AccountService
+    AccountService,
+    InstructionService
   ],
   bootstrap: [AppComponent]
 })
