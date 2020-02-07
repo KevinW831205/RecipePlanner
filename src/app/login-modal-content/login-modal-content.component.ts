@@ -6,12 +6,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './login-modal-content.component.html',
   styleUrls: ['./login-modal-content.component.css']
 })
-export class LoginModalContentComponent implements OnInit {
+export class LoginModalContentComponent {
 
   constructor(public activeModal: NgbActiveModal) { }
 
-  ngOnInit() {
-  }
 
   checkSubmit(e){
     console.log(e)

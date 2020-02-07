@@ -7,7 +7,7 @@ import { LoginModalContentComponent } from '../login-modal-content/login-modal-c
   templateUrl: './login-modal-btn.component.html',
   styleUrls: ['./login-modal-btn.component.css']
 })
-export class LoginModalBtnComponent implements OnInit {
+export class LoginModalBtnComponent {
 
   constructor(private modalService: NgbModal) { }
   open() {
