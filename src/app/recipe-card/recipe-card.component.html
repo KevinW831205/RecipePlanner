@@ -11,6 +11,6 @@
     </div>
     <div class="card-footer">
         <a [routerLink]="['/recipe/',recipe.id]" class="btn btn-primary">Details</a>
-        <a *ngIf="canEdit" class="btn btn-warning" [routerLink]="['/recipe/edit/',recipe.id]" >Edit</a>
+        <a *ngIf="canEdit" class="btn btn-warning ml-3" [routerLink]="['/recipe/edit/',recipe.id]" >Edit</a>
     </div>
 </div>
