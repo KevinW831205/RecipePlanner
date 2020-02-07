@@ -32,7 +32,7 @@ export class InstructionsComponent implements OnInit {
   }
 
   toggleEdit(i) {
-    console.log(i);
+    this.edit[i] = true;
   }
 
 
