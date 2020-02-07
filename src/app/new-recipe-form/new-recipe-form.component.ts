@@ -15,7 +15,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
 
   user: Account;
   subscription: Subscription;
-  error:boolean = false;
+  error: boolean = false;
 
 
   constructor(private authService: AuthService, private recipeService: RecipeService, private router: Router) { }
@@ -39,7 +39,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
     recipe.account = { id: this.user.id }
     this.recipeService.create(recipe).subscribe(
       res => {
-        this.router.navigate(['recipe', res.id])
+        this.router.navigate(['recipe/edit', res.id], { queryParams: { user: this.user.username } })
       }, err => {
         this.error = true;
         console.log(err);

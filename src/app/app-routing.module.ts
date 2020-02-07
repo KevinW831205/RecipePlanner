@@ -10,6 +10,7 @@ import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'recipes', component: RecipePageComponent },
   { path: 'my/profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'my/recipes', component: MyRecipesComponent, canActivate: [AuthGuard] },
+  { path: 'recipe/edit/:id', component: EditRecipePageComponent, canActivate: [AuthGuard] },
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category-tags', component: CategoryTagsPageComponent },

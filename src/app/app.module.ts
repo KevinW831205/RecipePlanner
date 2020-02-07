@@ -33,6 +33,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { SummaryPipe } from './recipe-card/summary.pipe';
 import { NewRecipeBtnComponent } from './new-recipe-btn/new-recipe-btn.component';
 import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.component';
+import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.com
     SummaryPipe,
     NewRecipeBtnComponent,
     NewRecipeModalComponent,
+    EditRecipePageComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
