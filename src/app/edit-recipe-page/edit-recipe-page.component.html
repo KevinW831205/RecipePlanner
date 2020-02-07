@@ -1,7 +1,18 @@
 <div class="container">
     <div *ngIf="authorized; else unauthorized">
-        <h1>Edit Recipe</h1>
+        <h1>Editing {{recipe.name}} <button class="btn btn-warning">Change Name</button></h1>
+
+        <div class="my-3 image-container">
+            <img [src]="recipe.imageUrl">
+            <button class="btn btn-warning image-edit-btn" (click)="toggelEditingImage()">Change Image</button>
+        </div>
+
+
+
     </div>
+
+
+
     <ng-template #unauthorized>
         <h3>Unauthorized to Edit this recipe</h3>
     </ng-template>
