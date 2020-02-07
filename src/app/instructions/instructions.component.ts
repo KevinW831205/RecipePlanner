@@ -20,7 +20,11 @@ export class InstructionsComponent implements OnInit {
   }
 
   addInstruction() {
-    let instruction = new Instruction(0, this.recipe.id, "new instruction", this.recipe.instructionList.length + 1);
+    let instruction = new Instruction();
+    instruction.recipeId = this.recipe.id;
+    instruction.instruction = "new instruction";
+    instruction.instructionOrder = this.recipe.instructionList.length + 1;
+
     this.instructionService.create(instruction).subscribe(
       res => {
         this.recipe.instructionList.push(res);
@@ -31,8 +35,10 @@ export class InstructionsComponent implements OnInit {
     )
   }
 
-  updateInstruction(instruction: Instruction, i) {
+  updateInstruction(event ,instruction: Instruction, i) {
     console.log(instruction);
+    console.log(event)
+
     this.toggleEdit(i);
   }
 
