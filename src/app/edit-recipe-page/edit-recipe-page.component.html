@@ -10,11 +10,18 @@
         <h3>Description</h3>
         {{recipe.description}}
 
-        <h3>Instructions</h3>
-        <app-instructions [recipe]="recipe"></app-instructions>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <h3>Instructions</h3>
+                <app-instructions [recipe]="recipe"></app-instructions>
+            </div>
 
-        <h3>Ingredients</h3>
-        <app-ingredients [recipe]="recipe"></app-ingredients>
+            <div class="col-md-6 col-sm-12">
+                <h3>Ingredients</h3>
+                <app-ingredients [recipe]="recipe"></app-ingredients>
+            </div>
+        </div>
+
     </div>
 
 
