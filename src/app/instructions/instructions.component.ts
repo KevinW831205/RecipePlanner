@@ -3,6 +3,7 @@ import { Account } from '../models/Account';
 import { Recipe } from '../models/Recipe';
 import { Instruction } from '../models/Instruction';
 import { InstructionService } from '../services/instruction.service';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-instructions',
@@ -17,6 +18,7 @@ export class InstructionsComponent implements OnInit {
   constructor(private instructionService: InstructionService) { }
 
   ngOnInit() {
+    console.log(this.recipe.instructionList)
   }
 
   addInstruction() {
@@ -44,7 +46,9 @@ export class InstructionsComponent implements OnInit {
     updatedInstruction.instruction = input;
 
     console.log(updatedInstruction)
-    this.instructionService.update(updatedInstruction).subscribe(
+    this.instructionService.update(updatedInstruction).pipe(
+      take(1)
+    ).subscribe(
       res => {
         this.recipe.instructionList[i] = res;
         this.toggleEdit(i);
@@ -60,10 +64,15 @@ export class InstructionsComponent implements OnInit {
     this.edit[i] = !this.edit[i];
   }
 
-  deleteInstruction(i, instruction) {
-    this.instructionService.delete(instruction.id).subscribe(
+  deleteInstruction(delIndex, instruction) {
+    this.instructionService.delete(instruction.id).pipe(
+      take(1)
+    ).subscribe(
       res => {
-        this.recipe.instructionList.splice(i, 1)
+        this.recipe.instructionList.splice(delIndex, 1)
+        for (let i = delIndex; i < this.recipe.instructionList.length; i++) {
+          this.decrementOrder(this.recipe.instructionList[i])
+        }
       },
       err => {
 
@@ -71,5 +80,15 @@ export class InstructionsComponent implements OnInit {
     )
   }
 
+  private decrementOrder(instruction: Instruction) {
+    instruction.instructionOrder--;
+
+    this.instructionService.update(instruction).pipe(
+      take(1)
+    ).subscribe(
+      res => {
+      }
+    )
+  }
 
 }

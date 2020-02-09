@@ -1,7 +1,11 @@
-<ul>
-    <li *ngFor="let ingredient of recipe.ingredientList;index as i;">
+<ul class="list-group">
+    <li *ngFor="let ingredient of recipe.ingredientList;index as i;" class="list-group-item">
         {{ingredient.name}} {{ingredient.amount}}
     </li>
+
+    <li class="list-group-item">
+        <form>
+            <input>
+        </form>
+    </li>
 </ul>
-<form>
-</form>
