@@ -66,7 +66,7 @@ export class InstructionsComponent implements OnInit {
   deleteInstruction(i, instruction) {
     this.instructionService.delete(instruction.id).subscribe(
       res => {
-        
+        this.recipe.instructionList.splice(i, 1)
       }
     )
   }
