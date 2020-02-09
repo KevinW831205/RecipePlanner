@@ -8,7 +8,8 @@
             <button class="btn btn-danger btn-sm ml-3">Delete</button>
         </span>
         <span *ngIf="edit[i]">
-            <input #editInstruction class="edit-input" [value]="instruction.instruction">
+            <input #editInstruction class="edit-input" [value]="instruction.instruction"
+                (keyup.enter)="updateInstruction(editInstruction.value, i)">
             <button class="btn btn-primary btn-sm ml-3"
                 (click)="updateInstruction(editInstruction.value , i)">Save</button>
             <button class="btn btn-danger btn-sm ml-3" (click)="toggleEdit(i)">Cancel</button>
