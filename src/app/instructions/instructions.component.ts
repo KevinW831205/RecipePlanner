@@ -54,9 +54,6 @@ export class InstructionsComponent implements OnInit {
 
       }
     )
-
-
-    // this.toggleEdit(i);
   }
 
   toggleEdit(i) {
@@ -67,6 +64,9 @@ export class InstructionsComponent implements OnInit {
     this.instructionService.delete(instruction.id).subscribe(
       res => {
         this.recipe.instructionList.splice(i, 1)
+      },
+      err => {
+
       }
     )
   }

@@ -9,7 +9,7 @@ export class Recipe {
     name: string;
     account;
     instructionList: Instruction[];
-    ingredientList;
+    ingredientList: Ingredient[];
     numberOfRating;
     averageRating;
     description: string;

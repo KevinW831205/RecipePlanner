@@ -1,1 +1,5 @@
-<p>ingredients works!</p>
+<ul>
+    <li *ngFor="let ingredient of recipe.ingredientList;index as i;">
+        {{ingredient.name}}
+    </li>
+</ul>
