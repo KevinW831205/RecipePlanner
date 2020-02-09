@@ -35,10 +35,10 @@ export class InstructionsComponent implements OnInit {
     )
   }
 
-  updateInstruction(event ,instruction: Instruction, i) {
-    console.log(instruction);
+  updateInstruction(event:string ,  i) {
+    // console.log(instruction);
     console.log(event)
-
+    this.recipe.instructionList[i].instruction = event
     this.toggleEdit(i);
   }
 
