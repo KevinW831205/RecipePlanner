@@ -46,7 +46,7 @@ export class InstructionsComponent implements OnInit {
     console.log(updatedInstruction)
     this.instructionService.update(updatedInstruction).subscribe(
       res => {
-        this.recipe.instructionList[i] =  res;
+        this.recipe.instructionList[i] = res;
         this.toggleEdit(i);
 
       },
@@ -61,6 +61,14 @@ export class InstructionsComponent implements OnInit {
 
   toggleEdit(i) {
     this.edit[i] = !this.edit[i];
+  }
+
+  deleteInstruction(i, instruction) {
+    this.instructionService.delete(instruction.id).subscribe(
+      res => {
+        
+      }
+    )
   }
 
 
