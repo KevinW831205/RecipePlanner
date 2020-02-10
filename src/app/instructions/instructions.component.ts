@@ -14,6 +14,7 @@ export class InstructionsComponent implements OnInit {
 
   @Input() recipe: Recipe;
   edit: boolean[] = [];
+  instructionInput: string
 
   constructor(private instructionService: InstructionService) { }
 
@@ -24,12 +25,14 @@ export class InstructionsComponent implements OnInit {
   addInstruction() {
     let instruction = new Instruction();
     instruction.recipeId = this.recipe.id;
-    instruction.instruction = "new instruction";
+    instruction.instruction = this.instructionInput || "new instruction";
     instruction.instructionOrder = this.recipe.instructionList.length + 1;
 
     this.instructionService.create(instruction).subscribe(
       res => {
         this.recipe.instructionList.push(res);
+        this.instructionInput="";
+        
       },
       err => {
         console.log(err)
