@@ -12,7 +12,7 @@ export class RecipeService extends DataService<Recipe> {
 
 
   constructor(http: HttpClient) {
-    super(http, baseUrl + "recipe/");
+    super(http, baseUrl + "recipe");
   }
 
   getPublished(): Observable<Recipe[]> {
@@ -23,13 +23,13 @@ export class RecipeService extends DataService<Recipe> {
     }
   }
 
-  patchTogglePublished(recipe): Observable<Recipe> {
+  patchTogglePublished(recipeId): Observable<Recipe> {
+    console.log("recipe patch ", baseUrl + "recipe/published/" + recipeId)
     try {
-      return this.http.patch<Recipe>(baseUrl + "recipe/published", httpOptions);
+      return this.http.patch<Recipe>(baseUrl + "recipe/published/" + recipeId, null, httpOptions);
     } catch (error) {
       super.handleError
     }
-
   }
 
 

@@ -36,7 +36,15 @@ export class EditRecipePageComponent implements OnInit {
     )
   }
 
-  togglePublish() {
+  togglePublished() {
+    this.recipeService.patchTogglePublished(this.recipe.id).subscribe(
+      res => {
+        this.recipe.published = res.published;
+      },
+      err => {
+
+      }
+    )
   }
 
 

@@ -10,6 +10,6 @@ import { baseUrl } from './httpConfig';
 export class InstructionService extends DataService<Instruction> {
 
   constructor(http: HttpClient) {
-    super(http, baseUrl+"instruction/")
+    super(http, baseUrl+"instruction")
   }
 }

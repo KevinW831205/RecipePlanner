@@ -20,7 +20,7 @@ export class DataService<someType> {
 
   getAll(): Observable<someType[]> {
     try {
-      return this.http.get<someType[]>(this.url, httpOptions);
+      return this.http.get<someType[]>(this.url + "/", httpOptions);
     } catch (error) {
       this.handleError(error);
     }
@@ -38,7 +38,7 @@ export class DataService<someType> {
   create(resource): Observable<someType> {
     console.log(resource)
     try {
-      return this.http.post<someType>(this.url, JSON.stringify(resource), httpOptions);
+      return this.http.post<someType>(this.url + "/", JSON.stringify(resource), httpOptions);
     } catch (error) {
       this.handleError(error);
     }
