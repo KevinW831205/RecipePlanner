@@ -14,7 +14,7 @@
 
     <li class="list-group-item" *ngIf="canEdit">
         <h6>Add New Ingredient</h6>
-        <form #ingredientForm="ngForm" class="form-inline" (ngSubmit)="addIngredient()">
+        <form #ingredientForm="ngForm" class="form-inline" (ngSubmit)="addIngredient(ingredientForm)">
 
             <!-- <div class="form-group">
                 <label for="password">Password</label>
