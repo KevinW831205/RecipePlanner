@@ -13,14 +13,15 @@
                 <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Enter a password</div>
             </div> -->
 
-            <div class="form-group">
-                <label for="name">Ingredient Name</label>
-                <input class="form-control" name="name" id="name">
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount</label>
-                <input class="form-control" name="amount" id="amount" type="text">
-            </div>
+            <label class="sr-only" for="name">Ingredient Name</label>
+            <input class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Ingredient Name">
+
+            <label class="sr-only" for="amount">Amount</label>
+            <input class="form-control mb-2 mr-sm-2" name="amount" id="amount" type="text" placeholder="Amount (units)">
+
+            <button type="button" class="btn btn-primary mb-2">Add Ingredient</button>
         </form>
     </li>
+
+
 </ul>
