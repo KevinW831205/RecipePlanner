@@ -58,4 +58,8 @@ export class EditRecipePageComponent implements OnInit {
       }
     )
   }
+
+  toggleEditName() {
+    this.editName = !this.editName;
+  }
 }
