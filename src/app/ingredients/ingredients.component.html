@@ -12,9 +12,9 @@
         </span>
     </li>
 
-    <li class="list-group-item">
+    <li class="list-group-item" *ngIf="canEdit">
         <h6>Add New Ingredient</h6>
-        <form class="form-inline">
+        <form #ingredientForm="ngForm" class="form-inline" (ngSubmit)="addIngredient()">
 
             <!-- <div class="form-group">
                 <label for="password">Password</label>
@@ -25,13 +25,17 @@
 
             <label class="sr-only" for="name">Ingredient Name</label>
             <input #name="ngModel" [(ngModel)]="ingredientInput.name" class="form-control mb-2 mr-sm-2" name="name"
-                id="name" placeholder="Ingredient Name">
+                id="name" placeholder="Ingredient Name" required>
 
             <label class="sr-only" for="amount">Amount</label>
             <input #amount="ngModel" [(ngModel)]="ingredientInput.amount" class="form-control mb-2 mr-sm-2"
                 name="amount" id="amount" type="text" placeholder="Amount (units)">
+            <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                A recipe name is required
+            </div>
 
-            <button type="button" class="btn btn-primary mb-2" (click)="addIngredient()">Add Ingredient</button>
+
+            <button type="submit" class="btn btn-primary mb-2" >Add Ingredient</button>
         </form>
     </li>
 

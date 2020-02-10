@@ -11,12 +11,13 @@ import { Ingredient } from '../models/Ingredient';
 export class IngredientsComponent {
   @Input() recipe: Recipe;
   @Input('canEdit') canEdit: boolean = true;
+  edit: boolean[] = [];
   ingredientInput: Partial<Ingredient> = {
     name: "",
     amount: ""
   }
 
-  constructor(private ingredientService: IngredientService) { }
+  constructor(private ingredientService: IngredientService, ) { }
 
   addIngredient() {
     let ingredient = new Ingredient(this.ingredientInput);
@@ -25,6 +26,8 @@ export class IngredientsComponent {
     this.ingredientService.create(ingredient).subscribe(
       res => {
         this.recipe.ingredientList.push(res);
+        this.ingredientInput.name = "";
+        this.ingredientInput.amount = "";
       },
       err => {
         console.log(err);
