@@ -24,11 +24,18 @@ export class RecipeService extends DataService<Recipe> {
   }
 
   patchTogglePublished(recipeId): Observable<Recipe> {
-    console.log("recipe patch ", baseUrl + "recipe/published/" + recipeId)
     try {
       return this.http.patch<Recipe>(baseUrl + "recipe/published/" + recipeId, null, httpOptions);
     } catch (error) {
-      super.handleError
+      super.handleError(error);
+    }
+  }
+
+  patchName(recipeId, name): Observable<Recipe> {
+    try{
+      return this.http.patch<Recipe>(`${baseUrl}recipe/name/${recipeId}?name=${name}`,null,httpOptions)
+    } catch (error){
+      super.handleError(error)
     }
   }
 
