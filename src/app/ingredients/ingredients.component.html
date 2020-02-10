@@ -12,19 +12,17 @@
         </span>
 
         <span *ngIf="edit[i]">
-            <form class="form-inline" (ngSubmit)="updateIngredient(i,ingredientUpdateForm)">
+            <form #editIngredientForm="ngForm" class="form-inline"
+                (ngSubmit)="updateIngredient(i,ingredient, editName.value,editAmount.value)">
                 <label class="sr-only" for="name">Ingredient Name</label>
                 <input #editName class="mb-2 mr-3" name="name" id="name" [value]="ingredient.name" required>
                 <label class="sr-only" for="amount">Amount</label>
-                <input #editAmount class="mb-2 mr-3" name="amount" id="amount" type="text"
-                    [value]="ingredient.amount" required>
+                <input #editAmount class="mb-2 mr-3" name="amount" id="amount" type="text" [value]="ingredient.amount"
+                    required>
 
 
-                <div class="alert alert-danger" *ngIf="editName.touched && editName.invalid">
-                    An Ingredient Name is Required
-                </div>
-                <div class="alert alert-danger" *ngIf="editAmount.touched && editAmount.invalid">
-                    Ingredient amount should be specified
+                <div class="alert alert-danger" *ngIf="editError[i]">
+                    An Ingredient Name and Amount is Required
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary btn-sm mr-3">Save</button>

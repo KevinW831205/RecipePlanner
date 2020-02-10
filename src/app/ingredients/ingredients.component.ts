@@ -13,6 +13,7 @@ export class IngredientsComponent {
   @Input() recipe: Recipe;
   @Input('canEdit') canEdit: boolean = true;
   edit: boolean[] = [];
+  editError: boolean[] = [];
 
   ingredientInput: Partial<Ingredient> = {
     name: "",
@@ -36,9 +37,24 @@ export class IngredientsComponent {
     )
   }
 
-  updateIngredient(i, form: NgForm) {
-    console.log(form.value);
-    this.toggleEdit(i)
+  updateIngredient(i, ingredient: Ingredient, newName, newAmount) {
+    if (!newName || !newAmount) {
+      this.editError[i] = true;
+      return;
+    }
+    ingredient.name = newName;
+    ingredient.amount = newAmount;
+    this.ingredientService.update(ingredient).subscribe(
+      res => {
+        this.recipe.ingredientList[i] = res;
+        this.toggleEdit(i)
+      },
+      err => {
+
+      }
+    )
+
+
   }
 
   toggleEdit(i) {
