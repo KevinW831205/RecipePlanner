@@ -14,7 +14,8 @@ export class InstructionsComponent {
 
   @Input() recipe: Recipe;
   edit: boolean[] = [];
-  instructionInput: string
+  instructionInput: string;
+  @Input('canEdit') canEdit: boolean = false;
 
   constructor(private instructionService: InstructionService) { }
 
