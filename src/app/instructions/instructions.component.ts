@@ -10,17 +10,13 @@ import { take } from 'rxjs/operators';
   templateUrl: './instructions.component.html',
   styleUrls: ['./instructions.component.css']
 })
-export class InstructionsComponent implements OnInit {
+export class InstructionsComponent {
 
   @Input() recipe: Recipe;
   edit: boolean[] = [];
   instructionInput: string
 
   constructor(private instructionService: InstructionService) { }
-
-  ngOnInit() {
-    console.log(this.recipe.instructionList)
-  }
 
   addInstruction() {
     let instruction = new Instruction();
@@ -31,8 +27,7 @@ export class InstructionsComponent implements OnInit {
     this.instructionService.create(instruction).subscribe(
       res => {
         this.recipe.instructionList.push(res);
-        this.instructionInput="";
-        
+        this.instructionInput = "";
       },
       err => {
         console.log(err)

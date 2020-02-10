@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../models/Recipe';
+import { IngredientService } from '../services/ingredient.service';
+import { Ingredient } from '../models/Ingredient';
 
 @Component({
   selector: 'app-ingredients',
@@ -9,9 +11,12 @@ import { Recipe } from '../models/Recipe';
 export class IngredientsComponent {
   @Input() recipe: Recipe;
 
-  constructor() { }
+  constructor(private ingredientService: IngredientService) { }
 
-  ngOnInit() {
+  addIngredient() {
+    let ingredient = new Ingredient();
+    
   }
+
 
 }

@@ -1,8 +1,11 @@
 export class Ingredient {
-    constructor(
-        private id : number,
-        private recipeId: number,
-        private name: string,
-        private amount : string
-    ){}
+
+    id: number,
+    recipeId: number,
+    name: string,
+    amount: string
+
+    constructor(init?: Partial<Ingredient>) {
+        Object.assign(this, init)
+    }
 }
