@@ -5,6 +5,7 @@ import { RecipeService } from '../services/recipe.service';
 import { Subscription } from 'rxjs';
 import { Account } from '../models/Account';
 import { Router } from '@angular/router';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-new-recipe-form',
@@ -18,7 +19,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
   error: boolean = false;
 
 
-  constructor(private authService: AuthService, private recipeService: RecipeService, private router: Router) { }
+  constructor(private authService: AuthService, private recipeService: RecipeService, private router: Router, public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
     this.authService.checkUserPersist();
@@ -39,6 +40,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
     recipe.account = { id: this.user.id }
     this.recipeService.create(recipe).subscribe(
       res => {
+        this.activeModal.close('success')
         this.router.navigate(['recipe/edit', res.id], { queryParams: { user: this.user.username } })
       }, err => {
         this.error = true;
