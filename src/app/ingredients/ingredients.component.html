@@ -12,9 +12,20 @@
         </span>
 
         <span *ngIf="edit[i]">
+            <form #ingredientForm="ngForm" class="form-inline" (ngSubmit)="addIngredient(ingredientForm)">
+                <label class="sr-only" for="name">Ingredient Name</label>
+                <input #name="ngModel" [(ngModel)]="ingredientInput.name" class="form-control mb-2 mr-sm-2" name="name"
+                    id="name" placeholder="Ingredient Name" required>
 
-            <button class="btn btn-primary btn-sm ml-3" (click)="updateIngredient()">Save</button>
-            <button class="btn btn-danger btn-sm ml-3" (click)="toggleEdit(i)">Cancel</button>
+                <label class="sr-only" for="amount">Amount</label>
+                <input #amount="ngModel" [(ngModel)]="ingredientInput.amount" class="form-control mb-2 mr-sm-2"
+                    name="amount" id="amount" type="text" placeholder="Amount (units)">
+                <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                    A recipe name is required
+                </div>
+            </form>
+            <button type="button" class="btn btn-primary btn-sm ml-3" (click)="updateIngredient()">Save</button>
+            <button type="button" class="btn btn-danger btn-sm ml-3" (click)="toggleEdit(i)">Cancel</button>
         </span>
 
 
@@ -23,26 +34,22 @@
     <li class="list-group-item" *ngIf="canEdit">
         <h6>Add New Ingredient</h6>
         <form #ingredientForm="ngForm" class="form-inline" (ngSubmit)="addIngredient(ingredientForm)">
-
-            <!-- <div class="form-group">
-                <label for="password">Password</label>
-                <input #password="ngModel" [(ngModel)]="account.password" name="password" id="password" type="password"
-                    class="form-control" required>
-                <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Enter a password</div>
-            </div> -->
-
             <label class="sr-only" for="name">Ingredient Name</label>
             <input #name="ngModel" [(ngModel)]="ingredientInput.name" class="form-control mb-2 mr-sm-2" name="name"
                 id="name" placeholder="Ingredient Name" required>
 
             <label class="sr-only" for="amount">Amount</label>
             <input #amount="ngModel" [(ngModel)]="ingredientInput.amount" class="form-control mb-2 mr-sm-2"
-                name="amount" id="amount" type="text" placeholder="Amount (units)">
+                name="amount" id="amount" type="text" placeholder="Amount (units)" required>
             <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
-                A recipe name is required
+                An Ingredient Name is Required
+            </div>
+            <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                Ingredient amount should be specified
             </div>
 
-            <button type="submit" class="btn btn-primary mb-2">Add Ingredient</button>
+            <button type="submit" class="btn btn-primary mb-2" [disabled]="ingredientForm.invalid">Add
+                Ingredient</button>
         </form>
     </li>
 
