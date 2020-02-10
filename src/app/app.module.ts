@@ -77,6 +77,7 @@ import { InstructionService } from './services/instruction.service';
     AppRoutingModule,
     HttpClientModule,
     CustomFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     RecipeService,

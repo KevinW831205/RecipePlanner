@@ -12,25 +12,25 @@
         </span>
 
         <span *ngIf="edit[i]">
-            <form #ingredientUpdateForm="ngForm" class="form-inline"
-                (ngSubmit)="updateIngredient(i,ingredientUpdateForm)">
+            <form class="form-inline" (ngSubmit)="updateIngredient(i,ingredientUpdateForm)">
                 <label class="sr-only" for="name">Ingredient Name</label>
-                <input #editName class="form-control mb-2 mr-sm-2" name="name" id="name" [value]="ingredient.name"
-                    required>
-
+                <input #editName class="mb-2 mr-3" name="name" id="name" [value]="ingredient.name" required>
                 <label class="sr-only" for="amount">Amount</label>
-                <input #editAmount class="form-control mb-2 mr-sm-2" name="amount" id="amount" type="text"
-                    [value]="ingredient.amount">
+                <input #editAmount class="mb-2 mr-3" name="amount" id="amount" type="text"
+                    [value]="ingredient.amount" required>
+
+
                 <div class="alert alert-danger" *ngIf="editName.touched && editName.invalid">
                     An Ingredient Name is Required
                 </div>
                 <div class="alert alert-danger" *ngIf="editAmount.touched && editAmount.invalid">
                     Ingredient amount should be specified
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm ml-3">Save</button>
-                <button type="button" class="btn btn-danger btn-sm ml-3" (click)="toggleEdit(i)">Cancel</button>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-sm mr-3">Save</button>
+                    <button type="button" class="btn btn-danger btn-sm mr-3" (click)="toggleEdit(i)">Cancel</button>
+                </div>
             </form>
-
         </span>
 
 

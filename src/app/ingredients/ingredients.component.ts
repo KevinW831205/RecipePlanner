@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../models/Recipe';
 import { IngredientService } from '../services/ingredient.service';
 import { Ingredient } from '../models/Ingredient';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { FormBuilder, NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ingredients',
@@ -37,7 +37,7 @@ export class IngredientsComponent {
   }
 
   updateIngredient(i, form: NgForm) {
-
+    console.log(form.value);
     this.toggleEdit(i)
   }
 
