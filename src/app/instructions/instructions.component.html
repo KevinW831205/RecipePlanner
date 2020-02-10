@@ -1,20 +1,19 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let instruction of recipe.instructionList; index as i;">
+    <li class="list-group-item list-group-item-action" *ngFor="let instruction of recipe.instructionList; index as i;">
         <span *ngIf="!edit[i]">
             {{i+1}}. {{instruction.instruction}}
-            <span *ngIf="canEdit">
+            <span *ngIf="canEdit" class="float-right">
                 <button class="btn btn-warning btn-sm ml-3" (click)="toggleEdit(i)">Edit</button>
                 <button class="btn btn-danger btn-sm ml-3" (click)="deleteInstruction(i, instruction)">Delete</button>
             </span>
         </span>
-        <span *ngIf="edit[i]" class="float-right">
+        <span *ngIf="edit[i]">
             <textarea #editInstruction class="edit-input" [value]="instruction.instruction"
                 (keyup.enter)="updateInstruction(editInstruction.value, i)"></textarea>
             <button class="btn btn-primary btn-sm ml-3"
                 (click)="updateInstruction(editInstruction.value, i)">Save</button>
             <button class="btn btn-danger btn-sm ml-3" (click)="toggleEdit(i)">Cancel</button>
         </span>
-
     </li>
     <li class="list-group-item" *ngIf="canEdit">
         <h6>Add New Instruction</h6>

@@ -10,6 +10,7 @@ import { Ingredient } from '../models/Ingredient';
 })
 export class IngredientsComponent {
   @Input() recipe: Recipe;
+  @Input('canEdit') canEdit: boolean = true;
   ingredientInput: Partial<Ingredient> = {
     name: "",
     amount: ""
