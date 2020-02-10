@@ -40,8 +40,7 @@ export class EditRecipePageComponent implements OnInit {
   saveRecipeName(nameInput) {
     this.recipeService.patchName(this.recipe.id, nameInput).subscribe(
       res => {
-        console.log(res);
-        this.recipe = res;
+        this.recipe.name = res.name;
         this.toggleEditName();
       },
       err => {
