@@ -53,8 +53,17 @@ export class IngredientsComponent {
 
       }
     )
+  }
 
+  deleteIngredient(i, ingredient: Ingredient) {
+    this.ingredientService.delete(ingredient.id).subscribe(
+      res => {
+        this.recipe.ingredientList.splice(i, 1);
+      },
+      err => {
 
+      }
+    )
   }
 
   toggleEdit(i) {
