@@ -15,8 +15,9 @@ export class EditRecipePageComponent implements OnInit {
   recipe: Recipe;
   authorized = false;
   recipeSubscription: Subscription;
+  editName: boolean = false;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService, private router:Router) { }
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     let recipeId = this.route.snapshot.paramMap.get('id');
@@ -51,8 +52,10 @@ export class EditRecipePageComponent implements OnInit {
     this.recipeService.delete(this.recipe.id).subscribe(
       res => {
         this.router.navigate(['/my/recipes'])
-      })
+      },
+      err => {
+
+      }
+    )
   }
-
-
 }

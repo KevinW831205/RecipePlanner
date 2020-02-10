@@ -1,6 +1,12 @@
 <div class="container">
     <div *ngIf="authorized; else unauthorized">
-        <h3>Editing {{recipe.name}} <button class="btn btn-warning">Change Name</button></h3>
+        <h2>Editing
+            <span *ngIf="!editName; else nameInput">{{recipe.name}}</span>
+            <ng-template #nameInput>
+                <input [value]="recipe.name">
+            </ng-template>
+            <button class="btn btn-warning btn-sm">Change Name</button>
+        </h2>
         <span>
             <button *ngIf="!recipe.published; else published" class="btn btn-info"
                 (click)="togglePublished()">Publish</button>
