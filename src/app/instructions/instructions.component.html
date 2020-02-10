@@ -19,8 +19,9 @@
         <h6>Add New Instruction</h6>
         <form>
             <div class="form-group">
-                <input #instructions="ngModel" [(ngModel)]="instructionInput" name="instructionInput"
-                    id="instructionInput" type="text" class="form-control mb-2 mr-sm-2" placeholder="instruction name">
+                <textarea #instructions="ngModel" [(ngModel)]="instructionInput" name="instructionInput"
+                    id="instructionInput" type="text" class="form-control mb-2 mr-sm-2"
+                    placeholder="instruction name"></textarea>
             </div>
             <button class="btn btn-primary" (click)="addInstruction(instructionInput.value)">Add Instruction</button>
         </form>

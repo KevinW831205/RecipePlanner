@@ -28,8 +28,6 @@ export class IngredientsComponent {
     this.ingredientService.create(ingredient).subscribe(
       res => {
         this.recipe.ingredientList.push(res);
-        // this.ingredientInput.name = "";
-        // this.ingredientInput.amount = "";
         form.reset();
       },
       err => {
@@ -37,6 +35,10 @@ export class IngredientsComponent {
       }
     )
 
+  }
+
+  toggleEdit(i) {
+    this.edit[i] = !this.edit[i];
   }
 
 
