@@ -37,6 +37,10 @@ export class EditRecipePageComponent implements OnInit {
     )
   }
 
+  saveRecipeName(nameInput) {
+    console.log(nameInput);
+  }
+
   togglePublished() {
     this.recipeService.patchTogglePublished(this.recipe.id).subscribe(
       res => {

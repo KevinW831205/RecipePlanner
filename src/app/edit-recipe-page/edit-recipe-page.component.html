@@ -1,13 +1,14 @@
 <div class="container">
     <div *ngIf="authorized; else unauthorized">
         <h2>Editing
-            <span *ngIf="!editName; else nameInput">
+            <span *ngIf="!editName; else editingName">
                 {{recipe.name}}
                 <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button>
             </span>
-            <ng-template #nameInput>
-                <input [value]="recipe.name">
-                <button class="btn btn-primary btn-sm">Save Name</button>
+            <ng-template #editingName>
+                <input #nameInput [value]="recipe.name">
+                <button class="btn btn-primary btn-sm" (click)="saveRecipeName(nameInput.value)">Save Name</button>
+                <button class="btn btn-danger btn-sm" (click)="toggleEditName()">Cancel</button>
             </ng-template>
         </h2>
         <span>
