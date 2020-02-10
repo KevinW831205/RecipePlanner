@@ -15,12 +15,14 @@
             </div> -->
 
             <label class="sr-only" for="name">Ingredient Name</label>
-            <input class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Ingredient Name">
+            <input #name="ngModel" [(ngModel)]="ingredientInput.name" class="form-control mb-2 mr-sm-2" name="name"
+                id="name" placeholder="Ingredient Name">
 
             <label class="sr-only" for="amount">Amount</label>
-            <input class="form-control mb-2 mr-sm-2" name="amount" id="amount" type="text" placeholder="Amount (units)">
+            <input #amount="ngModel" [(ngModel)]="ingredientInput.amount" class="form-control mb-2 mr-sm-2"
+                name="amount" id="amount" type="text" placeholder="Amount (units)">
 
-            <button type="button" class="btn btn-primary mb-2">Add Ingredient</button>
+            <button type="button" class="btn btn-primary mb-2" (click)="addIngredient()">Add Ingredient</button>
         </form>
     </li>
 

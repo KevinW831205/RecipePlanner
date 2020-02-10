@@ -10,12 +10,18 @@ import { Ingredient } from '../models/Ingredient';
 })
 export class IngredientsComponent {
   @Input() recipe: Recipe;
+  ingredientInput: Partial<Ingredient> = {
+    name: "",
+    amount: ""
+  }
 
   constructor(private ingredientService: IngredientService) { }
 
   addIngredient() {
-    let ingredient = new Ingredient();
-    
+    let ingredient = new Ingredient(this.ingredientInput);
+    ingredient.recipeId = this.recipe.id;
+    console.log(ingredient)
+
   }
 
 
