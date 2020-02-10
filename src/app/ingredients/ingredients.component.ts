@@ -34,7 +34,11 @@ export class IngredientsComponent {
         console.log(err);
       }
     )
+  }
 
+  updateIngredient(i, form: NgForm) {
+
+    this.toggleEdit(i)
   }
 
   toggleEdit(i) {
