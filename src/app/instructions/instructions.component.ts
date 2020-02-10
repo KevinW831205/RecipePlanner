@@ -15,7 +15,7 @@ export class InstructionsComponent {
   @Input() recipe: Recipe;
   edit: boolean[] = [];
   instructionInput: string;
-  @Input('canEdit') canEdit: boolean = false;
+  @Input('canEdit') canEdit: boolean = true;
 
   constructor(private instructionService: InstructionService) { }
 
@@ -43,8 +43,6 @@ export class InstructionsComponent {
     // console.log(instruction, this.recipe.instructionList[i])
     let updatedInstruction: Instruction = this.recipe.instructionList[i]
     updatedInstruction.instruction = input;
-
-    console.log(updatedInstruction)
     this.instructionService.update(updatedInstruction).pipe(
       take(1)
     ).subscribe(

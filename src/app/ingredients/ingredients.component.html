@@ -1,6 +1,11 @@
 <ul class="list-group">
-    <li *ngFor="let ingredient of recipe.ingredientList;index as i;" class="list-group-item">
-        {{ingredient.name}} {{ingredient.amount}}
+    <li *ngFor="let ingredient of recipe.ingredientList;index as i;" class="list-group-item list-group-item-action">
+        {{i+1}}.
+        <span class="font-italic"> {{ingredient.name}}</span>
+        <span class="delimiter"> . . . </span>
+        <span class="font-weight-bold">{{ingredient.amount}}</span>
+
+        
     </li>
 
     <li class="list-group-item">
