@@ -10,6 +10,6 @@ import { Ingredient } from '../models/Ingredient';
 export class IngredientService extends DataService<Ingredient> {
 
   constructor(http: HttpClient) {
-    super(http, baseUrl + "instruction/")
+    super(http, baseUrl + "ingredient/")
   }
 }

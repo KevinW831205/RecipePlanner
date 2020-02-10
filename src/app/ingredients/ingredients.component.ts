@@ -20,7 +20,15 @@ export class IngredientsComponent {
   addIngredient() {
     let ingredient = new Ingredient(this.ingredientInput);
     ingredient.recipeId = this.recipe.id;
-    console.log(ingredient)
+
+    this.ingredientService.create(ingredient).subscribe(
+      res => {
+        this.recipe.ingredientList.push(res);
+      },
+      err => {
+        console.log(err);
+      }
+    )
 
   }
 
