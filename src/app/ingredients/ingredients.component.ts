@@ -11,7 +11,7 @@ import { FormBuilder, NgForm, FormGroup, FormControl, Validators } from '@angula
 })
 export class IngredientsComponent {
   @Input() recipe: Recipe;
-  @Input('canEdit') canEdit: boolean = true;
+  @Input('canEdit') canEdit: boolean = false;
   edit: boolean[] = [];
   editError: boolean[] = [];
 

@@ -36,5 +36,8 @@ export class EditRecipePageComponent implements OnInit {
     )
   }
 
+  togglePublish() {
+  }
+
 
 }
