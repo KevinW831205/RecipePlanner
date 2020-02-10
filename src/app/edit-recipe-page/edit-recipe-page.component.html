@@ -2,7 +2,8 @@
     <div *ngIf="authorized; else unauthorized">
         <h3>Editing {{recipe.name}} <button class="btn btn-warning">Change Name</button></h3>
         <span>
-            <button *ngIf="!recipe.published; else published" class="btn btn-info" (click)="togglePublished()">Publish</button>
+            <button *ngIf="!recipe.published; else published" class="btn btn-info"
+                (click)="togglePublished()">Publish</button>
             <ng-template #published>
                 <button class="btn btn-secondary" (click)="togglePublished()">Unpublish</button>
             </ng-template>
@@ -28,7 +29,12 @@
             </div>
         </div>
 
-        <button class="btn btn-danger">Delete</button>
+
+        <div class="alert alert-danger">
+            No way to undelete a recipe
+            <button class="btn btn-danger" (click)="deleteRecipe()">Delete</button>
+        </div>
+
 
     </div>
 
