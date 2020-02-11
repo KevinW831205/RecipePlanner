@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { Account } from '../models/Account';
 import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-new-recipe-form',
@@ -17,7 +18,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
   user: Account;
   subscription: Subscription;
   error: boolean = false;
-
+  description;
 
   constructor(private authService: AuthService, private recipeService: RecipeService, private router: Router, public activeModal: NgbActiveModal) { }
 

@@ -10,8 +10,10 @@
 
     <div class="form-group">
         <label for="description">Description</label>
-        <textarea #description="ngModel" ngModel name="description" id="description" type="text" class="form-control">
+        <textarea #description="ngModel" ngModel name="description" id="description" type="text" class="form-control"
+            [maxlength]="500">
             </textarea>
+        <div class="float-right length-text">{{description.value.length}}/500</div>
     </div>
 
     <button class="btn btn-primary">Submit</button>
