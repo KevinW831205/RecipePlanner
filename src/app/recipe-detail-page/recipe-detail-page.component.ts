@@ -12,6 +12,7 @@ import { take } from 'rxjs/operators';
 export class RecipeDetailPageComponent {
 
   recipe: Recipe;
+  isRating = false;
 
   constructor(private recipeService: RecipeService, private route: ActivatedRoute) {
     this.recipeService.get(this.route.snapshot.paramMap.get('id')).pipe(
