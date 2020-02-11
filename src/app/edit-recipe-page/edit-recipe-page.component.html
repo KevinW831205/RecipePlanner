@@ -21,12 +21,20 @@
 
         <div class="my-3 image-container">
             <img [src]="recipe.imageUrl">
-            <button class="btn btn-warning image-edit-btn" (click)="toggelEditingImage()">Change Image</button>
+            <button class="btn btn-warning image-edit-btn" (click)="toggelEditImage()">Change Image</button>
+        </div>
+        <div *ngIf="editImage">
+            <input type="text" [value]=recipe.imageUrl>
+            <button (click)="saveImageUrl()" class="btn btn-primary">Save</button>
         </div>
 
-        <h3>Description</h3>
-        
-        {{recipe.description}}
+        <h3>Description <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button></h3>
+
+        <p class="mb-5" *ngIf="recipe.description; else emptyDescription">{{recipe.description}}</p>
+
+        <ng-template #emptyDescription>
+            <p class="mb-5">(empty)</p>
+        </ng-template>
 
         <div class="row">
             <div class="col-md-6 col-sm-12">

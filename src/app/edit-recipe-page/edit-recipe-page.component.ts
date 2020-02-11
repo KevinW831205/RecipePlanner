@@ -16,6 +16,7 @@ export class EditRecipePageComponent implements OnInit {
   authorized = false;
   recipeSubscription: Subscription;
   editName: boolean = false;
+  editImage: boolean = false;
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService, private router: Router) { }
 
@@ -73,5 +74,9 @@ export class EditRecipePageComponent implements OnInit {
 
   toggleEditName() {
     this.editName = !this.editName;
+  }
+
+  toggelEditImage() {
+    this.editImage = !this.editImage;
   }
 }
