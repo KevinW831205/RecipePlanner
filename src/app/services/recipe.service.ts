@@ -32,9 +32,17 @@ export class RecipeService extends DataService<Recipe> {
   }
 
   patchName(recipeId, name): Observable<Recipe> {
-    try{
-      return this.http.patch<Recipe>(`${baseUrl}recipe/name/${recipeId}?name=${name}`,null,httpOptions)
-    } catch (error){
+    try {
+      return this.http.patch<Recipe>(`${baseUrl}recipe/name/${recipeId}?name=${name}`, null, httpOptions)
+    } catch (error) {
+      super.handleError(error)
+    }
+  }
+
+  patchImageUrl(recipeId, url): Observable<Recipe> {
+    try {
+      return this.http.patch<Recipe>(`${baseUrl}recipe/imageurl/${recipeId}?url=${url}`, null, httpOptions);
+    } catch (error) {
       super.handleError(error)
     }
   }
