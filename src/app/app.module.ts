@@ -35,6 +35,8 @@ import { NewRecipeBtnComponent } from './new-recipe-btn/new-recipe-btn.component
 import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.component';
 import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
 import { InstructionService } from './services/instruction.service';
+import { RatingService } from './services/rating.service';
+import { IngredientService } from './services/ingredient.service';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { InstructionService } from './services/instruction.service';
   providers: [
     RecipeService,
     AccountService,
-    InstructionService
+    InstructionService,
+    IngredientService,
+    RatingService
   ],
   bootstrap: [AppComponent]
 })

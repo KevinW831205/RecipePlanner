@@ -5,7 +5,7 @@
         </h4>
         <span class="font-weight-bold">Author:</span> {{recipe.account.username}}
         <br>
-        <app-recipe-star-rating [averageRating]="recipe.averageRatinge" [numberOfRating]="recipe.numberOfRating">
+        <app-recipe-star-rating [averageRating]="recipe.averageRating" [numberOfRating]="recipe.numberOfRating">
         </app-recipe-star-rating>
         <p class="card-text font-italic">{{recipe.description || "(no description)" | summary}}</p>
     </div>
