@@ -17,6 +17,7 @@ export class EditRecipePageComponent implements OnInit {
   recipeSubscription: Subscription;
   editName: boolean = false;
   editImage: boolean = false;
+  editDescription: boolean = false;
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService, private router: Router) { }
 

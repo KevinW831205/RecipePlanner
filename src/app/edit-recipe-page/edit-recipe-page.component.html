@@ -26,18 +26,18 @@
         <div *ngIf="editImage">
             <form class="form-inline">
                 <label class="sr-only" for="imageUrl">Image Url</label>
-                <input #imageUrlInput (keyup.enter)="saveImageUrl(imageUrlInput.value)" type="text" name="imageUrl" id="imageUrl" class="mb-2 mr-3 p-1"
-                    [value]=recipe.imageUrl>
-                <button type="button" (click)="saveImageUrl(imageUrlInput.value)" class="btn btn-primary mr-2">Save</button>
+                <input #imageUrlInput (keyup.enter)="saveImageUrl(imageUrlInput.value)" type="text" name="imageUrl"
+                    id="imageUrl" class="mb-2 mr-3 p-1" [value]=recipe.imageUrl>
+                <button type="button" (click)="saveImageUrl(imageUrlInput.value)"
+                    class="btn btn-primary mr-2">Save</button>
                 <button type="button" class="btn btn-danger" (click)="toggelEditImage()">Cancel</button>
             </form>
         </div>
 
         <h3>Description <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button></h3>
 
-        <p class="mb-5" *ngIf="recipe.description; else emptyDescription">{{recipe.description}}</p>
-
-        <ng-template #emptyDescription>
+        <p class="mb-5" *ngIf="!editDescription; editingDescription">{{recipe.description || "(empty)"}}</p>
+        <ng-template #editingDescription>
             <p class="mb-5">(empty)</p>
         </ng-template>
 
