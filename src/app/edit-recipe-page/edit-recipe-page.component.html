@@ -20,7 +20,7 @@
         </span>
 
         <div class="my-3 image-container">
-            <img [src]="recipe.imageUrl">
+            <img [src]="recipe.imageUrl" class="img-fluid">
             <button class="btn btn-warning image-edit-btn rounded" (click)="toggelEditImage()">Change Image</button>
         </div>
         <div *ngIf="editImage">
