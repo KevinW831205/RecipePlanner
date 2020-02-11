@@ -86,7 +86,15 @@ export class EditRecipePageComponent implements OnInit {
   }
 
   saveDescription() {
-    
+    this.recipeService.patchDescription(this.recipe.id, this.descriptionInput).subscribe(
+      res => {
+        this.recipe.description = res.description;
+        this.toggleEditDescription();
+      },
+      err => {
+
+      }
+    )
   }
 
   toggleEditName() {
