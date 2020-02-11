@@ -24,8 +24,12 @@
             <button class="btn btn-warning image-edit-btn" (click)="toggelEditImage()">Change Image</button>
         </div>
         <div *ngIf="editImage">
-            <input type="text" [value]=recipe.imageUrl>
-            <button (click)="saveImageUrl()" class="btn btn-primary">Save</button>
+            <form class="form-inline">
+                <label class="sr-only" for="imageUrl">Image Url</label>
+                <input type="text" name="imageUrl" id="imageUrl" class="mb-2 mr-3 p-1" [value]=recipe.imageUrl>
+                <button (click)="saveImageUrl()" class="btn btn-primary mr-2">Save</button>
+                <button type="button" class="btn btn-danger" (click)="toggelEditImage()">Cancel</button>
+            </form>
         </div>
 
         <h3>Description <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button></h3>
