@@ -9,7 +9,7 @@ export class SummaryPipe implements PipeTransform {
     if (!value) {
       return null;
     } else {
-      let actualLimit = (limit) ? limit : 75;
+      let actualLimit = (limit) ? limit : 50;
 
       let result = value.substr(0, actualLimit)
 

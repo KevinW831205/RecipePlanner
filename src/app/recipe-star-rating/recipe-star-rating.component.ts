@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-recipe-star-rating',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecipeStarRatingComponent implements OnInit {
   @Input() averageRating;
-  @Input() numberOfRating;  
+  @Input() numberOfRating;
   @Input() canRate = false;
 
   constructor() { }

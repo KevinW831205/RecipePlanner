@@ -1,3 +1,7 @@
 .card-title{
     margin: 0;
 }
+
+.card-img-top{
+    height: 50%
+}

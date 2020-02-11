@@ -1,16 +1,16 @@
 <div class="card h-100">
     <img class="card-img-top" [src]="recipe.imageUrl" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">{{recipe.name}}<br>
-            <app-recipe-star-rating [averageRating]="recipe.averageRatinge" [numberOfRating]="recipe.numberOfRating">
-            </app-recipe-star-rating>
-        </h5>
-        {{recipe.account.username}}
-        <p class="card-text">{{recipe.description | summary}}</p>
-
+        <h4 class="card-title font-weight-bold">{{recipe.name | titlecase}}<br>
+        </h4>
+        <span class="font-weight-bold">Author:</span> {{recipe.account.username}}
+        <br>
+        <app-recipe-star-rating [averageRating]="recipe.averageRatinge" [numberOfRating]="recipe.numberOfRating">
+        </app-recipe-star-rating>
+        <p class="card-text font-italic">{{recipe.description || "(no description)" | summary}}</p>
     </div>
     <div class="card-footer">
         <a [routerLink]="['/recipe/',recipe.id]" class="btn btn-primary">Details</a>
-        <a *ngIf="canEdit" class="btn btn-warning ml-3" [routerLink]="['/recipe/edit/',recipe.id]" >Edit</a>
+        <a *ngIf="canEdit" class="btn btn-warning ml-3" [routerLink]="['/recipe/edit/',recipe.id]">Edit</a>
     </div>
 </div>
