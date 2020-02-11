@@ -25,13 +25,18 @@ export class RecipeDetailPageComponent {
     ).subscribe(res => {
       this.user = res;
     })
-
     this.recipeService.get(this.route.snapshot.paramMap.get('id')).pipe(
       take(1)
     ).subscribe(r => {
       this.recipe = r;
     });
 
+  }
+
+  checkRated(): boolean {
+    
+
+    return false;
   }
 
   rateRecipe(rate) {

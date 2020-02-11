@@ -10,6 +10,15 @@ import { HttpClient } from '@angular/common/http';
 export class RatingService extends DataService<Rating>{
 
   constructor(http: HttpClient) {
-    super(http, baseUrl+"rating")
+    super(http, baseUrl + "rating")
   }
+
+  checkRated(): Promise<Rating> {
+    try {
+      return this.http.get<Rating>(baseUrl + "rating/rated").toPromise();
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 }
