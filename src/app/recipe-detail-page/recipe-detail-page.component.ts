@@ -15,7 +15,6 @@ export class RecipeDetailPageComponent {
 
   user: Account;
   recipe: Recipe;
-  isRating = false;
 
   constructor(private authService: AuthService, private recipeService: RecipeService, private route: ActivatedRoute) {
     this.authService.checkUserPersist();
@@ -33,5 +32,8 @@ export class RecipeDetailPageComponent {
 
   }
 
+  rateRecipe(rate) {
+    console.log("rate",rate)
+  }
 
 }

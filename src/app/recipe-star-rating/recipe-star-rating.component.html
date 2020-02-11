@@ -3,5 +3,6 @@
         <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
     </span>
 </ng-template>
-<ngb-rating [(rate)]="averageRating" [starTemplate]="t" [readonly]="!canRate" max="5"></ngb-rating>
+<ngb-rating [(rate)]="averageRating" (hover)="hovered=$event" [starTemplate]="t" [readonly]="!canRate" max="5"
+    (click)="rate()"></ngb-rating>
 <span class="rate-text">{{averageRating}} ({{numberOfRating || "0"}} reviews)</span>
