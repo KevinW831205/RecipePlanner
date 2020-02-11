@@ -75,7 +75,6 @@ export class EditRecipePageComponent implements OnInit {
   }
 
   saveImageUrl(url: string) {
-    console.log(url)
     this.recipeService.patchImageUrl(this.recipe.id, url).subscribe(
       res => {
         this.recipe.imageUrl = res.imageUrl;
@@ -86,8 +85,8 @@ export class EditRecipePageComponent implements OnInit {
     )
   }
 
-  saveDescription(description: string) {
-    console.log
+  saveDescription() {
+    
   }
 
   toggleEditName() {
@@ -102,7 +101,7 @@ export class EditRecipePageComponent implements OnInit {
     this.editDescription = !this.editDescription;
   }
 
-  populateDescription(){
+  populateDescription() {
     this.descriptionInput = this.recipe.description;
   }
 

@@ -47,5 +47,12 @@ export class RecipeService extends DataService<Recipe> {
     }
   }
 
+  patchDescription(recipeId, description): Observable<Recipe> {
+    try {
+      return this.http.patch<Recipe>(`${baseUrl}recipe/description/${recipeId}`, description, httpOptions);
+    } catch (error) {
+      super.handleError(error);
+    }
+  }
 
 }

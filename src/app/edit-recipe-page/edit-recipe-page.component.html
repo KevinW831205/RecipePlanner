@@ -34,14 +34,15 @@
             </form>
         </div>
 
-        <h3>Description <button class="btn btn-warning btn-sm" (click)="toggleEditDescription(); populateDescription()">Edit
+        <h3>Description <button class="btn btn-warning btn-sm"
+                (click)="toggleEditDescription(); populateDescription()">Edit
                 Description</button></h3>
 
         <p class="mb-5" *ngIf="!editDescription;else editingDescription">{{recipe.description || "(empty)"}}</p>
         <ng-template #editingDescription>
-            <textarea class="w-100" [(ngModel)]="descriptionInput"></textarea>
-            <div class="float-right length-text">{{descriptionInput.length}}/500</div>
-            <button type="button" (click)="saveDescription(descriptionInput.value)"
+            <textarea class="w-100" [(ngModel)]="descriptionInput" [maxlength]="500"></textarea>
+            <div class=" float-right length-text">{{descriptionInput.length}}/500</div>
+            <button type="button" (click)="saveDescription()"
                 class="btn btn-primary mr-2">Save</button>
             <button type="button" class="btn btn-danger" (click)="toggleEditDescription()">Cancel</button>
         </ng-template>
