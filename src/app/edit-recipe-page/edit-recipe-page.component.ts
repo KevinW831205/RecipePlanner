@@ -18,6 +18,7 @@ export class EditRecipePageComponent implements OnInit {
   editName: boolean = false;
   editImage: boolean = false;
   editDescription: boolean = false;
+  descriptionInput: string;
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private authService: AuthService, private router: Router) { }
 
@@ -83,7 +84,10 @@ export class EditRecipePageComponent implements OnInit {
 
       }
     )
+  }
 
+  saveDescription(description: string) {
+    console.log
   }
 
   toggleEditName() {
@@ -96,6 +100,10 @@ export class EditRecipePageComponent implements OnInit {
 
   toggleEditDescription() {
     this.editDescription = !this.editDescription;
+  }
+
+  populateDescription(){
+    this.descriptionInput = this.recipe.description;
   }
 
 
