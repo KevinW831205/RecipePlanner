@@ -1,4 +1,3 @@
-import { Ratings } from './Rating';
 import { Instruction } from './Instruction';
 import { Ingredient } from './Ingredient';
 
