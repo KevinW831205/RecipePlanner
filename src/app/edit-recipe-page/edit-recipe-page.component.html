@@ -34,11 +34,12 @@
             </form>
         </div>
 
-        <h3>Description <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button></h3>
+        <h3>Description <button class="btn btn-warning btn-sm" (click)="toggleEditDescription()">Edit
+                Description</button></h3>
 
-        <p class="mb-5" *ngIf="!editDescription; editingDescription">{{recipe.description || "(empty)"}}</p>
+        <p class="mb-5" *ngIf="!editDescription;else editingDescription">{{recipe.description || "(empty)"}}</p>
         <ng-template #editingDescription>
-            <p class="mb-5">(empty)</p>
+            <textarea class="w-100">{{recipe.description}}</textarea>
         </ng-template>
 
         <div class="row">
@@ -46,7 +47,6 @@
                 <h3>Instructions</h3>
                 <app-instructions [recipe]="recipe" [canEdit]="true"></app-instructions>
             </div>
-
             <div class="col-md-6 col-sm-12">
                 <h3>Ingredients</h3>
                 <app-ingredients [recipe]="recipe" [canEdit]="true"></app-ingredients>
@@ -58,7 +58,6 @@
             <button class="btn btn-danger" (click)="deleteRecipe()">Delete</button>
             No way to undelete a recipe
         </div>
-
 
     </div>
 

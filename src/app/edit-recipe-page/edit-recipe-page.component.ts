@@ -94,5 +94,9 @@ export class EditRecipePageComponent implements OnInit {
     this.editImage = !this.editImage;
   }
 
+  toggleEditDescription() {
+    this.editDescription = !this.editDescription;
+  }
+
 
 }
