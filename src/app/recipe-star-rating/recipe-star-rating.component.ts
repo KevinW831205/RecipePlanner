@@ -20,7 +20,6 @@ export class RecipeStarRatingComponent implements OnInit {
   }
 
   rate() {
-    console.log("rating component emit ")
     this.rateEmitter.emit(this.hovered);
   }
 
