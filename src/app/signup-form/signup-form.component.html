@@ -28,5 +28,8 @@
             <div *ngIf="confirmPassword.errors?.equalTo">Passwords must match</div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" (click)="signUp()" [disabled]="signUpForm.invalid">Sign Up</button>
+    <button type="submit" class="btn" [ngClass]="{
+        'btn-primary':!signUpForm.invalid,
+        'btn-secondary':signUpForm.invalid
+       }" (click)="signUp()" [disabled]="signUpForm.invalid">Sign Up</button>
 </form>
