@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RecipeStarRatingComponent implements OnInit {
   @Input() averageRating;
   @Input() numberOfRating;  
+  @Input() canRate = false;
 
   constructor() { }
 

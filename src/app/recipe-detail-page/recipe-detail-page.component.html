@@ -4,10 +4,8 @@
             <div class="col-md-6">
                 <h1>{{recipe.name}}</h1>
 
-                <div (mouseOver)="isRating=true; console.log(1)" (mouseLeave)="isRating=false">
-                    <app-recipe-star-rating *ngIf="!isRating"></app-recipe-star-rating>
+                <app-recipe-star-rating *ngIf="!isRating" [canRate]="true"></app-recipe-star-rating>
 
-                </div>
 
                 <app-author-media></app-author-media>
                 <div>

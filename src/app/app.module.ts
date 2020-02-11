@@ -35,7 +35,6 @@ import { NewRecipeBtnComponent } from './new-recipe-btn/new-recipe-btn.component
 import { NewRecipeModalComponent } from './new-recipe-modal/new-recipe-modal.component';
 import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
 import { InstructionService } from './services/instruction.service';
-import { RateComponent } from './rate/rate.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +63,6 @@ import { RateComponent } from './rate/rate.component';
     NewRecipeBtnComponent,
     NewRecipeModalComponent,
     EditRecipePageComponent,
-    RateComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
