@@ -72,6 +72,11 @@ export class EditRecipePageComponent implements OnInit {
     )
   }
 
+  saveImageUrl(url: string) {
+    console.log(url)
+
+  }
+
   toggleEditName() {
     this.editName = !this.editName;
   }
@@ -79,4 +84,6 @@ export class EditRecipePageComponent implements OnInit {
   toggelEditImage() {
     this.editImage = !this.editImage;
   }
+
+
 }
