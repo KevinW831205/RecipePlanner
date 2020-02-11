@@ -51,7 +51,10 @@
                 Ingredient amount should be specified
             </div>
 
-            <button type="submit" class="btn btn-primary mb-2" [disabled]="ingredientForm.invalid">Add
+            <button type="submit" class="btn mb-2" [ngClass]="{
+                            'btn-primary':!ingredientForm.invalid,
+                            'btn-secondary':ingredientForm.invalid
+                           }" [disabled]="ingredientForm.invalid">Add
                 Ingredient</button>
         </form>
     </li>
