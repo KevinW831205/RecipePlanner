@@ -8,6 +8,7 @@ export class Recipe {
     id
     name: string;
     account;
+    imageUrl: string;
     instructionList: Instruction[];
     ingredientList: Ingredient[];
     numberOfRating;

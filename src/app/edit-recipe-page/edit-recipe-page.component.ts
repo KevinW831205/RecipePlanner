@@ -74,6 +74,14 @@ export class EditRecipePageComponent implements OnInit {
 
   saveImageUrl(url: string) {
     console.log(url)
+    this.recipeService.patchImageUrl(this.recipe.id, url).subscribe(
+      res => {
+        this.recipe.imageUrl = res.imageUrl;
+      },
+      err => {
+
+      }
+    )
 
   }
 
