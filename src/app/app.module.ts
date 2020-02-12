@@ -42,6 +42,7 @@ import { AccountsComponent } from './admin/accounts/accounts.component';
 import { CategoryService } from './services/category.service';
 import { CategoryDropdownComponent } from './category-dropdown/category-dropdown.component';
 import { FilterService } from './services/filter.service';
+import { CategoryTypeaheadComponent } from './category-typeahead/category-typeahead.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { FilterService } from './services/filter.service';
     FiltererComponent,
     AccountsComponent,
     CategoryDropdownComponent,
+    CategoryTypeaheadComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
