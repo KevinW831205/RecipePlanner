@@ -20,7 +20,6 @@ import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-pa
 import { InstructionsComponent } from './instructions/instructions.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { AuthorMediaComponent } from './author-media/author-media.component';
-import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 import { CategoryTagsPageComponent } from './admin/category-tags-page/category-tags-page.component';
 import { RecipeService } from './services/recipe.service';
 import { NewRecipeFormComponent } from './new-recipe-form/new-recipe-form.component';
@@ -39,6 +38,7 @@ import { RatingService } from './services/rating.service';
 import { IngredientService } from './services/ingredient.service';
 import { FiltererComponent } from './filterer/filterer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccountsComponent } from './admin/accounts/accounts.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     InstructionsComponent,
     IngredientsComponent,
     AuthorMediaComponent,
-    AdminProfileComponent,
     CategoryTagsPageComponent,
     NewRecipeFormComponent,
     SignupPageComponent,
@@ -68,6 +67,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewRecipeModalComponent,
     EditRecipePageComponent,
     FiltererComponent,
+    AccountsComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
