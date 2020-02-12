@@ -46,7 +46,15 @@ export class RecipeDetailPageComponent {
     console.log("rate", rate)
     let ratedRating = await this.checkRated();
     if (ratedRating) {
+      ratedRating.rating = rate;
+      this.ratingService.update(ratedRating).subscribe(
+        res => {
 
+        },
+        err => {
+
+        }
+      )
     } else {
       let rating = new Rating({ accountId: this.user.id, recipeId: this.recipe.id, rating: rate });
       this.ratingService.create(rating).subscribe(
