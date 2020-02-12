@@ -37,7 +37,7 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
     let recipe = new Recipe(recipeForm);
     recipe.name = recipe.name.trim();
     recipe.description = recipe.description.trim();
-    recipe.account = { id: this.user.id }
+    recipe.account = new Account({ id: this.user.id });
     this.recipeService.create(recipe).subscribe(
       res => {
         this.activeModal.close('success')
