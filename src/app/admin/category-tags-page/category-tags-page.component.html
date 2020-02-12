@@ -17,11 +17,11 @@
             <th>Number Of Recipes</th>
             <th></th>
         </thead>
-        <tbody *ngIf="categories$ | async as categories">
+        <tbody>
             <tr *ngFor="let category of categories">
                 <td>{{category.name}}</td>
                 <td>{{category.recipes.length}}</td>
-                <td></td>
+                <td><button class="btn btn-danger" (click)="deleteCategory(category)">Delete</button></td>
             </tr>
         </tbody>
 

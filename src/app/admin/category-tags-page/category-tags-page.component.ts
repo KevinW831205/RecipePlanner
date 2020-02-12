@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/Category';
 import { Subscription, Observable } from 'rxjs';
@@ -8,29 +8,45 @@ import { Subscription, Observable } from 'rxjs';
   templateUrl: './category-tags-page.component.html',
   styleUrls: ['./category-tags-page.component.css']
 })
-export class CategoryTagsPageComponent implements OnInit {
+export class CategoryTagsPageComponent implements OnInit, OnDestroy {
 
   categoryInput: string;
-  categories$: Observable<Category[]>;
+  categories: Category[];
+  categorySubscription: Subscription;
 
   constructor(private categoryService: CategoryService) {
 
   }
 
   ngOnInit() {
-    this.categories$ = this.categoryService.getAll()
-  }
-
-  createCategory() {
-    let newCategory = new Category({ name: this.categoryInput })
-    this.categoryService.create(newCategory).subscribe(
+    this.categorySubscription = this.categoryService.getAll().subscribe(
       res => {
-        console.log(res);
+        this.categories = res;
       },
       err => {
         console.log(err)
       }
     )
   }
+
+  ngOnDestroy() {
+    this.categorySubscription.unsubscribe();
+  }
+
+  createCategory() {
+    let newCategory = new Category({ name: this.categoryInput })
+    this.categoryService.create(newCategory).subscribe(
+      res => {
+        res.recipes = [];
+        this.categories.push(res);
+      },
+      err => {
+        console.log(err)
+      }
+    )
+  }
+
+  // deleteCategory(category: Category){
+  // }
 
 }
