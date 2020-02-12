@@ -1,12 +1,13 @@
 import { Instruction } from './Instruction';
 import { Ingredient } from './Ingredient';
+import { Account } from './Account';
 
 
 export class Recipe {
 
     id
     name: string;
-    account;
+    account : Account;
     imageUrl: string;
     instructionList: Instruction[];
     ingredientList: Ingredient[];

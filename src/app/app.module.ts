@@ -37,6 +37,7 @@ import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.com
 import { InstructionService } from './services/instruction.service';
 import { RatingService } from './services/rating.service';
 import { IngredientService } from './services/ingredient.service';
+import { FiltererComponent } from './filterer/filterer.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { IngredientService } from './services/ingredient.service';
     NewRecipeBtnComponent,
     NewRecipeModalComponent,
     EditRecipePageComponent,
+    FiltererComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,

@@ -8,7 +8,7 @@
                     [numberOfRating]="recipe.numberOfRating" [canRate]="user" (addRate)="rateRecipe($event)">
                 </app-recipe-star-rating>
 
-                <app-author-media></app-author-media>
+                <app-author-media [imgUrl]="recipe.account.profileImageUrl"></app-author-media>
                 <div>
                     <strong>Description:</strong><br>
                     {{recipe.description}}
