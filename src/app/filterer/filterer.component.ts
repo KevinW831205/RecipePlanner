@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterService } from '../services/filter.service';
 
 @Component({
   selector: 'app-filterer',
@@ -7,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltererComponent {
 
-  constructor() { }
+  constructor(private filterService: FilterService) { }
+
+  filterByCategory(value) {
+    console.log(value);
+
+    
+  }
 
 }
