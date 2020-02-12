@@ -1,11 +1,14 @@
 <div class="btn-group mr-3">
     <span class="btn-group btn btn-outline-primary disabled"
-        (click)="$event.stopPropagation(); catagoryDropdown.open();" id="currentFilter">All</span>
+        (click)="$event.stopPropagation(); catagoryDropdown.open();" id="currentFilter">{{currentCategory}}</span>
     <div class="btn-group" ngbDropdown #catagoryDropdown="ngbDropdown" role="group">
         <button class="btn btn-primary dropdown-toggle-split" ngbDropdownAnchor
             (focus)="catagoryDropdown.open()"></button>
-        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button ngbDropdownItem>All</button>
+        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownBasic1"
+            *ngIf="categories$ | async as categories">
+            <button ngbDropdownItem (click)="setCurrentCategory('All')">All</button>
+            <button ngbDropdownItem *ngFor="let category of categories"
+                (click)="setCurrentCategory(category.name)">{{category.name}}</button>
         </div>
     </div>
 </div>
