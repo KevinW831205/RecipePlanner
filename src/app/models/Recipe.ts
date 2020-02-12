@@ -22,11 +22,17 @@ export class Recipe {
 
     addRating(rating: number) {
         this.numberOfRating++;
-        let newAverage = this.getTotalRating() + rating;
+        let newAverage = (this.getTotalRating() + rating) / this.numberOfRating;
         this.averageRating = newAverage;
     }
 
-    private getTotalRating() {
+    updateRating(newRating: number, oldRating: number) {
+        let oldTotal = this.getTotalRating();
+        let newTotal = oldTotal - oldRating + newRating;
+        this.averageRating = newTotal / this.numberOfRating;
+    }
+
+    private getTotalRating(): number {
         return this.averageRating * this.numberOfRating;
     }
 
