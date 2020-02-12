@@ -1,1 +1,3 @@
-<p>category-typeahead works!</p>
+<label for="">Add a category:</label>
+<input id="category-typeahead" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"
+    [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]='false' />
