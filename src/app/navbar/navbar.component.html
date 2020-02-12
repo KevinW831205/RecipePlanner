@@ -17,6 +17,7 @@
                 <li ngbDropdown *ngIf="user; else notLoggedIn" class="nav-item dropdown">
                     <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <fa-icon [icon]="faUserCircle"></fa-icon>
                         {{user.username}}
                     </a>
                     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">

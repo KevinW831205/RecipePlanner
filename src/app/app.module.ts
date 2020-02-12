@@ -38,6 +38,7 @@ import { InstructionService } from './services/instruction.service';
 import { RatingService } from './services/rating.service';
 import { IngredientService } from './services/ingredient.service';
 import { FiltererComponent } from './filterer/filterer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { FiltererComponent } from './filterer/filterer.component';
     AppRoutingModule,
     HttpClientModule,
     CustomFormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     RecipeService,

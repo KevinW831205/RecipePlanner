@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,7 @@ import { AuthService } from '../services/auth.service';
 export class NavbarComponent implements OnInit {
 
   user;
+  faUserCircle = faUserCircle;
 
   constructor(private authService : AuthService) { }
 
