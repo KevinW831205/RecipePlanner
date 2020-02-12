@@ -1,3 +1,4 @@
 <label for="">Add a category:</label>
 <input id="category-typeahead" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"
-    [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]='false' />
+    [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]='false'
+    (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)" />

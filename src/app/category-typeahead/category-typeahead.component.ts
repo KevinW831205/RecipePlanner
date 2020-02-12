@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Observable, Subscription, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Category } from '../models/Category';
 import { CategoryService } from '../services/category.service';
+import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-category-typeahead',
@@ -13,6 +14,9 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
 
   categories: Category[];
   categorySubscription: Subscription;
+  @ViewChild('instance', { static: true }) instance: NgbTypeahead;
+  focus$ = new Subject<string>();
+  click$ = new Subject<string>();
 
   constructor(private categoryService: CategoryService) { }
 
