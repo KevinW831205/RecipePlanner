@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Observable, Subscription, Subject } from 'rxjs';
+import { Observable, Subscription, Subject, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Category } from '../models/Category';
 import { CategoryService } from '../services/category.service';
@@ -37,12 +37,25 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
 
   formatter = (category: Category) => category.name;
 
-  search = (text$: Observable<string>) => text$.pipe(
-    debounceTime(200),
-    distinctUntilChanged(),
-    filter(term => term.length >= 1),
-    map(term => this.categories.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
-  )
+  search = (text$: Observable<string>) => {
+
+    const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
+    const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()));
+    
+    const inputFocus$ = this.focus$;
+    return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
+      map(term => (term === '') ? this.categories
+        : this.categories.filter(c => c.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)
+      )
+    );
+
+    // text$.pipe(
+    //   debounceTime(200),
+    //   distinctUntilChanged(),
+    //   filter(term => term.length >= 1),
+    //   map(term => this.categories.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
+    // )
+  }
 
 
 }
