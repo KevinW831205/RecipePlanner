@@ -13,11 +13,12 @@ export class RatingService extends DataService<Rating>{
     super(http, baseUrl + "rating")
   }
 
-  checkRated(): Promise<Rating> {
+  checkRated(recipeId, accountId): Promise<Rating> {
     try {
-      return this.http.get<Rating>(baseUrl + "rating/rated").toPromise();
+      return this.http.get<Rating>(`${baseUrl}rating/rated?recipe_id=${recipeId}&account_id=${accountId}`).toPromise();
     } catch (error) {
       console.log(error)
+      return null;
     }
   }
 

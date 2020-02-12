@@ -33,24 +33,31 @@ export class RecipeDetailPageComponent {
 
   }
 
-  checkRated(): boolean {
-    
-
-    return false;
+  async checkRated(): Promise<Rating> {
+    console.log(this.recipe.id, this.user.id)
+    if(this.user && this.recipe){
+      let result = await this.ratingService.checkRated(this.recipe.id, this.user.id);
+      return result;  
+    }
+    return null;
   }
 
-  rateRecipe(rate) {
+  async rateRecipe(rate) {
     console.log("rate", rate)
-    let rating = new Rating({ accountId: this.user.id, recipeId: this.recipe.id, rating: rate });
-    this.ratingService.create(rating).subscribe(
-      res => {
-        console.log(res)
-      },
-      err => {
+    let ratedRating = await this.checkRated();
+    if (ratedRating) {
 
-      }
-    );
+    } else {
+      let rating = new Rating({ accountId: this.user.id, recipeId: this.recipe.id, rating: rate });
+      this.ratingService.create(rating).subscribe(
+        res => {
+          console.log(res)
+        },
+        err => {
 
+        }
+      );
+    }
   }
 
 }
