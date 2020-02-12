@@ -5,4 +5,4 @@
 </ng-template>
 <ngb-rating [(rate)]="averageRating" (hover)="hovered=$event" [starTemplate]="t" [readonly]="!canRate" max="5"
     (click)="addRate()"></ngb-rating>
-<span class="rate-text">{{averageRating}} ({{numberOfRating || "0"}} reviews)</span>
+<span class="rate-text font-italic">{{averageRating | number:'1.2-2'}} ({{numberOfRating || "0"}} reviews)</span>
