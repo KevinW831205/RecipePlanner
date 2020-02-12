@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryTagsPageComponent implements OnInit {
 
+  categoryInput: string;
+
   constructor() { }
 
   ngOnInit() {
