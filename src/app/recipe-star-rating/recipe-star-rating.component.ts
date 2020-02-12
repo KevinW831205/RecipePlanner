@@ -10,7 +10,7 @@ export class RecipeStarRatingComponent implements OnInit {
   @Input() averageRating;
   @Input() numberOfRating;
   @Input() canRate = false;
-  @Output('rate') rateEmitter = new EventEmitter<number>();
+  @Output('addRate') rateEmitter = new EventEmitter<number>();
 
   hovered = 0;
 
@@ -19,7 +19,7 @@ export class RecipeStarRatingComponent implements OnInit {
   ngOnInit() {
   }
 
-  rate() {
+  addRate() {
     this.rateEmitter.emit(this.hovered);
   }
 

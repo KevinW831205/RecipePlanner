@@ -5,7 +5,7 @@
                 <h1>{{recipe.name}}</h1>
 
                 <app-recipe-star-rating *ngIf="!isRating" [averageRating]="recipe.averageRating"
-                    [numberOfRating]="recipe.numberOfRating" [canRate]="user" (rate)="rateRecipe($event)">
+                    [numberOfRating]="recipe.numberOfRating" [canRate]="user" (addRate)="rateRecipe($event)">
                 </app-recipe-star-rating>
 
                 <app-author-media></app-author-media>
