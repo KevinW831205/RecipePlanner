@@ -12,7 +12,6 @@ export class LoginModalContentComponent {
 
 
   checkSubmit(e){
-    console.log(e)
     if(e){
       this.activeModal.close('logged in')
     }
