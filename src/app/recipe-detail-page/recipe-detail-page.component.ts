@@ -51,7 +51,7 @@ export class RecipeDetailPageComponent {
       let rating = new Rating({ accountId: this.user.id, recipeId: this.recipe.id, rating: rate });
       this.ratingService.create(rating).subscribe(
         res => {
-          console.log(res)
+          
         },
         err => {
 

@@ -20,5 +20,14 @@ export class Recipe {
         Object.assign(this, init)
     }
 
+    addRating(rating: number) {
+        this.numberOfRating++;
+        let newAverage = this.getTotalRating() + rating;
+        this.averageRating = newAverage;
+    }
+
+    private getTotalRating() {
+        return this.averageRating * this.numberOfRating;
+    }
 
 }

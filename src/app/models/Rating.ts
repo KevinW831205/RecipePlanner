@@ -6,5 +6,4 @@ export class Rating {
     constructor(init?: Partial<Rating>) {
         Object.assign(this, init)
     }
-
 }
