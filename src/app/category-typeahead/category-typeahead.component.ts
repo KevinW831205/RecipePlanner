@@ -36,7 +36,7 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
   search = (text$: Observable<string>) => text$.pipe(
     debounceTime(200),
     distinctUntilChanged(),
-    filter(term => term.length >= 2),
+    filter(term => term.length >= 1),
     map(term => this.categories.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
   )
 

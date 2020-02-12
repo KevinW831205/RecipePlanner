@@ -11,6 +11,7 @@
                 <button class="btn btn-danger btn-sm" (click)="toggleEditName()">Cancel</button>
             </ng-template>
         </h2>
+        <app-category-typeahead></app-category-typeahead>
         <span>
             <button *ngIf="!recipe.published; else published" class="btn btn-info"
                 (click)="togglePublished()">Publish</button>
@@ -42,8 +43,7 @@
         <ng-template #editingDescription>
             <textarea class="w-100" [(ngModel)]="descriptionInput" [maxlength]="500"></textarea>
             <div class=" float-right length-text">{{descriptionInput.length}}/500</div>
-            <button type="button" (click)="saveDescription()"
-                class="btn btn-primary mr-2">Save</button>
+            <button type="button" (click)="saveDescription()" class="btn btn-primary mr-2">Save</button>
             <button type="button" class="btn btn-danger" (click)="toggleEditDescription()">Cancel</button>
         </ng-template>
 
