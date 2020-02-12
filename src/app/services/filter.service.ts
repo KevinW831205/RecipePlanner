@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class FilterService {
 
-  category$: Observable<String>
+  category$: Observable<string>
   private categorySubject = new Subject<string>();
 
   constructor() {

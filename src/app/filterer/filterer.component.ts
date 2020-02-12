@@ -11,9 +11,7 @@ export class FiltererComponent {
   constructor(private filterService: FilterService) { }
 
   filterByCategory(value) {
-    console.log(value);
-
-    
+    this.filterService.setCategory(value);
   }
 
 }
