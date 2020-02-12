@@ -39,7 +39,7 @@ export class RecipeDetailPageComponent {
       let result = await this.ratingService.checkRated(this.recipe.id, this.user.id);
       return result;  
     }
-    return null;
+    return Promise.resolve(null);
   }
 
   async rateRecipe(rate) {
