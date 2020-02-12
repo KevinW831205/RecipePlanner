@@ -39,6 +39,7 @@ import { IngredientService } from './services/ingredient.service';
 import { FiltererComponent } from './filterer/filterer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountsComponent } from './admin/accounts/accounts.component';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { AccountsComponent } from './admin/accounts/accounts.component';
     AccountService,
     InstructionService,
     IngredientService,
-    RatingService
+    RatingService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
