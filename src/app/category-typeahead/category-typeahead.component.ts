@@ -14,9 +14,12 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
 
   categories: Category[];
   categorySubscription: Subscription;
+
   @ViewChild('instance', { static: true }) instance: NgbTypeahead;
   focus$ = new Subject<string>();
   click$ = new Subject<string>();
+
+  filterCategory: Category;
 
   constructor(private categoryService: CategoryService) { }
 
@@ -41,7 +44,7 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
 
     const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
     const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()));
-    
+
     const inputFocus$ = this.focus$;
     return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
       map(term => (term === '') ? this.categories
@@ -55,6 +58,10 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
     //   filter(term => term.length >= 1),
     //   map(term => this.categories.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
     // )
+  }
+
+  addCategory() {
+    console.log(this.filterCategory)
   }
 
 
