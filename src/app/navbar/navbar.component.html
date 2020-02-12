@@ -24,8 +24,8 @@
                         <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" routerLink="/my/profile">My Profile</a>
                         <a class="dropdown-item" routerLink="/my/recipes">My Recipes</a>
-                        <a class="dropdown-item" *ngIf="user.admin">See Accounts</a>
-                        <a class="dropdown-item" *ngIf="user.admin">Category Tags</a>
+                        <a class="dropdown-item" routerLink="/admin/accounts" *ngIf="user.admin">See Accounts</a>
+                        <a class="dropdown-item" routerLink = "/admin/category" *ngIf="user.admin">Category Tags</a>
                         <a class="dropdown-item" (click)="logout()">Log Out</a>
                     </div>
                 </li>
