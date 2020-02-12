@@ -1,4 +1,12 @@
 <form class="form-inline my-2 my-lg-0">
+
+    <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>All</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem>All</button>
+        </div>
+    </div>
+
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
