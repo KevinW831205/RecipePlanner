@@ -10,7 +10,11 @@ export class FilterService {
   private categorySubject = new Subject<string>();
 
   constructor() {
-    this.categorySubject.asObservable();
+    this.category$ = this.categorySubject.asObservable();
+  }
+
+  getCategory$() {
+    return this.category$;
   }
 
   setCategory(category: string) {

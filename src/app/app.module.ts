@@ -41,6 +41,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountsComponent } from './admin/accounts/accounts.component';
 import { CategoryService } from './services/category.service';
 import { CategoryDropdownComponent } from './category-dropdown/category-dropdown.component';
+import { FilterService } from './services/filter.service';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { CategoryDropdownComponent } from './category-dropdown/category-dropdown
     InstructionService,
     IngredientService,
     RatingService,
-    CategoryService
+    CategoryService,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })
