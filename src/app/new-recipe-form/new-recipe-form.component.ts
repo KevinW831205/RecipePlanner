@@ -18,7 +18,6 @@ export class NewRecipeFormComponent implements OnInit, OnDestroy {
   user: Account;
   subscription: Subscription;
   error: boolean = false;
-  description;
 
   constructor(private authService: AuthService, private recipeService: RecipeService, private router: Router, public activeModal: NgbActiveModal) { }
 

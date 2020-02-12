@@ -13,7 +13,11 @@
         <textarea #description="ngModel" ngModel name="description" id="description" type="text" class="form-control"
             [maxlength]="500">
             </textarea>
-        <div class="float-right length-text">{{description.value.length}}/500</div>
+        <div class="float-right length-text" *ngIf="description.value; else lengthTrackerNull">
+            {{description.value.length}}/500</div>
+        <ng-template #lengthTrackerNull>
+            <div class="float-right length-text">0/500</div>
+        </ng-template>
     </div>
 
     <button class="btn btn-primary">Submit</button>

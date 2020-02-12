@@ -28,16 +28,16 @@ export class RecipeDetailPageComponent {
     this.recipeService.get(this.route.snapshot.paramMap.get('id')).pipe(
       take(1)
     ).subscribe(r => {
-      this.recipe = r;
+      this.recipe = new Recipe(r);
     });
 
   }
 
   async checkRated(): Promise<Rating> {
     console.log(this.recipe.id, this.user.id)
-    if(this.user && this.recipe){
+    if (this.user && this.recipe) {
       let result = await this.ratingService.checkRated(this.recipe.id, this.user.id);
-      return result;  
+      return result;
     }
     return Promise.resolve(null);
   }
@@ -51,7 +51,7 @@ export class RecipeDetailPageComponent {
       let rating = new Rating({ accountId: this.user.id, recipeId: this.recipe.id, rating: rate });
       this.ratingService.create(rating).subscribe(
         res => {
-          
+          this.recipe.addRating(res.rating);
         },
         err => {
 
