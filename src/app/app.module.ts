@@ -40,6 +40,7 @@ import { FiltererComponent } from './filterer/filterer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountsComponent } from './admin/accounts/accounts.component';
 import { CategoryService } from './services/category.service';
+import { CategoryDropdownComponent } from './category-dropdown/category-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { CategoryService } from './services/category.service';
     EditRecipePageComponent,
     FiltererComponent,
     AccountsComponent,
+    CategoryDropdownComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
