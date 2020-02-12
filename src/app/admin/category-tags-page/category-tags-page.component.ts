@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/Category';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-category-tags-page',
@@ -10,12 +11,14 @@ import { Category } from 'src/app/models/Category';
 export class CategoryTagsPageComponent implements OnInit {
 
   categoryInput: string;
+  categories$: Observable<Category[]>;
 
   constructor(private categoryService: CategoryService) {
 
   }
 
   ngOnInit() {
+    this.categories$ = this.categoryService.getAll()
   }
 
   createCategory() {

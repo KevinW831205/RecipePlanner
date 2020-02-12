@@ -1,6 +1,7 @@
 <div class="container">
     <form #categoryForm="ngForm" class="form-inline float-right">
-        <div class="alert alert-danger mr-2" *ngIf="category.touched && category.invalid">Must have a category name</div>
+        <div class="alert alert-danger mr-2" *ngIf="category.touched && category.invalid">Must have a category name
+        </div>
         <label class="sr-only" for="inlineFormInputName2">Category Name</label>
         <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Category Name" #category="ngModel"
             [(ngModel)]="categoryInput" name="categoryInput" id="categoryInput" required>
@@ -14,12 +15,14 @@
         <thead>
             <th>Category Name</th>
             <th>Number Of Recipes</th>
-            <th>
-
-            </th>
+            <th></th>
         </thead>
-        <tbody>
-
+        <tbody *ngIf="categories$ | async as categories">
+            <tr *ngFor="let category of categories">
+                <td>{{category.name}}</td>
+                <td>{{category.recipes.length}}</td>
+                <td></td>
+            </tr>
         </tbody>
 
     </table>
