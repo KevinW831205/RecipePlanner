@@ -34,7 +34,6 @@ export class RecipeDetailPageComponent {
   }
 
   async checkRated(): Promise<Rating> {
-    console.log(this.recipe.id, this.user.id)
     if (this.user && this.recipe) {
       let result = await this.ratingService.checkRated(this.recipe.id, this.user.id);
       return result;
@@ -43,13 +42,13 @@ export class RecipeDetailPageComponent {
   }
 
   async rateRecipe(rate) {
-    console.log("rate", rate)
     let ratedRating = await this.checkRated();
     if (ratedRating) {
+      let oldRating = ratedRating.rating;
       ratedRating.rating = rate;
       this.ratingService.update(ratedRating).subscribe(
         res => {
-
+          this.recipe.updateRating(res.rating, oldRating)
         },
         err => {
 
