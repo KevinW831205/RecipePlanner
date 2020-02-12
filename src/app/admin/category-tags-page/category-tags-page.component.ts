@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/Category';
 import { Subscription, Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category-tags-page',
@@ -35,7 +36,9 @@ export class CategoryTagsPageComponent implements OnInit, OnDestroy {
 
   createCategory() {
     let newCategory = new Category({ name: this.categoryInput })
-    this.categoryService.create(newCategory).subscribe(
+    this.categoryService.create(newCategory).pipe(
+      take(1)
+    ).subscribe(
       res => {
         res.recipes = [];
         this.categories.push(res);
@@ -46,7 +49,19 @@ export class CategoryTagsPageComponent implements OnInit, OnDestroy {
     )
   }
 
-  // deleteCategory(category: Category){
-  // }
+  deleteCategory(category: Category) {
+    this.categoryService.delete(category.id).pipe(
+      take(1)
+    ).subscribe(
+      res => {
+        let index = this.categories.indexOf(res);
+        this.categories.splice(index, 1);
+      },
+      err => {
+
+      }
+    )
+
+  }
 
 }
