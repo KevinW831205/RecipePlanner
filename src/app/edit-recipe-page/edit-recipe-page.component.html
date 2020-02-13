@@ -2,7 +2,7 @@
     <div *ngIf="authorized; else unauthorized">
         <h2>Editing
             <span *ngIf="!editName; else editingName">
-                {{recipe.name}}
+                {{recipe.name | titlecase}}
                 <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button>
             </span>
             <ng-template #editingName>
@@ -12,13 +12,19 @@
             </ng-template>
         </h2>
 
-        <button *ngIf="!recipe.published; else published" class="btn btn-info"
-            (click)="togglePublished()">Publish</button>
-        <ng-template #published>
-            <button class="btn btn-secondary" (click)="togglePublished()">Unpublish</button>
-        </ng-template>
+        <div>
+            <button *ngIf="!recipe.published; else published" class="btn btn-info"
+                (click)="togglePublished()">Publish</button>
+            <ng-template #published>
+                <button class="btn btn-secondary" (click)="togglePublished()">Unpublish</button>
+            </ng-template>
+            <h6>Current Status:
+                <span class="text-success" *ngIf="recipe.published">Published</span>
+                <span class="text-danger" *ngIf="!recipe.published">Not-Published</span>
+            </h6>
 
-        <app-category-typeahead></app-category-typeahead>
+        </div>
+
 
 
         <div class="my-3 image-container">
@@ -66,6 +72,8 @@
         </div>
 
     </div>
+
+    <app-category-typeahead></app-category-typeahead>
 
     <ng-template #unauthorized>
         <h3>Unauthorized to Edit this recipe</h3>
