@@ -116,19 +116,29 @@ export class EditRecipePageComponent implements OnInit {
   }
 
   addCategory(category: Category) {
-
-    console.log(category)
-
     this.recipeService.addTag(this.recipe.id, category.id).pipe(
       take(1)
     ).subscribe(
       res => {
-        this.recipe.categories = res.categories;
+        this.recipe.categoryTags = res.categoryTags;
       },
       err => {
 
       }
     )
+  }
+
+  removeTag(category: Category) {
+    this.recipeService.deleteTag(this.recipe.id, category.id).pipe(
+      take(1)
+    ).subscribe(
+      res => {
+        this.recipe.categoryTags = res.categoryTags;
+      }, err => {
+        console.log(err)
+      }
+    )
+
   }
 
 

@@ -27,7 +27,12 @@
         <div class="border border-dark p-3">
             <app-category-typeahead (categoryEmitter)="addCategory($event)"></app-category-typeahead>
             <div class="mt-2">
-                <span *ngFor="let tag of recipe.categoryTags" class="btn btn-outline-dark mr-1">{{tag.name}}</span>
+                <span *ngFor="let tag of recipe.categoryTags" class="btn btn-outline-dark mr-1">{{tag.name}}
+                    <button type="button" class="close" aria-label="Close" (click)="removeTag(tag)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </span>
+
             </div>
         </div>
 

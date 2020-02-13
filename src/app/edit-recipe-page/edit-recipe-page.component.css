@@ -9,3 +9,13 @@
     bottom: 5px;
     right: 5px;
 }
+
+.btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active, .btn-outline-dark.active{
+    cursor: default;
+    background-color: white;
+    color: black;
+}
+
+.close{
+    color:red;
+}
