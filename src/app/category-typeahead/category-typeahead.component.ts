@@ -51,13 +51,6 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
         : this.categories.filter(c => c.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)
       )
     );
-
-    // text$.pipe(
-    //   debounceTime(200),
-    //   distinctUntilChanged(),
-    //   filter(term => term.length >= 1),
-    //   map(term => this.categories.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
-    // )
   }
 
   addCategory() {
