@@ -48,11 +48,9 @@ export class RecipePageComponent implements OnInit, OnDestroy {
 
     this.querySubscription = this.filterSerivce.getQuery$().subscribe(
       res => {
-        console.log(res)
         this.filteredRecipes = (!res) ? this.recipes : this.recipes.filter(r => {
           return r.name.toLowerCase().includes(res.toLowerCase());
         })
-
       }, err => {
 
       }
