@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { Observable, Subscription, Subject, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Category } from '../models/Category';
@@ -9,6 +9,7 @@ import { } from 'events';
 @Component({
   selector: 'app-category-typeahead',
   templateUrl: './category-typeahead.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./category-typeahead.component.css']
 })
 export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
