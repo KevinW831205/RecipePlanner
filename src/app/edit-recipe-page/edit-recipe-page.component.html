@@ -24,7 +24,7 @@
             </h6>
         </div>
 
-        <div class="border border-dark p-3">
+        <div class="border border-gray rounded p-3">
             <app-category-typeahead (categoryEmitter)="addCategory($event)"></app-category-typeahead>
             <div class="mt-2">
                 <span *ngFor="let tag of recipe.categoryTags" class="btn btn-outline-dark mr-1">{{tag.name}}
@@ -51,17 +51,19 @@
             </form>
         </div>
 
-        <h3>Description <button class="btn btn-warning btn-sm"
-                (click)="toggleEditDescription(); populateDescription()">Edit
-                Description</button></h3>
+        <div class="border border-gray rounded p-3">
+            <h3>Description <button class="btn btn-warning btn-sm"
+                    (click)="toggleEditDescription(); populateDescription()">Edit
+                    Description</button></h3>
 
-        <p class="mb-5" *ngIf="!editDescription;else editingDescription">{{recipe.description || "(empty)"}}</p>
-        <ng-template #editingDescription>
-            <textarea class="w-100" [(ngModel)]="descriptionInput" [maxlength]="500"></textarea>
-            <div class=" float-right length-text">{{descriptionInput.length}}/500</div>
-            <button type="button" (click)="saveDescription()" class="btn btn-primary mr-2">Save</button>
-            <button type="button" class="btn btn-danger" (click)="toggleEditDescription()">Cancel</button>
-        </ng-template>
+            <p class="mb-5" *ngIf="!editDescription;else editingDescription">{{recipe.description || "(empty)"}}</p>
+            <ng-template #editingDescription>
+                <textarea class="w-100" [(ngModel)]="descriptionInput" [maxlength]="500"></textarea>
+                <div class=" float-right length-text">{{descriptionInput.length}}/500</div>
+                <button type="button" (click)="saveDescription()" class="btn btn-primary mr-2">Save</button>
+                <button type="button" class="btn btn-danger" (click)="toggleEditDescription()">Cancel</button>
+            </ng-template>
+        </div>
 
         <div class="row">
             <div class="col-md-6 col-sm-12">
