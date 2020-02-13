@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpErrorHandlerService } from '../services/http-error-handler.service';
+import { ErrorService } from '../services/error.service';
 
 @Component({
   selector: 'app-error-alert',
@@ -10,10 +10,14 @@ export class ErrorAlertComponent implements OnInit {
 
   hasError: boolean = false;
 
-  constructor() { }
+  constructor(private errorService: ErrorService) { }
 
   ngOnInit() {
-
+    this.errorService.getHasError$().subscribe(
+      res => {
+        this.hasError = res;
+      }
+    )
   }
 
 }

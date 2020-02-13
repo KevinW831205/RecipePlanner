@@ -44,6 +44,7 @@ import { CategoryDropdownComponent } from './category-dropdown/category-dropdown
 import { FilterService } from './services/filter.service';
 import { CategoryTypeaheadComponent } from './category-typeahead/category-typeahead.component';
 import { ErrorAlertComponent } from './error-alert/error-alert.component';
+import { ErrorService } from './services/error.service';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { ErrorAlertComponent } from './error-alert/error-alert.component';
     RatingService,
     CategoryService,
     FilterService,
+    ErrorService
   ],
   bootstrap: [AppComponent]
 })
