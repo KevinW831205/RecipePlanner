@@ -23,61 +23,40 @@ export class DataService<someType> {
     return this.http.get<someType[]>(this.url + "/", httpOptions).pipe(
       catchError(err => { return this.handleError(err) })
     );
-
-
-    // try {
-    //   return this.http.get<someType[]>(this.url + "/", httpOptions);
-    // } catch (error) {
-    //   this.handleError(error);
-    // }
   }
 
   get(id): Observable<someType> {
-    try {
-      return this.http.get<someType>(this.url + '/' + id, httpOptions);
-    } catch (error) {
-      this.handleError(error);
-    }
+    return this.http.get<someType>(this.url + '/' + id, httpOptions).pipe(
+      catchError(err => { return this.handleError(err) })
+    );
   }
 
 
   create(resource): Observable<someType> {
-    console.log(resource)
-    try {
-      return this.http.post<someType>(this.url + "/", JSON.stringify(resource), httpOptions);
-    } catch (error) {
-      this.handleError(error);
-    }
+    return this.http.post<someType>(this.url + "/", JSON.stringify(resource), httpOptions).pipe(
+      catchError(err => { return this.handleError(err) })
+    );
   }
 
   update(resource): Observable<someType> {
-    try {
-      return this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource), httpOptions);
-    } catch (error) {
-      this.handleError(error);
-    }
+    return this.http.put<someType>(this.url + "/" + resource.id, JSON.stringify(resource), httpOptions).pipe(
+      catchError(err => { return this.handleError(err) })
+    );
   }
 
   delete(id): Observable<someType> {
-    try {
-      return this.http.delete<someType>(this.url + "/" + id, httpOptions);
-    } catch (error) {
-      this.handleError(error);
-    }
+    return this.http.delete<someType>(this.url + "/" + id, httpOptions).pipe(
+      catchError(err => { return this.handleError(err) })
+    );
   }
 
   handleError(error) {
-
-
-    console.log("dataService handle error")
-    console.log(error)
     if (error.status === 400) {
     }
     if (error.status === 404) {
     }
     this.errorService.emitError();
     return throwError('error occured')
-
   }
 
 }
