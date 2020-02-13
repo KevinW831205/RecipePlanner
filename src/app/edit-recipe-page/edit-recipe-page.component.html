@@ -11,14 +11,15 @@
                 <button class="btn btn-danger btn-sm" (click)="toggleEditName()">Cancel</button>
             </ng-template>
         </h2>
+
+        <button *ngIf="!recipe.published; else published" class="btn btn-info"
+            (click)="togglePublished()">Publish</button>
+        <ng-template #published>
+            <button class="btn btn-secondary" (click)="togglePublished()">Unpublish</button>
+        </ng-template>
+
         <app-category-typeahead></app-category-typeahead>
-        <span>
-            <button *ngIf="!recipe.published; else published" class="btn btn-info"
-                (click)="togglePublished()">Publish</button>
-            <ng-template #published>
-                <button class="btn btn-secondary" (click)="togglePublished()">Unpublish</button>
-            </ng-template>
-        </span>
+
 
         <div class="my-3 image-container">
             <img [src]="recipe.imageUrl" class="img-fluid">

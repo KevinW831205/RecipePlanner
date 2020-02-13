@@ -1,7 +1,9 @@
 <label for="">Add a category:</label>
-<input #instance="ngbTypeahead" id="category-typeahead" type="text" class="form-control" [(ngModel)]="filterCategory"
-    [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]='false'
-    (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)" (keyup.enter)="addCategory()">
-
-
-<button class="btn btn-primary" (click)="addCategory()">Add Category</button>
+<form class="form-inline">
+    <input #instance="ngbTypeahead" id="category-typeahead" type="text" class="form-control"
+        [ngModelOptions]="{standalone: true}" [(ngModel)]=" filterCategory" [ngbTypeahead]="search"
+        [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]='false'
+        (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)"
+        (keyup.enter)="addCategory()">
+    <button class="btn btn-primary" (click)="addCategory()">Add Category</button>
+</form>
