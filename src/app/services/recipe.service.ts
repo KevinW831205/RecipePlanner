@@ -55,7 +55,7 @@ export class RecipeService extends DataService<Recipe> {
 
   addTag(recipeId, tagId) {
     try {
-      return this.http.put<Recipe>(`${baseUrl}recipe/tag?recipe_id${recipeId}&tag_id${tagId}`, null, httpOptions);
+      return this.http.put<Recipe>(`${baseUrl}recipe/tag?recipe_id=${recipeId}&tag_id=${tagId}`, null, httpOptions);
     } catch (error) {
       super.handleError(error);
     }

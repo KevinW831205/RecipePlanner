@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { Subscription, VirtualTimeScheduler } from 'rxjs';
 import { Recipe } from '../models/Recipe';
 import { Category } from '../models/Category';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-edit-recipe-page',
@@ -118,7 +119,16 @@ export class EditRecipePageComponent implements OnInit {
 
     console.log(category)
 
-    this.recipeService
+    this.recipeService.addTag(this.recipe.id, category.id).pipe(
+      take(1)
+    ).subscribe(
+      res => {
+        this.recipe.categories = res.categories;
+      },
+      err => {
+
+      }
+    )
   }
 
 

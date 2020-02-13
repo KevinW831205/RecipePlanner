@@ -25,6 +25,7 @@
         </div>
 
         <app-category-typeahead (categoryEmitter)="addCategory($event)"></app-category-typeahead>
+        <p *ngFor="let c of recipe.categoryTags">{{c.name}}</p>
 
         <div class="my-3 image-container">
             <img [src]="recipe.imageUrl" class="img-fluid">
