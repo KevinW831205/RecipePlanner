@@ -4,6 +4,7 @@ import { RecipeService } from '../services/recipe.service';
 import { AuthService } from '../services/auth.service';
 import { Subscription, VirtualTimeScheduler } from 'rxjs';
 import { Recipe } from '../models/Recipe';
+import { Category } from '../models/Category';
 
 @Component({
   selector: 'app-edit-recipe-page',
@@ -111,6 +112,10 @@ export class EditRecipePageComponent implements OnInit {
 
   populateDescription() {
     this.descriptionInput = this.recipe.description;
+  }
+
+  addCategory(category: Category) {
+    console.log(category)
   }
 
 

@@ -24,7 +24,7 @@
             </h6>
         </div>
 
-        <app-category-typeahead></app-category-typeahead>
+        <app-category-typeahead (categoryEmitter)="addCategory($event)"></app-category-typeahead>
 
         <div class="my-3 image-container">
             <img [src]="recipe.imageUrl" class="img-fluid">
