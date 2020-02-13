@@ -100,7 +100,7 @@ import { ErrorAlertComponent } from './error-alert/error-alert.component';
     IngredientService,
     RatingService,
     CategoryService,
-    FilterService
+    FilterService,
   ],
   bootstrap: [AppComponent]
 })

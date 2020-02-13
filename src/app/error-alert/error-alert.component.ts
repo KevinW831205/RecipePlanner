@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorHandlerService } from '../services/http-error-handler.service';
 
 @Component({
   selector: 'app-error-alert',
@@ -12,6 +13,7 @@ export class ErrorAlertComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

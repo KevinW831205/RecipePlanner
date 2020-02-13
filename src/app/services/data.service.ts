@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, throwError, Subject } from 'rxjs';
 import { httpOptions } from './httpConfig';
 
 
@@ -19,6 +19,11 @@ export class DataService<someType> {
   }
 
   getAll(): Observable<someType[]> {
+    return this.http.get<someType[]>(this.url + "/", httpOptions).pipe(
+      catchError(this.handleError)
+    );
+
+
     try {
       return this.http.get<someType[]>(this.url + "/", httpOptions);
     } catch (error) {
@@ -60,11 +65,14 @@ export class DataService<someType> {
     }
   }
 
-  handleError(error: Response) {
+  handleError(error) {
+    console.log("handle error")
     if (error.status === 400) {
     }
     if (error.status === 404) {
     }
+    return throwError('error occured')
+
   }
 
 }
