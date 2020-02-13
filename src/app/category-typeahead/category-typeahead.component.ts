@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, EventEmitter, Output } from '@angular/core';
 import { Observable, Subscription, Subject, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Category } from '../models/Category';
 import { CategoryService } from '../services/category.service';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+import { } from 'events';
 
 @Component({
   selector: 'app-category-typeahead',
@@ -11,6 +12,8 @@ import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./category-typeahead.component.css']
 })
 export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
+
+  @Output('categoryEmitter') categoryEmitter = new EventEmitter<Category>();
 
   categories: Category[];
   categorySubscription: Subscription;
@@ -54,7 +57,9 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
   }
 
   addCategory() {
-    console.log(this.filterCategory)
+    if (this.filterCategory) {
+      this.categoryEmitter.emit(this.filterCategory)
+    }
   }
 
 
