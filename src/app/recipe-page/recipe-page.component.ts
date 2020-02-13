@@ -14,22 +14,47 @@ export class RecipePageComponent implements OnInit, OnDestroy {
 
   category;
   categorySubscription: Subscription;
-  recipes$: Observable<Recipe[]>;
+  query: string;
+  querySubscription: Subscription;
+  recipes: Recipe[];
+  filteredRecipes: Recipe[];
+  recipeSubscription: Subscription;
 
   constructor(private recipeService: RecipeService, private filterSerivce: FilterService) { }
 
   ngOnInit() {
-    this.recipes$ = this.recipeService.getPublished()
+    this.recipeSubscription = this.recipeService.getPublished().subscribe(
+      res => {
+        this.recipes = res;
+        this.filteredRecipes = res;
+      }, err => {
+
+      }
+    )
+
     this.categorySubscription = this.filterSerivce.getCategory$().subscribe(
       res => {
+        console.log(res)
         this.category = res;
-        console.log(this.category)
+
+      }, err => {
+
+      }
+    )
+
+    this.querySubscription = this.filterSerivce.getQuery$().subscribe(
+      res => {
+        console.log(res);
+        this.query = res;
+      }, err => {
+
       }
     )
   }
 
   ngOnDestroy() {
     this.categorySubscription.unsubscribe();
+    this.recipeSubscription.unsubscribe();
   }
 
 

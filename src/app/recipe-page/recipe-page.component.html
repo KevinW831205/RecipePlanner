@@ -1,10 +1,10 @@
 <div class="container">
     <app-filterer></app-filterer>
-    <div *ngIf="recipes$ | async as recipes" [ngClass]="{
-         'row':recipes.length>0
+    <div *ngIf="filteredRecipes" [ngClass]="{
+         'row':filteredRecipes.length>0
         }">
-        <h3 *ngIf="recipes.length === 0" class="text-center">No Recipes Found</h3>
-        <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of recipes">
+        <h3 *ngIf="filteredRecipes.length === 0" class="text-center">No Recipes Found</h3>
+        <div class="col-md-4 col-sm-12 my-3" *ngFor="let recipe of filteredRecipes">
             <app-recipe-card [recipe]="recipe"></app-recipe-card>
         </div>
     </div>
