@@ -1,0 +1,7 @@
+.my-tooltip-invalid .tooltip-inner{
+    background-color:red;
+}
+
+.my-tooltip-invalid .arrow::before {
+    border-top-color: red;
+  }
