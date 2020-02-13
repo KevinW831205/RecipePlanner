@@ -29,13 +29,20 @@ export class AuthService {
       this.accountService.getAccount(JSON.parse(user)).subscribe(res => {
         this.userSubject.next(res);
       })
-      // this.userSubject.next(JSON.parse(user));
     }
   }
 
   isLoggedIn() {
     let user = localStorage.getItem('user');
     if (user) {
+      return true;
+    }
+    return false;
+  }
+
+  isAdmin() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.admin) {
       return true;
     }
     return false;
