@@ -1,7 +1,7 @@
-.my-tooltip-invalid .tooltip-inner{
-    background-color:red;
+.my-custom-class .tooltip-inner {
+    background-color: red !important;
 }
 
-.my-tooltip-invalid .arrow::before {
-    border-top-color: red;
-  }
+.my-custom-class .arrow::before {
+    border-top-color: red !important;
+}

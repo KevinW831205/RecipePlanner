@@ -66,6 +66,8 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
     }
 
     tooltip.open();
+    setTimeout(() => { tooltip.close() }, 2000)
+
   }
 
 
