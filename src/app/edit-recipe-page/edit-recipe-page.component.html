@@ -22,10 +22,9 @@
                 <span class="text-success" *ngIf="recipe.published">Published</span>
                 <span class="text-danger" *ngIf="!recipe.published">Not-Published</span>
             </h6>
-
         </div>
 
-
+        <app-category-typeahead></app-category-typeahead>
 
         <div class="my-3 image-container">
             <img [src]="recipe.imageUrl" class="img-fluid">
@@ -72,8 +71,6 @@
         </div>
 
     </div>
-
-    <app-category-typeahead></app-category-typeahead>
 
     <ng-template #unauthorized>
         <h3>Unauthorized to Edit this recipe</h3>
