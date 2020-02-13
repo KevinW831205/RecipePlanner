@@ -4,6 +4,7 @@
         [ngModelOptions]="{standalone: true}" [(ngModel)]=" filterCategory" [ngbTypeahead]="search"
         [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]='false'
         (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)"
-        (keyup.enter)="addCategory()" placeholder="Lookup a Category">
-    <button type="button" class="btn btn-primary" (click)="addCategory()">Add Category</button>
+        (keyup.enter)="addCategory(tooltip)" placeholder="Lookup a Category" ngbTooltip="Invalid category"
+        #tooltip="ngbTooltip">
+    <button type="button" class="btn btn-primary" (click)="addCategory(tooltip)">Add Category</button>
 </form>

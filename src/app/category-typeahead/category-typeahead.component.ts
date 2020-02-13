@@ -24,6 +24,8 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
 
   filterCategory: Category;
 
+
+
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
@@ -56,10 +58,14 @@ export class CategoryTypeaheadComponent implements OnInit, OnDestroy {
     );
   }
 
-  addCategory() {
+  addCategory(tooltip) {
+
     if (this.filterCategory) {
       this.categoryEmitter.emit(this.filterCategory)
+      return
     }
+
+    tooltip.open();
   }
 
 
