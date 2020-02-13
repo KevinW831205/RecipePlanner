@@ -1,20 +1,21 @@
 import { Instruction } from './Instruction';
 import { Ingredient } from './Ingredient';
 import { Account } from './Account';
+import { Category } from './Category';
 
 
 export class Recipe {
 
     id
     name: string;
-    account : Account;
+    account: Account;
     imageUrl: string;
     instructionList: Instruction[];
     ingredientList: Ingredient[];
     numberOfRating;
     averageRating;
     description: string;
-    categories;
+    categoryTags: Category[];
     published: boolean;
 
     constructor(init?: Partial<Recipe>) {

@@ -61,4 +61,12 @@ export class RecipeService extends DataService<Recipe> {
     }
   }
 
+  deleteTag(recipeId, tagId) {
+    try {
+      return this.http.delete<Recipe>(`${baseUrl}recipe/tag?recipe_id=${recipeId}&tag_id=${tagId}`, httpOptions);
+    } catch (error) {
+      super.handleError(error);
+    }
+  }
+
 }
