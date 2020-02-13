@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
+import { AdminGuard } from './services/admin-guard.service';
 
 const routes: Routes = [
 
@@ -23,8 +24,8 @@ const routes: Routes = [
   { path: 'recipe/edit/:id', component: EditRecipePageComponent, canActivate: [AuthGuard] },
   { path: 'recipe/:id', component: RecipeDetailPageComponent },
   { path: 'profile/:username', component: ProfileComponent },
-  { path: 'admin/category', component: CategoryTagsPageComponent },
-  { path: 'admin/accounts', component: AccountsComponent },
+  { path: 'admin/category', component: CategoryTagsPageComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'admin/accounts', component: AccountsComponent, canActivate: [AuthGuard, AdminGuard] },
   // { path:'', component: },
   { path: '', redirectTo: '/recipes', pathMatch: 'full' }
 ];
