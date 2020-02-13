@@ -24,7 +24,44 @@
             </h6>
         </div>
 
-        <div class="border border-gray rounded p-3">
+
+
+
+
+        <div class="border border-gray rounded row mx-0 p-3 my-2">
+            <div class="col-sm-12 col-md-6">
+                <h3>Description <button class="btn btn-warning btn-sm"
+                        (click)="toggleEditDescription(); populateDescription()">Edit
+                        Description</button></h3>
+
+                <p class="mb-5" *ngIf="!editDescription;else editingDescription">{{recipe.description || "(empty)"}}</p>
+                <ng-template #editingDescription>
+                    <textarea class="w-100" [(ngModel)]="descriptionInput" [maxlength]="500"></textarea>
+                    <div class=" float-right length-text">{{descriptionInput.length}}/500</div>
+                    <button type="button" (click)="saveDescription()" class="btn btn-primary mr-2">Save</button>
+                    <button type="button" class="btn btn-danger" (click)="toggleEditDescription()">Cancel</button>
+                </ng-template>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="my-3 image-container">
+                    <img [src]="recipe.imageUrl" class="img-fluid">
+                    <button class="btn btn-warning image-edit-btn rounded" (click)="toggelEditImage()">Change
+                        Image</button>
+                </div>
+                <div *ngIf="editImage">
+                    <form class="form-inline">
+                        <label class="sr-only" for="imageUrl">Image Url</label>
+                        <input #imageUrlInput (keyup.enter)="saveImageUrl(imageUrlInput.value)" type="text"
+                            name="imageUrl" id="imageUrl" class="rounded mb-2 mr-3 p-1" [value]=recipe.imageUrl>
+                        <button type="button" (click)="saveImageUrl(imageUrlInput.value)"
+                            class="btn btn-primary mr-2">Save</button>
+                        <button type="button" class="btn btn-danger" (click)="toggelEditImage()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="border border-gray rounded p-3 my-2">
             <app-category-typeahead (categoryEmitter)="addCategory($event)"></app-category-typeahead>
             <div class="mt-2">
                 <span *ngFor="let tag of recipe.categoryTags" class="btn btn-outline-dark mr-1">{{tag.name}}
@@ -32,37 +69,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </span>
-
             </div>
-        </div>
-
-        <div class="my-3 image-container">
-            <img [src]="recipe.imageUrl" class="img-fluid">
-            <button class="btn btn-warning image-edit-btn rounded" (click)="toggelEditImage()">Change Image</button>
-        </div>
-        <div *ngIf="editImage">
-            <form class="form-inline">
-                <label class="sr-only" for="imageUrl">Image Url</label>
-                <input #imageUrlInput (keyup.enter)="saveImageUrl(imageUrlInput.value)" type="text" name="imageUrl"
-                    id="imageUrl" class="mb-2 mr-3 p-1" [value]=recipe.imageUrl>
-                <button type="button" (click)="saveImageUrl(imageUrlInput.value)"
-                    class="btn btn-primary mr-2">Save</button>
-                <button type="button" class="btn btn-danger" (click)="toggelEditImage()">Cancel</button>
-            </form>
-        </div>
-
-        <div class="border border-gray rounded p-3">
-            <h3>Description <button class="btn btn-warning btn-sm"
-                    (click)="toggleEditDescription(); populateDescription()">Edit
-                    Description</button></h3>
-
-            <p class="mb-5" *ngIf="!editDescription;else editingDescription">{{recipe.description || "(empty)"}}</p>
-            <ng-template #editingDescription>
-                <textarea class="w-100" [(ngModel)]="descriptionInput" [maxlength]="500"></textarea>
-                <div class=" float-right length-text">{{descriptionInput.length}}/500</div>
-                <button type="button" (click)="saveDescription()" class="btn btn-primary mr-2">Save</button>
-                <button type="button" class="btn btn-danger" (click)="toggleEditDescription()">Cancel</button>
-            </ng-template>
         </div>
 
         <div class="row">

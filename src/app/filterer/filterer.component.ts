@@ -14,4 +14,8 @@ export class FiltererComponent {
     this.filterService.setCategory(value);
   }
 
+  filterByInput() {
+
+  }
+
 }
