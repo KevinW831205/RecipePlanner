@@ -115,7 +115,10 @@ export class EditRecipePageComponent implements OnInit {
   }
 
   addCategory(category: Category) {
+
     console.log(category)
+
+    this.recipeService
   }
 
 
