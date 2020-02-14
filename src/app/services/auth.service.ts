@@ -44,7 +44,6 @@ export class AuthService {
     let user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       user = await this.accountService.getAccount(user).toPromise();
-      console.log("user is admin: ", user.admin);
       return user.admin;
     }
     return false;
