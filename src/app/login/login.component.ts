@@ -43,6 +43,18 @@ export class LoginComponent {
     )
   }
 
+  demouserLogin() {
+    this.account.username="demouser"
+    this.account.password="demo123"
+    this.login();
+  }
+
+  demoadminLogin() {
+    this.account.username="demoadmin"
+    this.account.password="demo123"
+    this.login();
+
+  }
 
 
 }
