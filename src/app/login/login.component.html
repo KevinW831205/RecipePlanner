@@ -12,12 +12,12 @@
       class="form-control" required>
     <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Enter a password</div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid || disableLogin">Login</button>
 
-  <button type="button" class="btn btn-dark ml-5" (click)="demouserLogin() ">
+  <button type="button" [disabled]="disableLogin" class="btn btn-dark ml-5" (click)="demouserLogin() ">
     demouser
   </button>
-  <button type="button" class="btn btn-info ml-1" (click)="demoadminLogin() ">
+  <button type="button" [disabled]="disableLogin" class="btn btn-info ml-1" (click)="demoadminLogin() ">
     demoadmin
   </button>
 </form>

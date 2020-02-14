@@ -14,12 +14,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
 
   account: SignupInfo = {
     username: null,
     password: null
   };
   invalidLogin: boolean = false;
+  disableLogin: boolean = false;
 
   @Output() submitLogin: EventEmitter<boolean> = new EventEmitter();
 
@@ -31,6 +33,7 @@ export class LoginComponent {
       res => {
         this.authService.userSubject.next(res);
         this.invalidLogin = false;
+        this.disableLogin = true;
         localStorage.setItem('user', JSON.stringify(res.username))
         this.submitLogin.emit(true);
         this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl') || '/')
