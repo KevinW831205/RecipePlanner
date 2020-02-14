@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/services/account.service';
+import { Observable } from 'rxjs';
+import { Account } from 'src/app/models/Account';
 
 @Component({
   selector: 'app-accounts',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountsComponent implements OnInit {
 
-  constructor() { }
+  accounts$: Observable<Account[]>
+
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
+    this.accounts$ = this.accountService.getAllAccount();
   }
 
 }

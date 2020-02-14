@@ -15,8 +15,12 @@ export class AccountService {
 
   }
 
+  getAllAccount(): Observable<Account[]> {
+    return this.http.get<Account[]>(baseUrl + "account/", httpOptions);
+  }
+
   getAccount(userName: string): Observable<Account> {
-    return this.http.get<Account>(baseUrl + "account/user?username=" + userName);
+    return this.http.get<Account>(baseUrl + "account/user?username=" + userName, httpOptions);
   }
 
   createAccount(accountInfo: SignupInfo) {

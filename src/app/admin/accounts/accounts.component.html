@@ -6,5 +6,13 @@
             <th></th>
         </thead>
 
+        <tbody *ngIf="accounts$ | asycn as accounts">
+            <tr *ngFor="let account of accounts">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+
     </table>
 </div>

@@ -31,9 +31,9 @@ export class LoginComponent {
       res => {
         this.authService.userSubject.next(res);
         this.invalidLogin = false;
-        localStorage.setItem('user',JSON.stringify(res.username))
+        localStorage.setItem('user', JSON.stringify(res.username))
         this.submitLogin.emit(true);
-        this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl')|| '/')
+        this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl') || '/my/profile')
         // this.activeModal.close('logged in')
       }, err => {
         if (err.status == 403) {
@@ -43,6 +43,6 @@ export class LoginComponent {
     )
   }
 
-  
+
 
 }
