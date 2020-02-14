@@ -8,7 +8,7 @@
             *ngIf="categories$ | async as categories">
             <button ngbDropdownItem (click)="setCurrentCategory('All')">All</button>
             <button ngbDropdownItem *ngFor="let category of categories"
-                (click)="setCurrentCategory(category.name)">{{category.name}}</button>
+                (click)="setCurrentCategory(category.name)">{{category.name | titlecase}}</button>
         </div>
     </div>
 </div>
