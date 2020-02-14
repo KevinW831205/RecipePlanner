@@ -10,11 +10,20 @@ export class LoginModalContentComponent {
 
   constructor(public activeModal: NgbActiveModal) { }
 
+  successfulLogin: boolean;
 
-  checkSubmit(e){
-    if(e){
-      this.activeModal.close('logged in')
+  checkSubmit(e) {
+    if (e) {
+      this.toggleSuccessfulLogin();
+      setTimeout(() => {
+        this.toggleSuccessfulLogin();
+        this.activeModal.close('logged in')
+      }, 3000)
     }
+  }
+
+  toggleSuccessfulLogin() {
+    this.successfulLogin = !this.successfulLogin;
   }
 
 }

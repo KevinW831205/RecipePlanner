@@ -33,7 +33,7 @@ export class LoginComponent {
         this.invalidLogin = false;
         localStorage.setItem('user', JSON.stringify(res.username))
         this.submitLogin.emit(true);
-        this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl') || '/my/profile')
+        this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('returnUrl') || '/')
         // this.activeModal.close('logged in')
       }, err => {
         if (err.status == 403) {
