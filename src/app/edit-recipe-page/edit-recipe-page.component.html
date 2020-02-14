@@ -1,6 +1,6 @@
 <div class="container">
     <div *ngIf="authorized; else unauthorized">
-        <h2>Editing
+        <h2>Editing: 
             <span *ngIf="!editName; else editingName">
                 {{recipe.name | titlecase}}
                 <button class="btn btn-warning btn-sm" (click)="toggleEditName()">Change Name</button>

@@ -18,7 +18,7 @@ export class LoginModalContentComponent {
       setTimeout(() => {
         this.toggleSuccessfulLogin();
         this.activeModal.close('logged in')
-      }, 3000)
+      }, 1500)
     }
   }
 
