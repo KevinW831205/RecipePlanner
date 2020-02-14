@@ -6,11 +6,13 @@
             <th></th>
         </thead>
 
-        <tbody *ngIf="accounts$ | asycn as accounts">
+        <tbody *ngIf="accounts$ | async as accounts">
             <tr *ngFor="let account of accounts">
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{account.username}}</td>
+                <td>{{account.recipesCreated.length}}</td>
+                <td>
+                    <a routerLink="">View Profile</a>
+                </td>
             </tr>
         </tbody>
 
