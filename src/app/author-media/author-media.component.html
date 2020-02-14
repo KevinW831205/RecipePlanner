@@ -3,5 +3,6 @@
     <div class="media-body">
         <h5 class="mt-0">Author: {{account.username}}</h5>
         <p>{{account.aboutMe}}</p>
+        <a [routerLink]="['/profile/',account.username]">View Profile</a>
     </div>
 </div>
