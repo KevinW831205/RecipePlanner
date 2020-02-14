@@ -1,5 +1,5 @@
 <div class="container" *ngIf="user">
-    <h1>My Profile</h1>
+    <h1 *ngIf="canEdit">My Profile</h1>
     <h3>Welcome: {{user.username}}</h3>
 
     <div class="my-3 image-container">
@@ -40,5 +40,5 @@
             <button class="btn btn-danger ml-3" (click)="toggleEditAboutMe()">Cancel</button>
         </form>
     </div>
-    <button routerLink="/my/recipes" class="btn btn-outline-dark">Go to My Recipes</button>
+    <button routerLink="/my/recipes" class="btn btn-outline-dark" *ngIf="canEdit">Go to My Recipes</button>
 </div>

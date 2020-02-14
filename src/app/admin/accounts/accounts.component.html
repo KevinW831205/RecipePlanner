@@ -11,7 +11,7 @@
                 <td>{{account.username}}</td>
                 <td>{{account.recipesCreated.length}}</td>
                 <td>
-                    <a routerLink="">View Profile</a>
+                    <a [routerLink]="['/profile/',account.username]">View Profile</a>
                 </td>
             </tr>
         </tbody>
