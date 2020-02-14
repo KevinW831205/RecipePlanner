@@ -6,8 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomFormsModule } from 'ng2-validation';
 
-import { AccountsComponent } from './admin/components/accounts/accounts.component';
-import { CategoryTagsPageComponent } from './admin/components/category-tags-page/category-tags-page.component';
+import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorMediaComponent } from './author-media/author-media.component';
@@ -62,7 +61,6 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
     InstructionsComponent,
     IngredientsComponent,
     AuthorMediaComponent,
-    CategoryTagsPageComponent,
     NewRecipeFormComponent,
     SignupPageComponent,
     MyRecipesComponent,
@@ -73,7 +71,6 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
     NewRecipeModalComponent,
     EditRecipePageComponent,
     FiltererComponent,
-    AccountsComponent,
     CategoryDropdownComponent,
     CategoryTypeaheadComponent,
     ErrorAlertComponent,
@@ -92,7 +89,8 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
     HttpClientModule,
     CustomFormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AdminModule
   ],
   providers: [
     RecipeService,
