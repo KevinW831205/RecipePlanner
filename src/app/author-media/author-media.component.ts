@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Account } from '../models/Account';
 
 @Component({
   selector: 'app-author-media',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./author-media.component.css']
 })
 export class AuthorMediaComponent {
-  @Input('imgUrl') imgUrl;
+  @Input('account') account: Account;
 
   constructor() { }
 
