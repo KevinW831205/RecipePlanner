@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CategoryService } from 'src/app/services/category.service';
-import { Category } from 'src/app/models/Category';
-import { Subscription, Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { Category } from 'src/app/models/Category';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category-tags-page',
