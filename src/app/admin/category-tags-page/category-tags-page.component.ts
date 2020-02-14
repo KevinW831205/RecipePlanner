@@ -54,8 +54,15 @@ export class CategoryTagsPageComponent implements OnInit, OnDestroy {
       take(1)
     ).subscribe(
       res => {
-        let index = this.categories.indexOf(res);
-        this.categories.splice(index, 1);
+        let index = null;
+        for (let i = 0; i < this.categories.length; i++) {
+          if (this.categories[i].name == res.name) {
+            index = i;
+          }
+        }
+        if (index) {
+          this.categories.splice(index, 1);
+        }
       },
       err => {
 
