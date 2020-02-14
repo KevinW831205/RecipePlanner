@@ -54,6 +54,7 @@ export class RecipePageComponent implements OnInit, OnDestroy {
   }
 
   filter() {
+    console.log("filter")
     this.categoryFilter();
     this.queryFilter()
   }
@@ -71,7 +72,7 @@ export class RecipePageComponent implements OnInit, OnDestroy {
   }
 
   queryFilter() {
-    this.filteredRecipes = (!this.query) ? this.recipes : this.recipes.filter(r => {
+    this.filteredRecipes = (!this.query) ? this.filteredRecipes : this.filteredRecipes.filter(r => {
       return r.name.toLowerCase().includes(this.query.toLowerCase());
     })
   }
