@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Observable, Subscription, of } from 'rxjs';
 import { Account } from '../models/Account';
 import { AccountService } from '../services/account.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,21 +13,35 @@ import { AccountService } from '../services/account.service';
 export class ProfileComponent implements OnInit, OnDestroy {
 
   user: Account;
+  canEdit: boolean = false;
   aboutMeTextArea: string = "";
   aboutMeEditing: boolean = false;
   editingImage: boolean = false;
   imageUrlInput: string = "";
   userSubscription: Subscription;
 
-  constructor(private authService: AuthService, private accountService: AccountService) {
+  constructor(private authService: AuthService, private accountService: AccountService, private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    this.authService.checkUserPersist();
-    this.userSubscription = this.authService.user$.subscribe(res => {
-      this.user = res;
-    })
+    let username = this.route.snapshot.paramMap.get('username');
+    if (username) {
+      this.userSubscription = this.accountService.getAccount(username).subscribe(
+        res => {
+          this.user = res;
+        }
+      )
+
+    } else {
+      this.authService.checkUserPersist();
+      this.userSubscription = this.authService.user$.subscribe(res => {
+        if (res) {
+          this.canEdit = true;
+          this.user = res;
+        }
+      })
+    }
   }
 
   ngOnDestroy() {
@@ -37,7 +52,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.accountService.patchAboutMe({ aboutMe: this.aboutMeTextArea }, id).subscribe(
       res => {
         console.log(res)
-        this.user.aboutMe=this.aboutMeTextArea.trim();
+        this.user.aboutMe = this.aboutMeTextArea.trim();
         this.aboutMeTextArea = "";
         this.toggleEditAboutMe();
       },

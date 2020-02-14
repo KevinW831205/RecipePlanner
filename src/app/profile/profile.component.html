@@ -4,7 +4,8 @@
 
     <div class="my-3 image-container">
         <img [src]="user.profileImageUrl">
-        <button class="btn btn-warning btn-sm image-edit-btn" (click)="toggelEditingImage()">Change Image</button>
+        <button class="btn btn-warning btn-sm image-edit-btn" (click)="toggelEditingImage()" *ngIf="canEdit">Change
+            Image</button>
     </div>
 
     <form class="form-inline" *ngIf="editingImage">
@@ -19,13 +20,13 @@
 
 
     <div class="p-3 border border-dark rounded my-3">
-        <h4>About Me <button class="btn btn-warning btn-sm" *ngIf="user.aboutMe"
+        <h4>About Me <button class="btn btn-warning btn-sm" *ngIf="canEdit && user.aboutMe"
                 (click)="toggleEditAboutMe(); populateAboutMe(user.aboutMe);">Edit</button></h4>
         <div *ngIf="user.aboutMe; else addAboutMe">
             <p *ngIf="!aboutMeEditing">{{user.aboutMe}}</p>
         </div>
         <ng-template #addAboutMe>
-            <button class="btn btn-primary" (click)="toggleEditAboutMe()">Add an About Me</button>
+            <button class="btn btn-primary" (click)="toggleEditAboutMe()" *ngIf="canEdit">Add an About Me</button>
         </ng-template>
 
         <form *ngIf="aboutMeEditing">
@@ -39,5 +40,5 @@
             <button class="btn btn-danger ml-3" (click)="toggleEditAboutMe()">Cancel</button>
         </form>
     </div>
-    <button routerLink="/my/recipes" class="btn btn-link  btn-outline-info">Go to My Recipes</button>
+    <button routerLink="/my/recipes" class="btn btn-outline-dark">Go to My Recipes</button>
 </div>
