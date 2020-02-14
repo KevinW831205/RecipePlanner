@@ -17,7 +17,8 @@ export class RecipePageComponent implements OnInit, OnDestroy {
   recipes: Recipe[];
   filteredRecipes: Recipe[];
   recipeSubscription: Subscription;
-
+  query;
+  category;
   constructor(private recipeService: RecipeService, private filterSerivce: FilterService) { }
 
   ngOnInit() {
@@ -25,22 +26,13 @@ export class RecipePageComponent implements OnInit, OnDestroy {
       res => {
         this.recipes = res;
         this.filteredRecipes = res;
-      }, err => {
-
-      }
+      }, err => { }
     )
 
     this.categorySubscription = this.filterSerivce.getCategory$().subscribe(
       res => {
-        console.log(res)
-        this.filteredRecipes = (res == 'All') ? this.recipes : this.recipes.filter(r => {
-          for (let i = 0; i < r.categoryTags.length; i++) {
-            if (r.categoryTags[i].name == res) {
-              return true;
-            };
-          }
-          return false;
-        })
+        this.category = res;
+        this.filter();
       }, err => {
 
       }
@@ -48,9 +40,8 @@ export class RecipePageComponent implements OnInit, OnDestroy {
 
     this.querySubscription = this.filterSerivce.getQuery$().subscribe(
       res => {
-        this.filteredRecipes = (!res) ? this.recipes : this.recipes.filter(r => {
-          return r.name.toLowerCase().includes(res.toLowerCase());
-        })
+        this.query = res;
+        this.filter();
       }, err => {
 
       }
@@ -60,6 +51,29 @@ export class RecipePageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.categorySubscription.unsubscribe();
     this.recipeSubscription.unsubscribe();
+  }
+
+  filter() {
+    this.categoryFilter();
+    this.queryFilter()
+  }
+
+  categoryFilter() {
+    this.filteredRecipes = (this.category == 'All') ? this.recipes : this.recipes.filter(r => {
+      for (let i = 0; i < r.categoryTags.length; i++) {
+        if (r.categoryTags[i].name == this.category) {
+          return true;
+        };
+      }
+      return false;
+    })
+
+  }
+
+  queryFilter() {
+    this.filteredRecipes = (!this.query) ? this.recipes : this.recipes.filter(r => {
+      return r.name.toLowerCase().includes(this.query.toLowerCase());
+    })
   }
 
 
