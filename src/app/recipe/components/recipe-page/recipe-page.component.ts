@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Recipe } from '../shared/models/Recipe';
-import { FilterService } from '../shared/services/filter.service';
-import { RecipeService } from '../shared/services/recipe.service';
+import { Recipe } from '../../../shared/models/Recipe';
+import { FilterService } from '../../../shared/services/filter.service';
+import { RecipeService } from '../../../shared/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-page',

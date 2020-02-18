@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
 
-import { Account } from '../shared/models/Account';
-import { Rating } from '../shared/models/Rating';
-import { Recipe } from '../shared/models/Recipe';
-import { AuthService } from '../shared/services/auth.service';
-import { RatingService } from '../shared/services/rating.service';
-import { RecipeService } from '../shared/services/recipe.service';
+import { Account } from '../../../shared/models/Account';
+import { Rating } from '../../../shared/models/Rating';
+import { Recipe } from '../../../shared/models/Recipe';
+import { AuthService } from '../../../shared/services/auth.service';
+import { RatingService } from '../../../shared/services/rating.service';
+import { RecipeService } from '../../../shared/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-detail-page',

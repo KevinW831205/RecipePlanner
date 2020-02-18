@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { Category } from '../shared/models/Category';
-import { Recipe } from '../shared/models/Recipe';
-import { AuthService } from '../shared/services/auth.service';
-import { RecipeService } from '../shared/services/recipe.service';
+import { Category } from '../../../shared/models/Category';
+import { Recipe } from '../../../shared/models/Recipe';
+import { AuthService } from '../../../shared/services/auth.service';
+import { RecipeService } from '../../../shared/services/recipe.service';
 
 @Component({
   selector: 'app-edit-recipe-page',

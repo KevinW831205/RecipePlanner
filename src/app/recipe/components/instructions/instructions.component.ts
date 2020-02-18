@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { take } from 'rxjs/operators';
 
-import { Instruction } from '../shared/models/Instruction';
-import { Recipe } from '../shared/models/Recipe';
-import { InstructionService } from '../shared/services/instruction.service';
+import { Instruction } from '../../../shared/models/Instruction';
+import { Recipe } from '../../../shared/models/Recipe';
+import { InstructionService } from '../../../shared/services/instruction.service';
 
 @Component({
   selector: 'app-instructions',
