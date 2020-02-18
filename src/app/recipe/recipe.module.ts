@@ -41,9 +41,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    FormsModule,
     SharedModule,
-    AppRoutingModule
 
   ],
   exports: [

@@ -6,6 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { CategoryTagsPageComponent } from './components/category-tags-page/category-tags-page.component';
 import { AdminGuard } from './services/admin-guard.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -19,8 +20,7 @@ import { AdminGuard } from './services/admin-guard.service';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
-    FormsModule
+    SharedModule
   ],
   exports: [
     AccountsComponent,
