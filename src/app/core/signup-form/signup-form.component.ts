@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
-import { SignupInfo } from '../shared/models/SignupInfo';
-import { AccountService } from '../shared/services/account.service';
+import { SignupInfo } from '../../shared/models/SignupInfo';
+import { AccountService } from '../../shared/services/account.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { SignupSuccessModalComponent } from '../signup-success-modal/signup-success-modal.component';
-import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-signup-form',

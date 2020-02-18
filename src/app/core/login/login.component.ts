@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { SignupInfo } from '../shared/models/SignupInfo';
-import { AuthService } from '../shared/services/auth.service';
+import { SignupInfo } from '../../shared/models/SignupInfo';
+import { AuthService } from '../../shared/services/auth.service';
 
 
 

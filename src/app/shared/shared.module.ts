@@ -15,6 +15,9 @@ import { IngredientService } from './services/ingredient.service';
 import { InstructionService } from './services/instruction.service';
 import { RatingService } from './services/rating.service';
 import { RecipeService } from './services/recipe.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CustomFormsModule } from 'ng2-validation';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -39,6 +42,9 @@ import { RecipeService } from './services/recipe.service';
     CommonModule,
     NgbModule,
     FormsModule,
+    FontAwesomeModule,
+    CustomFormsModule,
+    AppRoutingModule
   ],
   exports: [
     ErrorAlertComponent,
@@ -46,6 +52,11 @@ import { RecipeService } from './services/recipe.service';
     CategoryTypeaheadComponent,
     FiltererComponent,
     NgbModule,
+    FontAwesomeModule,
+    FormsModule,
+    CustomFormsModule,
+    AppRoutingModule
+
   ]
 })
 export class SharedModule { }
