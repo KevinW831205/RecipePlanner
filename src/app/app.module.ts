@@ -31,15 +31,7 @@ import { SummaryPipe } from './recipe-card/summary.pipe';
 import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
 import { RecipePageComponent } from './recipe-page/recipe-page.component';
 import { RecipeStarRatingComponent } from './recipe-star-rating/recipe-star-rating.component';
-import { ErrorAlertComponent } from './shared/components/error-alert/error-alert.component';
-import { AccountService } from './shared/services/account.service';
-import { CategoryService } from './shared/services/category.service';
-import { ErrorService } from './shared/services/error.service';
-import { FilterService } from './shared/services/filter.service';
-import { IngredientService } from './shared/services/ingredient.service';
-import { InstructionService } from './shared/services/instruction.service';
-import { RatingService } from './shared/services/rating.service';
-import { RecipeService } from './shared/services/recipe.service';
+import { SharedModule } from './shared/shared.module';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { SignupSuccessModalComponent } from './signup-success-modal/signup-success-modal.component';
@@ -73,7 +65,6 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
     FiltererComponent,
     CategoryDropdownComponent,
     CategoryTypeaheadComponent,
-    ErrorAlertComponent,
   ],
   entryComponents: [
     LoginModalContentComponent,
@@ -90,17 +81,11 @@ import { SignupSuccessModalComponent } from './signup-success-modal/signup-succe
     CustomFormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    AdminModule
+    AdminModule,
+    SharedModule
   ],
   providers: [
-    RecipeService,
-    AccountService,
-    InstructionService,
-    IngredientService,
-    RatingService,
-    CategoryService,
-    FilterService,
-    ErrorService
+
   ],
   bootstrap: [AppComponent]
 })
