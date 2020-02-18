@@ -25,7 +25,6 @@ const routes: Routes = [
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category', component: CategoryTagsPageComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/accounts', component: AccountsComponent, canActivate: [AuthGuard, AdminGuard] },
-  // { path:'', component: },
   { path: '', redirectTo: '/recipes', pathMatch: 'full' }
 ];
 
