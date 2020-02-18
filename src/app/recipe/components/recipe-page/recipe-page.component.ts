@@ -22,6 +22,7 @@ export class RecipePageComponent implements OnInit, OnDestroy {
   constructor(private recipeService: RecipeService, private filterSerivce: FilterService) { }
 
   ngOnInit() {
+    this.category="All"
     this.recipeSubscription = this.recipeService.getPublished().subscribe(
       res => {
         this.recipes = res;
@@ -31,6 +32,7 @@ export class RecipePageComponent implements OnInit, OnDestroy {
 
     this.categorySubscription = this.filterSerivce.getCategory$().subscribe(
       res => {
+        console.log(res)
         this.category = res;
         this.filter();
       }, err => {
@@ -54,7 +56,6 @@ export class RecipePageComponent implements OnInit, OnDestroy {
   }
 
   filter() {
-    console.log("filter")
     this.categoryFilter();
     this.queryFilter()
   }
