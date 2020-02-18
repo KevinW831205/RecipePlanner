@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RecipeService } from '../services/recipe.service';
-import { AuthService } from '../services/auth.service';
-import { Subscription, VirtualTimeScheduler } from 'rxjs';
-import { Recipe } from '../models/Recipe';
-import { Category } from '../models/Category';
+import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+
+import { Category } from '../models/Category';
+import { Recipe } from '../models/Recipe';
+import { AuthService } from '../shared/services/auth.service';
+import { RecipeService } from '../shared/services/recipe.service';
 
 @Component({
   selector: 'app-edit-recipe-page',

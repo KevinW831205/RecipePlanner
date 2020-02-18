@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../models/Recipe';
-import { AuthService } from '../services/auth.service';
-import { Subscription } from 'rxjs';
-import { Account } from '../models/Account';
 import { Router } from '@angular/router';
-import { RecipeService } from '../services/recipe.service';
+import { Subscription } from 'rxjs';
+
+import { Account } from '../models/Account';
+import { Recipe } from '../models/Recipe';
+import { AuthService } from '../shared/services/auth.service';
+import { RecipeService } from '../shared/services/recipe.service';
 
 @Component({
   selector: 'app-my-recipes',

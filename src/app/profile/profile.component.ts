@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { Observable, Subscription, of } from 'rxjs';
-import { Account } from '../models/Account';
-import { AccountService } from '../services/account.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+import { Account } from '../models/Account';
+import { AccountService } from '../shared/services/account.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-profile',

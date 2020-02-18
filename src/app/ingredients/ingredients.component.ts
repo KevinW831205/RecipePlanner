@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Recipe } from '../models/Recipe';
-import { IngredientService } from '../services/ingredient.service';
+import { Component, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 import { Ingredient } from '../models/Ingredient';
-import { FormBuilder, NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Recipe } from '../models/Recipe';
+import { IngredientService } from '../shared/services/ingredient.service';
 
 @Component({
   selector: 'app-ingredients',

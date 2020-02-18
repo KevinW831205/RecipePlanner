@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../models/Recipe'
-import { RecipeService } from '../services/recipe.service';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
+
 import { Account } from '../models/Account';
-import { AuthService } from '../services/auth.service';
 import { Rating } from '../models/Rating';
-import { RatingService } from '../services/rating.service';
+import { Recipe } from '../models/Recipe';
+import { AuthService } from '../shared/services/auth.service';
+import { RatingService } from '../shared/services/rating.service';
+import { RecipeService } from '../shared/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-detail-page',

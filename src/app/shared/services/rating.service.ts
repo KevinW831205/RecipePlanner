@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { DataService } from './data.service';
-import { Rating } from '../models/Rating';
-import { baseUrl } from './httpConfig';
 import { HttpClient } from '@angular/common/http';
-import { ErrorService } from './error.service';
+import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
+
+import { Rating } from '../../models/Rating';
+import { baseUrl } from './httpConfig';
+import { DataService } from './data.service';
+import { ErrorService } from './error.service';
 
 @Injectable({
   providedIn: 'root'

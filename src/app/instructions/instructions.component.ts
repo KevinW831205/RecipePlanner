@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Account } from '../models/Account';
-import { Recipe } from '../models/Recipe';
-import { Instruction } from '../models/Instruction';
-import { InstructionService } from '../services/instruction.service';
+import { Component, Input } from '@angular/core';
 import { take } from 'rxjs/operators';
+
+import { Instruction } from '../models/Instruction';
+import { Recipe } from '../models/Recipe';
+import { InstructionService } from '../shared/services/instruction.service';
 
 @Component({
   selector: 'app-instructions',

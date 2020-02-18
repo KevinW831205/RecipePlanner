@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-navbar',

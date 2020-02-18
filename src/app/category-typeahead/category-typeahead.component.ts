@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
-import { Observable, Subscription, Subject, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
-import { Category } from '../models/Category';
-import { CategoryService } from '../services/category.service';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
-import { } from 'events';
+import { merge, Observable, Subject, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
+
+import { Category } from '../models/Category';
+import { CategoryService } from '../shared/services/category.service';
 
 @Component({
   selector: 'app-category-typeahead',

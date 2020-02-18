@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FilterService } from '../services/filter.service';
+import { Component } from '@angular/core';
+
+import { FilterService } from '../shared/services/filter.service';
 
 @Component({
   selector: 'app-filterer',
