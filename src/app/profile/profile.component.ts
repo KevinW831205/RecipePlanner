@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { Account } from '../models/Account';
+import { Account } from '../shared/models/Account';
 import { AccountService } from '../shared/services/account.service';
 import { AuthService } from '../shared/services/auth.service';
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Instruction } from '../../models/Instruction';
+import { Instruction } from '../models/Instruction';
 import { baseUrl } from './httpConfig';
 import { DataService } from './data.service';
 import { ErrorService } from './error.service';

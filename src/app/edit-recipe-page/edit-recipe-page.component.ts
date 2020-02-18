@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { Category } from '../models/Category';
-import { Recipe } from '../models/Recipe';
+import { Category } from '../shared/models/Category';
+import { Recipe } from '../shared/models/Recipe';
 import { AuthService } from '../shared/services/auth.service';
 import { RecipeService } from '../shared/services/recipe.service';
 

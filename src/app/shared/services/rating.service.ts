@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 
-import { Rating } from '../../models/Rating';
+import { Rating } from '../models/Rating';
 import { baseUrl } from './httpConfig';
 import { DataService } from './data.service';
 import { ErrorService } from './error.service';

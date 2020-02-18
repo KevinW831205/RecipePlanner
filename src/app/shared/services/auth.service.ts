@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of, Subject, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { httpOptions, baseUrl } from './httpConfig';
-import { SignupInfo } from '../../models/SignupInfo';
+import { SignupInfo } from '../models/SignupInfo';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Account } from '../../models/Account';
+import { Account } from '../models/Account';
 import { take } from 'rxjs/operators';
 import { AccountService } from './account.service';
 

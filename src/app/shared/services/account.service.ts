@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { httpOptions, baseUrl } from './httpConfig';
 import { HttpClient } from '@angular/common/http';
-import { SignupInfo } from '../../models/SignupInfo';
-import { Account } from '../../models/Account';
+import { SignupInfo } from '../models/SignupInfo';
+import { Account } from '../models/Account';
 import { Observable } from 'rxjs';
 
 @Injectable({

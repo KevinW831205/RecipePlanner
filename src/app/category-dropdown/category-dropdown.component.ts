@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Category } from '../models/Category';
+import { Category } from '../shared/models/Category';
 import { CategoryService } from '../shared/services/category.service';
 
 @Component({

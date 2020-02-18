@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Recipe } from '../../models/Recipe';
+import { Recipe } from '../models/Recipe';
 import { httpOptions, baseUrl } from './httpConfig';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';

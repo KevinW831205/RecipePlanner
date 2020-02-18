@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 
-import { Account } from '../models/Account';
-import { Recipe } from '../models/Recipe';
+import { Account } from '../shared/models/Account';
+import { Recipe } from '../shared/models/Recipe';
 import { AuthService } from '../shared/services/auth.service';
 import { RecipeService } from '../shared/services/recipe.service';
 

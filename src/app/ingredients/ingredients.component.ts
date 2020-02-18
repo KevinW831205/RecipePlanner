@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Ingredient } from '../models/Ingredient';
-import { Recipe } from '../models/Recipe';
+import { Ingredient } from '../shared/models/Ingredient';
+import { Recipe } from '../shared/models/Recipe';
 import { IngredientService } from '../shared/services/ingredient.service';
 
 @Component({

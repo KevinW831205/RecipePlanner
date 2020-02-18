@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
 
-import { Account } from '../models/Account';
-import { Rating } from '../models/Rating';
-import { Recipe } from '../models/Recipe';
+import { Account } from '../shared/models/Account';
+import { Rating } from '../shared/models/Rating';
+import { Recipe } from '../shared/models/Recipe';
 import { AuthService } from '../shared/services/auth.service';
 import { RatingService } from '../shared/services/rating.service';
 import { RecipeService } from '../shared/services/recipe.service';

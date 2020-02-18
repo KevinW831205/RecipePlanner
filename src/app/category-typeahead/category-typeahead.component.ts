@@ -3,7 +3,7 @@ import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { merge, Observable, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
-import { Category } from '../models/Category';
+import { Category } from '../shared/models/Category';
 import { CategoryService } from '../shared/services/category.service';
 
 @Component({
