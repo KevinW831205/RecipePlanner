@@ -1,4 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 export const httpOptions = {
     headers: new HttpHeaders({
@@ -8,4 +9,4 @@ export const httpOptions = {
     })
 }
 
-export const baseUrl: string = "http://localhost:8080/api/"
+export const baseUrl: string =  environment.backendURL;

@@ -18,6 +18,7 @@ export class RecipeService extends DataService<Recipe> {
 
 
   getPublished(): Observable<Recipe[]> {
+    console.log(baseUrl);
     return this.http.get<Recipe[]>(baseUrl + "recipe/published", httpOptions).pipe(
       catchError(err => { return super.handleError(err) })
     );
