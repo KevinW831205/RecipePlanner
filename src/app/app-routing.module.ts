@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { RecipePageComponent } from './recipe-page/recipe-page.component';
-import { ProfileComponent } from './profile/profile.component';
-import { RecipeDetailPageComponent } from './recipe-detail-page/recipe-detail-page.component';
-import { CategoryTagsPageComponent } from './admin/components/category-tags-page/category-tags-page.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-import { SignupPageComponent } from './signup-page/signup-page.component';
-import { MyRecipesComponent } from './my-recipes/my-recipes.component';
-import { AuthGuard } from './services/auth-guard.service';
-import { LoginComponent } from './login/login.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { EditRecipePageComponent } from './edit-recipe-page/edit-recipe-page.component';
+import { RouterModule, Routes } from '@angular/router';
+
 import { AccountsComponent } from './admin/components/accounts/accounts.component';
+import { CategoryTagsPageComponent } from './admin/components/category-tags-page/category-tags-page.component';
 import { AdminGuard } from './admin/services/admin-guard.service';
+import { EditRecipePageComponent } from './recipe/components/edit-recipe-page/edit-recipe-page.component';
+import { LoginPageComponent } from './core/login-page/login-page.component';
+import { MyRecipesComponent } from './recipe/components/my-recipes/my-recipes.component';
+import { ProfileComponent } from './core/profile/profile.component';
+import { RecipeDetailPageComponent } from './recipe/components/recipe-detail-page/recipe-detail-page.component';
+import { RecipePageComponent } from './recipe/components/recipe-page/recipe-page.component';
+import { SignupPageComponent } from './core/signup-page/signup-page.component';
+import { AuthGuard } from './shared/services/auth-guard.service';
 
 const routes: Routes = [
 
@@ -26,7 +25,6 @@ const routes: Routes = [
   { path: 'profile/:username', component: ProfileComponent },
   { path: 'admin/category', component: CategoryTagsPageComponent, canActivate: [AuthGuard, AdminGuard] },
   { path: 'admin/accounts', component: AccountsComponent, canActivate: [AuthGuard, AdminGuard] },
-  // { path:'', component: },
   { path: '', redirectTo: '/recipes', pathMatch: 'full' }
 ];
 
