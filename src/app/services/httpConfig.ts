@@ -9,4 +9,4 @@ export const httpOptions = {
     })
 }
 
-export const baseUrl: string =  environment.backendURL;
+export const baseUrl: string =  environment.backendUrl;

@@ -8,9 +8,6 @@ import { ErrorService } from './error.service';
 
 
 
-@Injectable({
-  providedIn: 'root'
-})
 
 export class DataService<someType> {
   url

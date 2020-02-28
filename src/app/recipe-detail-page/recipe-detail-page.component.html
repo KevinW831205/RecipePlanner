@@ -4,7 +4,7 @@
             <div class="col-md-6 col-sm-12">
                 <h1>{{recipe.name}}</h1>
 
-                <app-recipe-star-rating *ngIf="!isRating" [averageRating]="recipe.averageRating"
+                <app-recipe-star-rating [averageRating]="recipe.averageRating"
                     [numberOfRating]="recipe.numberOfRating" [canRate]="user" (addRate)="rateRecipe($event)">
                 </app-recipe-star-rating>
 
