@@ -18,7 +18,6 @@ export class ErrorService {
   }
 
   emitError() {
-    console.log("emitting")
     this.errorSubject.next(true);
     setTimeout(() => {
       this.errorSubject.next(false);

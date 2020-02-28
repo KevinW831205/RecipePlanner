@@ -31,7 +31,6 @@ export class SignupFormComponent implements OnInit {
   signUp() {
     this.accountService.createAccount(this.account).subscribe(
       r => {
-        console.log(r);
         let modalOptions: NgbModalOptions = {};
         modalOptions.backdrop = 'static';
         modalOptions.keyboard = false;
